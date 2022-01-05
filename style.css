@@ -1,0 +1,104 @@
+@import 
+url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Roboto:wght@400;500&display=swap');
+
+:root {
+  --bg-color: #191765;
+  --app-bg: hsla(360, 50%, 100%, 0.25);
+  --title-color: hsla(244, 96%, 72%, 1);
+  --subtitle-color: hsla(243, 100%, 96%, 1);
+  --text-color: hsla(240, 12%, 81%);
+  
+  --fs-text: 1.25em;
+  --fs-title: 3em;
+
+  --fw-normal: 400;
+  --fw-bold: 500;
+}
+
+/* General Styles */
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: var(--fs-text);
+  font-weight: var(--fw-normal);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Background glowing objects */
+.circle {
+  position: absolute;
+  top: 125px;
+  left: -106px;
+  width: 160px;
+  height: 160px;
+}
+
+.blur-item {
+  background-color: hsla(243, 100%, 96%, 1);
+  border-radius: 50%;
+  filter: blur(30px);
+  box-shadow: 12px 12px 5px 5px hsla(243, 100%, 80%, .5);
+}
+
+/* Header section */
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--subtitle-color);
+  font-size: var(--fs-text);
+  padding: 1em;
+}
+
+.header > a {
+  color: inherit;
+  font-size: inherit;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+.hamburger {
+  position: relative;
+  width: 35px;
+  height: 3px;
+  background-color: var(--subtitle-color);
+}
+
+.hamburger::before {
+  position: absolute;
+  content: '';
+  bottom: 10px;
+  width: inherit;
+  height: inherit;
+  background-color: inherit;
+}
+
+.hamburger::after {
+  position: absolute;
+  content: '';
+  top: 10px;
+  width: inherit;
+  height: inherit;
+  background-color: inherit;
+}
