@@ -51,7 +51,7 @@ a {
 .circle {
   position: absolute;
   top: 125px;
-  left: -106px;
+  left: -116px;
   width: 160px;
   height: 160px;
 }
@@ -127,21 +127,21 @@ a {
 }
 
 #main-title {
-  font-size: 1.95em;
+  font-size: 1.85em;
   font-weight: var(--fw-bold);
   color: var(--title-color);
-  margin-top: 1em;
+  margin-top: 1.25em;
 }
 
 #main-sub {
   font-size: 1.65em;
   font-weight: var(--fw-normal);
   color: var(--subtitle-color);
-  margin-top: 0.25em;
+  margin-top: .6125em;
 }
 
 .intro {
-  font-size: 1.225em;
+  font-size: 1.215em;
   color: var(--text-color);
-  margin-top: 0.125em;
+  margin-top: 1.25em;
 }
