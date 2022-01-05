@@ -3,7 +3,7 @@ url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Roboto:w
 
 :root {
   --bg-color: #191765;
-  --app-bg: hsla(360, 50%, 100%, 0.25);
+  --app-bg: #1a176544;
   --title-color: hsla(244, 96%, 72%, 1);
   --subtitle-color: hsla(243, 100%, 96%, 1);
   --text-color: hsla(240, 12%, 81%);
@@ -38,6 +38,11 @@ body {
   font-weight: var(--fw-normal);
 }
 
+body > * {
+  background-color: var(--app-bg);
+  backdrop-filter: blur(10px);
+}
+
 a {
   text-decoration: none;
 }
@@ -52,15 +57,15 @@ a {
 }
 
 .blur-item {
-  background-color: hsla(243, 100%, 96%, 1);
+  background-color: hsla(243, 100%, 90%, 1);
   border-radius: 50%;
-  filter: blur(30px);
-  box-shadow: 12px 12px 5px 5px hsla(243, 100%, 80%, .5);
+  filter: blur(20px);
+  z-index: -5;
 }
 
 /* Header section */
 
-.header {
+.header-section {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -70,7 +75,11 @@ a {
   padding: 1em;
 }
 
-.header > a {
+.header-section > * {
+  z-index: 10;
+}
+
+.header-section > a {
   color: inherit;
   font-size: inherit;
   align-self: stretch;
@@ -101,4 +110,38 @@ a {
   width: inherit;
   height: inherit;
   background-color: inherit;
+}
+
+/* Main page content */
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0em 1.125em;
+}
+
+.main-section > * {
+  z-index: 10;
+}
+
+#main-title {
+  font-size: 1.95em;
+  font-weight: var(--fw-bold);
+  color: var(--title-color);
+  margin-top: 1em;
+}
+
+#main-sub {
+  font-size: 1.65em;
+  font-weight: var(--fw-normal);
+  color: var(--subtitle-color);
+  margin-top: 0.25em;
+}
+
+.intro {
+  font-size: 1.225em;
+  color: var(--text-color);
+  margin-top: 0.125em;
 }
