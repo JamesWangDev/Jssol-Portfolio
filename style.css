@@ -1,5 +1,5 @@
-@import 
-url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
 :root {
   --bg-color: #191765;
@@ -7,10 +7,8 @@ url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Roboto:w
   --title-color: hsla(244, 96%, 72%, 1);
   --subtitle-color: hsla(243, 100%, 96%, 1);
   --text-color: hsla(240, 12%, 81%);
-  
   --fs-text: 1.25em;
   --fs-title: 3em;
-
   --fw-normal: 400;
   --fw-bold: 500;
 }
@@ -119,7 +117,7 @@ a {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 0em 1.125em;
+  padding: 0 1.125em;
 }
 
 .main-section > * {
@@ -137,7 +135,7 @@ a {
   font-size: 1.65em;
   font-weight: var(--fw-normal);
   color: var(--subtitle-color);
-  margin-top: .6125em;
+  margin-top: 0.6125em;
 }
 
 .intro {
