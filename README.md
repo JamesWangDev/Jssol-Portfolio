@@ -2,6 +2,8 @@
 
 # Portfolio
 
+![A screenshot of the mobile version](./screenshot.png)
+
 > This is my future portfolio.
 
 This is one of the five portfolio templates offered by Microverse.
