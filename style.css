@@ -8,7 +8,7 @@
   --subtitle-color: hsla(243, 100%, 96%, 1);
   --text-color: hsla(240, 12%, 81%);
   --fs-text: 1.25em;
-  --fs-title: 3em;
+  --fs-title: 2em;
   --fw-normal: 400;
   --fw-bold: 500;
   --ff-title: 'Roboto', sans-serif;
@@ -33,7 +33,7 @@ body {
   background-color: var(--bg-color);
   width: 100vw;
   overflow-x: hidden;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--ff-text);
   font-size: var(--fs-text);
   font-weight: var(--fw-normal);
 }
@@ -59,7 +59,7 @@ a {
   width: 160px;
   height: 160px;
   animation-timing-function: ease-in;
-  animation-duration: 10s;
+  animation-duration: 16s;
   animation-fill-mode: backwards;
 }
 
@@ -69,7 +69,7 @@ a {
   width: 85px;
   height: 85px;
   animation-timing-function: ease-in-out;
-  animation-duration: 5s;
+  animation-duration: 10s;
   animation-fill-mode: forwards;
 }
 
@@ -97,7 +97,7 @@ a {
 
   100% {
     background-color: hsla(290, 75%, 97%, 0.671);
-    transform: scale(1.05);
+    transform: scale(0.75);
   }
 }
 
@@ -231,4 +231,59 @@ a {
   font-weight: 300;
   font-family: var(--ff-text);
   color: var(--subtitle-color);
+}
+
+/* Contact section */
+.contact-links {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  width: 60%;
+  margin-top: 2em;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: var(--subtitle-color);
+  display: block;
+}
+
+.contact-link > i{
+  width: 24px;
+  height: 24px;
+}
+
+/* Internal link to the projects */
+#to-projects {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  color: var(--text-color);
+  font-family: var(--ff-title);
+  font-size: var(--fs-text);
+  font-weight: var(--fw-normal);
+  margin-top: 1em;
+  animation-name: bounce;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+}
+
+#to-projects > svg {
+  margin-right: 0.25em;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
