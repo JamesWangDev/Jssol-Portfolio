@@ -62,7 +62,6 @@ a {
 }
 
 /* Header section */
-
 .header-section {
   width: 100%;
   display: flex;
@@ -111,7 +110,6 @@ a {
 }
 
 /* Main page content */
-
 .main-section {
   display: flex;
   flex-direction: column;
@@ -124,14 +122,19 @@ a {
   z-index: 10;
 }
 
-#main-title {
+/* Headline section */
+.headline-section {
+  width: 100%;
+}
+
+#headline-title {
   font-size: 1.85em;
   font-weight: var(--fw-bold);
   color: var(--title-color);
   margin-top: 1.25em;
 }
 
-#main-sub {
+#headline-sub {
   font-size: 1.65em;
   font-weight: var(--fw-normal);
   color: var(--subtitle-color);
