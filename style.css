@@ -249,7 +249,7 @@ a {
   display: block;
 }
 
-.contact-link > i{
+.contact-link > i {
   width: 24px;
   height: 24px;
 }
@@ -276,7 +276,7 @@ a {
 
 @keyframes bounce {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 
   50% {
@@ -284,6 +284,6 @@ a {
   }
 
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 }
