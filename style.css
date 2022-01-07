@@ -36,15 +36,13 @@ body {
   font-family: var(--ff-text);
   font-size: var(--fs-text);
   font-weight: var(--fw-normal);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 body > * {
   background-color: var(--app-bg);
-  backdrop-filter: blur(10px);
-  flex: 1;
+  backdrop-filter: blur(15px);
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 a {
@@ -92,7 +90,7 @@ a {
 /* Background glowing objects */
 .circle-one {
   top: 125px;
-  left: -116px;
+  left: -130px;
   width: 160px;
   height: 160px;
   filter: blur(15px);
@@ -103,7 +101,7 @@ a {
 
 .circle-two {
   top: 650px;
-  right: -40px;
+  right: -45px;
   width: 85px;
   height: 85px;
   filter: blur(15px);
@@ -119,6 +117,9 @@ a {
   top: 1624.71px;
   transform: rotate(-36.38deg);
   filter: blur(50px);
+  animation-timing-function: ease-in-out;
+  animation-duration: 10s;
+  animation-fill-mode: both;
 }
 
 .circle-four {
@@ -126,7 +127,7 @@ a {
   height: 261.6px;
   left: 385.27px;
   top: 2437.23px;
-  filter: blur(10px);
+  filter: blur(20px);
   transform: matrix(-0.84, -0.54, -0.54, 0.84, 0, 0);
 }
 
@@ -136,8 +137,11 @@ a {
   height: 155px;
   left: -93px;
   top: 3274px;
-  background: rgba(237, 236, 220, 0.15);
+  background: rgba(194, 192, 149, 0.05);
   filter: blur(100px);
+  animation-timing-function: ease-out;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
 }
 
 .circle-six {
@@ -153,28 +157,49 @@ a {
 
 .blur-item {
   position: absolute;
-  background-color: hsla(285, 100%, 95%, 1);
+  background-color: hsla(285, 100%, 95%, 0.8);
   box-shadow: 10px 10px 5px 5px hsla(285, 100%, 88%, 0.8);
   border-radius: 50%;
   z-index: -5;
-  animation-name: blop;
   animation-iteration-count: infinite;
+}
+
+.blop {
+  animation-name: blop;
+}
+
+.rotate {
+  animation-name: rotate;
 }
 
 @keyframes blop {
   0% {
-    background-color: rgba(249, 229, 255, 0.918);
+    background-color: rgba(249, 229, 255, 0.7);
     transform: scale(0.75);
   }
 
   50% {
-    background-color: hsla(360, 100%, 100%, 1);
+    background-color: hsla(360, 100%, 100%, 0.8);
     transform: scale(1.25);
   }
 
   100% {
     background-color: hsla(290, 75%, 97%, 0.671);
     transform: scale(0.75);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-36.38deg);
+  }
+
+  50% {
+    transform: rotate(90.38deg);
+  }
+
+  100% {
+    transform: rotate(-36.38deg);
   }
 }
 
@@ -437,4 +462,59 @@ a {
   height: 220px;
   width: 100%;
   background-color: var(--subtitle-color);
+}
+
+
+
+@media screen and (max-width: 320px) {
+  .projects-title {
+    margin-top: 1.25em;
+    padding-bottom: 0.75em;
+  }
+
+  .project-card {
+    overflow-x: hidden;
+  }
+
+  .image-placeholder {
+    height: 180px;
+    width: 100%;
+  }
+  
+  .project-card-title {
+    font-size: 1em;
+  }
+  
+  .project-card-description {
+    font-size: 0.75em;
+  }
+
+  .technology {
+    padding: 0.25em;
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-height: 568px) {
+  .circle-six {
+    top: 3000px;
+  }
+
+  .projects {
+    grid-template: repeat(4, minmax(105vh, auto)) / 1fr;
+    padding: 3em 0;
+    grid-row-gap: 3em;
+  }
+}
+
+@media (max-height: 667px) {
+  .circle-six {
+    top: 3500px;
+  }
+
+  .projects {
+    grid-template: repeat(4, minmax(95vh, auto)) / 1fr;
+    padding: 3em 0;
+    grid-row-gap: 3em;
+  }
 }
