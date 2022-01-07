@@ -464,8 +464,6 @@ a {
   background-color: var(--subtitle-color);
 }
 
-
-
 @media screen and (max-width: 320px) {
   .projects-title {
     margin-top: 1.25em;
@@ -480,11 +478,11 @@ a {
     height: 180px;
     width: 100%;
   }
-  
+
   .project-card-title {
     font-size: 1em;
   }
-  
+
   .project-card-description {
     font-size: 0.75em;
   }
