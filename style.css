@@ -36,12 +36,15 @@ body {
   font-family: var(--ff-text);
   font-size: var(--fs-text);
   font-weight: var(--fw-normal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 body > * {
   background-color: var(--app-bg);
   backdrop-filter: blur(10px);
-  width: inherit;
+  flex: 1;
 }
 
 a {
@@ -411,6 +414,7 @@ a {
   justify-content: stretch;
   align-items: center;
   width: 100%;
+  list-style: none;
 }
 
 .technology {
