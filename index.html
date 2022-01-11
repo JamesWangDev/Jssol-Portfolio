@@ -202,7 +202,7 @@
         </section>
       </section>
       <!-- Contact me section -->
-      <section class="contact-section">
+      <section class="contact-section border">
         <h2 class="contact-title">contact us</h2>
         <p class="contact-info">
           If you have an application you are interested in developing,
@@ -210,22 +210,33 @@
           I'd love to help with it.
         </p>
         <form action="https://formspree.io/f/mbjwdrry" method="POST">
-          <label for="name">
-            Name(s)
-            <input type="text" name="name" id="name" class="user-inputs" placeholder="Jack Sparrow" required>
-          </label>
-          <label for="email">
-            Email
-            <input type="email" name="email" id="email" class="user-inputs" placeholder="name@example.com" required>
-          </label>
-          <label for="message">
-            Talk to me
-            <textarea name="message" id="message" class="user-inputs" placeholder="Enter you message here..." required></textarea>
-          </label>
-          <button type="submit" class="button">Send</button>
+          <ul class="widgets">
+            <li class="widget">
+              <label for="name">
+                Name(s)
+                <input type="text" name="name" id="name" class="user-inputs" placeholder="Jack Sparrow" required>
+              </label>
+            </li>
+            <li class="widget">
+              <label for="email">
+                Email
+                <input type="email" name="email" id="email" class="user-inputs" placeholder="name@example.com" required>
+              </label>
+            </li>
+            <li class="widget">
+              <label for="message">
+                Talk to me
+                <textarea name="message" id="message" class="user-inputs" placeholder="Enter you message here..." required></textarea>
+              </label>
+            </li>
+            <li class="widget">
+              <button type="submit" class="button">Send</button>
+            </li>
+          </ul>
         </form>
       </section>
     </main>
+    <!-- Footer section -->
     <footer class="footer-section">
       <section class="contact-links">
         <a href="https://www.twitter.com/jsivahera" class="contact-link" id="twitter" title="Reach out on Twitter">
@@ -247,7 +258,7 @@
           <i class="fab fa-codepen" ></i>
         </a>
       </section>
-      <p class="mail-me">Mail me at <a href="mailto:jsivahera@icloud.com">jsivahera@icloud.com</a></p>
+      <a href="mailto:jsivahera@icloud.com" id="mail">jsivahera@icloud.com</a>
     </footer>
   </body>
 </html>
