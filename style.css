@@ -464,6 +464,14 @@ a {
   background-color: var(--subtitle-color);
 }
 
+.footer-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.footer-section > a {
+  display: block;
+}
 @media screen and (max-width: 320px) {
   .projects-title {
     margin-top: 1.25em;
