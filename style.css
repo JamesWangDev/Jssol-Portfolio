@@ -491,6 +491,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  line-height: 1.5;
 }
 
 .widget {
@@ -501,15 +502,19 @@ a {
   font-family: var(--ff-text);
 }
 
+#submit-button {
+  width: auto;
+}
+
 .user-inputs {
   display: block;
   width: 100%;
-  margin: 0.75em 0 1.5em;
+  margin: 0.5em 0 1.5em;
   padding: 0.75em;
   font-family: var(--ff-text);
   font-size: 1em;
   color: var(--bg-color);
-  border-radius: 0.25em;
+  border-radius: 0.125em;
 }
 
 .user-inputs::placeholder {
@@ -520,8 +525,11 @@ a {
   outline: 3px var(--title-color) solid;
 }
 
-textarea#message {
-  resize: none;
+#message {
+  height: 8em;
+  resize: vertical;
+  min-height: 6em;
+  max-height: 10em;
 }
 
 /* Footer */
@@ -549,8 +557,8 @@ textarea#message {
   color: var(--subtitle-color);
 }
 
-.footer-section > * {
-  margin-bottom: 1em;
+.contact-links + #mail {
+  margin: 0.5em 0 1.5em;
 }
 
 @media screen and (max-width: 320px) {
