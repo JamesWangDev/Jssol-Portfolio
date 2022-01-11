@@ -463,7 +463,10 @@ a {
   width: 100%;
   background-color: var(--subtitle-color);
 }
-
+.widgets {
+  list-style-type: none;
+  list-style: none;
+}
 .footer-section {
   display: flex;
   align-items: center;
