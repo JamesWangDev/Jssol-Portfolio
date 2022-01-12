@@ -20,7 +20,17 @@
     <!-- Header section -->
     <header class="header-section">
     <a href="index.html#home">JS</a>
-    <nav class="hamburger"></nav>
+    <nav class="navigation">
+      <ul class="nav-list">
+        <li class="nav-list-item"><a href="index.html#home">Portfolio</a></li>
+        <li class="nav-list-item"><a href="index.html#about">About</a></li>
+        <li class="nav-list-item"><a href="index.html#projects">Work</a></li>
+        <li class="nav-list-item">
+          <a href="index.html#contact-me"><i class="far fa-envelope"></i></a>
+        </li>
+      </ul>
+      <div class="hamburger"></div>
+    </nav>
     </header>
     <!-- Main page content -->
     <main class="main-section">
@@ -126,7 +136,7 @@
       <!-- My projects section -->
       <section class="projects-section">
         <h2 class="projects-title">My recent work</h2>
-        <section class="projects">
+        <section class="projects" id="projects">
           <article class="project-card">
             <section class="image-placeholder">
               <!-- This is a placeholder -->
@@ -209,7 +219,7 @@
           a feature that you need built or a project that needs coding.
           I'd love to help with it.
         </p>
-        <form action="https://formspree.io/f/mbjwdrry" method="POST">
+        <form action="https://formspree.io/f/mbjwdrry" method="POST" id="contact-me">
           <ul class="widgets">
             <li class="widget">
               <label for="name">
