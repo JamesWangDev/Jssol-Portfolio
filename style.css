@@ -468,6 +468,13 @@ a {
 }
 
 /* Contact section */
+.about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .contact-links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -495,7 +502,7 @@ a {
 }
 
 /* Internal link to the projects */
-#to-projects {
+.to-projects {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -520,8 +527,12 @@ a {
           animation-iteration-count: infinite;
 }
 
-#to-projects > svg {
+.to-projects > svg {
   margin-right: 0.25em;
+}
+
+#first-to-projects {
+  display: none;
 }
 
 @-webkit-keyframes bounce {
@@ -878,6 +889,10 @@ a {
     font-size: 0.8em;
   }
 
+  .border {
+    padding-bottom: 4em;
+  }
+
   /* Background glowing objects */
   .circle-one {
     top: 50px;
@@ -887,10 +902,10 @@ a {
   }
 
   .circle-two {
-    top: 650px;
-    right: -45px;
-    width: 85px;
-    height: 85px;
+    top: 500px;
+    right: 65px;
+    width: 120px;
+    height: 120px;
   }
 
   .circle-three {
@@ -926,7 +941,7 @@ a {
   /* Header section */
   .header-section {
     font-size: var(--fs-text);
-    padding: 1.75em 4em;
+    padding: 1.75em 6em;
   }
 
   .nav-list {
@@ -947,11 +962,185 @@ a {
   }
 
   .nav-list-item + .nav-list-item {
-    margin-left: 0.75em;
+    margin-left: 1em;
   }
 
   .hamburger {
     display: none;
+  }
+
+  /* Main page content */
+.main-section {
+  padding: 0 5em;
+}
+
+/* Headline section */
+.headline-section {
+  padding-left: 15em;
+  padding-right: 15em;
+}
+
+#headline-title {
+  font-size: var(--fs-title);
+  letter-spacing: 3px;
+  line-height: 1.125;
+  font-weight: 500;
+  margin-top: 1em;
+}
+
+#headline-sub {
+  font-size: 1.85em;
+  margin-top: 0.25em;
+}
+
+.intro {
+  font-size: var(--fs-text);
+  margin-top: 2.5em;
+}
+
+/* Skills section */
+.skills-list {
+  display: flex;
+  align-items: flex-start;
+  align-self: center;
+  justify-content: center;
+  margin-top: 4.5em;
+}
+
+.skill + .skill {
+  margin-left: 2.5em;
+}
+
+.skill-title {
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+
+.sublist {
+  line-height: 1.85;
+}
+
+.skill-item {
+  font-size: 1.125em;
+}
+
+/* Contact section */
+.about-me {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 3em;
+}
+
+.contact-links {
+  width: 30%;
+  margin-top: 2em;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: var(--subtitle-color);
+  display: block;
+}
+
+.contact-link > i {
+  font-size: 24px;
+}
+
+/* Internal link to the projects */
+.to-projects {
+  font-size: var(--fs-text);
+  font-weight: var(--fw-normal);
+  margin-top: 1em;
+}
+
+.to-projects > svg {
+  margin-right: 0.25em;
+}
+
+#first-to-projects {
+  display: flex;
+}
+
+/* My projects section */
+
+.projects-title {
+  margin-top: 1.25em;
+  text-transform: uppercase;
+  font-weight: var(--fw-normal);
+}
+
+.project-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.project-card-title {
+  color: var(--subtitle-color);
+  font-family: var(--ff-title);
+  font-weight: var(--fw-bold);
+  font-size: 1.5em;
+}
+
+.project-card-description {
+  color: var(--text-color);
+  font-size: 1em;
+  font-family: var(--ff-text);
+  font-weight: var(--fw-normal);
+}
+
+.technologies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  list-style: none;
+}
+
+.technology {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  padding: 0.5em;
+  color: var(--subtitle-color);
+  font-family: var(--ff-title);
+  font-weight: var(--fw-bold);
+  font-size: 1em;
+}
+
+.technology + .technology {
+  border-left: 1px solid var(--text-color);
+}
+
+.image-placeholder {
+  height: 220px;
+  width: 100%;
+  background-color: var(--subtitle-color);
 }
 }
 
