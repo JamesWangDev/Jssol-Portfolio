@@ -1042,7 +1042,7 @@ a {
 
   .intro {
     font-size: var(--fs-text);
-    text-align: justify;
+    text-align: center;
     line-height: 1.5;
     margin-top: 2.5em;
     padding: 0 0.75em;
