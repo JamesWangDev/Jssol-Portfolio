@@ -2,7 +2,13 @@
 
 # Portfolio
 
-![A screenshot of the mobile version](./screenshot.png)
+## Screenshots
+
+### Mobile:
+![Mobile version screeshot](./screenshot.png)
+
+### Desktop:
+![Desktop version screenshot](./desktop.png)
 
 > This is my future portfolio.
 
