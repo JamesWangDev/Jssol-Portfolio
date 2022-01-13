@@ -1155,7 +1155,7 @@ a {
 
   .projects-title {
     margin-top: 2em;
-    text-transform: initial;
+    text-transform: none;
     font-weight: var(--fw-normal);
   }
 
