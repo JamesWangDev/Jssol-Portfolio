@@ -20,7 +20,17 @@
     <!-- Header section -->
     <header class="header-section">
     <a href="index.html#home">JS</a>
-    <nav class="hamburger"></nav>
+    <nav class="navigation">
+      <ul class="nav-list">
+        <li class="nav-list-item"><a href="index.html#home">Portfolio</a></li>
+        <li class="nav-list-item"><a href="index.html#about">About</a></li>
+        <li class="nav-list-item"><a href="index.html#projects">Work</a></li>
+        <li class="nav-list-item">
+          <a href="index.html#contact-me"><i class="far fa-envelope"></i></a>
+        </li>
+      </ul>
+      <div class="hamburger"></div>
+    </nav>
     </header>
     <!-- Main page content -->
     <main class="main-section">
@@ -95,6 +105,15 @@
         </ul>
       </section>
       <!-- About me section -->
+      <section class="about-me">
+              <!-- Internal link to the projects -->
+      <a href="index.html#projects" class="to-projects" id="first-to-projects">
+        <svg width="20" height="24" viewBox="0 0 19 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 12.8005L9.15 21.6505L18 12.8005" stroke="#C4C4C4"/>
+          <path d="M9.1499 0.500488V21.8005" stroke="#C4C4C4"/>
+        </svg>
+        <span>Work</span>
+      </a>
       <section class="contact-links">
         <a href="https://www.twitter.com/jsivahera" class="contact-link" id="twitter" title="Reach out on Twitter">
           <i class="fab fa-twitter"></i>
@@ -116,22 +135,24 @@
         </a>
       </section>
       <!-- Internal link to the projects -->
-      <a href="index.html#projects" id="to-projects">
+      <a href="index.html#projects" class="to-projects">
         <svg width="20" height="24" viewBox="0 0 19 23" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 12.8005L9.15 21.6505L18 12.8005" stroke="#C4C4C4"/>
           <path d="M9.1499 0.500488V21.8005" stroke="#C4C4C4"/>
         </svg>
         <span>Work</span>
       </a>
+      </section>
       <!-- My projects section -->
       <section class="projects-section">
         <h2 class="projects-title">My recent work</h2>
-        <section class="projects">
+        <section class="projects" id="projects">
           <article class="project-card">
             <section class="image-placeholder">
               <!-- This is a placeholder -->
             </section>
-            <h3 class="project-card-title">Multi-Post Stories</h3>
+            <section class="about-project">
+              <h3 class="project-card-title">Multi-Post Stories</h3>
             <p class="project-card-description">
               A daily selection of privately personalized reads; 
               no accounts or sign-ups required has been the industry's standard 
@@ -143,13 +164,15 @@
               <li class="technology">bootstrap</li>
               <li class="technology">ruby</li>
             </ul>
-            <button type="button" class="button">See Project</button>     
+            <button type="button" class="button">See Project</button>
+            </section>
           </article>
           <article class="project-card">
             <section class="image-placeholder">
               <!-- This is a placeholder -->
             </section>
-            <h3 class="project-card-title">Multi-Post Stories</h3>
+            <section class="about-project">
+              <h3 class="project-card-title">Multi-Post Stories</h3>
             <p class="project-card-description">
               A daily selection of privately personalized reads; 
               no accounts or sign-ups required has been the industry's standard 
@@ -161,13 +184,15 @@
               <li class="technology">bootstrap</li>
               <li class="technology">ruby</li>
             </ul>
-            <button type="button" class="button">See Project</button>     
+            <button type="button" class="button">See Project</button>
+            </section>
           </article>
           <article class="project-card">
             <section class="image-placeholder">
               <!-- This is a placeholder -->
             </section>
-            <h3 class="project-card-title">Multi-Post Stories</h3>
+            <section class="about-project">
+              <h3 class="project-card-title">Multi-Post Stories</h3>
             <p class="project-card-description">
               A daily selection of privately personalized reads; 
               no accounts or sign-ups required has been the industry's standard 
@@ -179,12 +204,14 @@
               <li class="technology">bootstrap</li>
               <li class="technology">ruby</li>
             </ul>
-            <button type="button" class="button">See Project</button>     
+            <button type="button" class="button">See Project</button>
+            </section>
           </article>
           <article class="project-card">
             <section class="image-placeholder">
               <!-- This is a placeholder -->
             </section>
+            <section class="about-project">
             <h3 class="project-card-title">Multi-Post Stories</h3>
             <p class="project-card-description">
               A daily selection of privately personalized reads; 
@@ -197,19 +224,20 @@
               <li class="technology">bootstrap</li>
               <li class="technology">ruby</li>
             </ul>
-            <button type="button" class="button">See Project</button>     
+            <button type="button" class="button">See Project</button>
+            </section>
           </article>
         </section>
       </section>
       <!-- Contact me section -->
       <section class="contact-section">
-        <h2 class="contact-title">contact us</h2>
+        <h2 class="contact-title">Contact us</h2>
         <p class="contact-info">
           If you have an application you are interested in developing,
           a feature that you need built or a project that needs coding.
           I'd love to help with it.
         </p>
-        <form action="https://formspree.io/f/mbjwdrry" method="POST">
+        <form action="https://formspree.io/f/mbjwdrry" method="POST" id="contact-me">
           <ul class="widgets">
             <li class="widget">
               <label for="name">
