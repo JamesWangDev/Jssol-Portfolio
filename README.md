@@ -19,7 +19,7 @@ This is one of the five portfolio templates offered by Microverse.
 - HTML/CSS
 - Git, Github, Lighthouse, Webhint, Stylelint.
 
-## Live Demo
+## Live Site URL
 
 [https://jssol.github.io/portfolio/](https://jssol.github.io/portfolio/)
 
