@@ -127,6 +127,11 @@ a:hover,
   background-color: hsla(233, 10%, 18%, 1);
 }
 
+a:focus, input:focus, textarea:focus, .button:focus {
+	outline: 2px solid var(--title-color);
+	outline-offset: .2em;
+}
+
 /* Background glowing objects */
 .circle-one {
   top: 125px;
@@ -771,7 +776,7 @@ a:hover,
 }
 
 .user-inputs:focus {
-  outline: 3px var(--title-color) solid;
+  outline-width: 3px;
 }
 
 #message {
@@ -1300,7 +1305,7 @@ a:hover,
   }
 
   .user-inputs:focus {
-    outline: 5px var(--title-color) solid;
+    outline-width: 5px;
   }
 
   #submit-button {
