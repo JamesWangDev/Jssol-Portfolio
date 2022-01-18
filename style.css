@@ -826,8 +826,9 @@ textarea:focus,
   color: var(--subtitle-color);
 }
 
-.contact-links + #mail {
+#mail {
   margin: 0.5em 0 1.5em;
+  color: var(--subtitle-color);
 }
 
 /* For mobile devices smaller than the IPhone X */
