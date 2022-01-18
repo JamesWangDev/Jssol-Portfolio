@@ -70,6 +70,12 @@ a {
   text-decoration: none;
 }
 
+a:hover,
+.nav-list-item:hover > a {
+  color: var(--title-color);
+  transition: color 250ms ease-out;
+}
+
 .border {
   border-bottom: 2px solid var(--subtitle-color);
   padding-bottom: 2em;
@@ -338,6 +344,24 @@ a {
   align-items: center;
 }
 
+.header-section > a:hover {
+  animation: 250ms ease-in 20ms 1 reverse flippy;
+}
+
+@keyframes flippy {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.5);
+  }
+
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
 .nav-list {
   display: none;
 }
@@ -492,7 +516,9 @@ a {
 }
 
 .contact-link:hover {
+  transform: translateY(-3px) scale(1.25);
   color: var(--title-color);
+  transition: all 180ms ease-in-out;
 }
 
 .contact-link > i {
