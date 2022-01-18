@@ -4,7 +4,8 @@
 :root {
   --bg-color: #191765;
   --app-bg: #1a176544;
-  --title-color: hsla(256, 70%, 65%, 1);
+  --title-color: hsla(256, 70%, 70%, 1);
+  --btn-bg-color: hsl(256.3, 69.9%, 57%);
   --subtitle-color: hsla(243, 100%, 96%, 1);
   --text-color: hsla(240, 12%, 81%);
   --fs-text: 1.25em;
@@ -85,7 +86,7 @@ a:hover,
   width: 7.5em;
   height: 3.25em;
   color: var(--subtitle-color);
-  background-color: var(--title-color);
+  background-color: var(--btn-bg-color);
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
