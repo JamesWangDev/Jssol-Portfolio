@@ -127,9 +127,12 @@ a:hover,
   background-color: hsla(233, 10%, 18%, 1);
 }
 
-a:focus, input:focus, textarea:focus, .button:focus {
-	outline: 2px solid var(--title-color);
-	outline-offset: .2em;
+a:focus,
+input:focus,
+textarea:focus,
+.button:focus {
+  outline: 2px solid var(--title-color);
+  outline-offset: 0.2em;
 }
 
 /* Background glowing objects */
