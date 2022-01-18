@@ -4,7 +4,8 @@
 :root {
   --bg-color: #191765;
   --app-bg: #1a176544;
-  --title-color: hsla(256, 70%, 65%, 1);
+  --title-color: hsla(256, 70%, 70%, 1);
+  --btn-bg-color: hsl(256.3, 69.9%, 57%);
   --subtitle-color: hsla(243, 100%, 96%, 1);
   --text-color: hsla(240, 12%, 81%);
   --fs-text: 1.25em;
@@ -70,8 +71,7 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-.nav-list-item:hover > a {
+a:hover {
   color: var(--title-color);
   transition: color 250ms ease-out;
 }
@@ -85,7 +85,7 @@ a:hover,
   width: 7.5em;
   height: 3.25em;
   color: var(--subtitle-color);
-  background-color: var(--title-color);
+  background-color: var(--btn-bg-color);
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
@@ -124,6 +124,14 @@ a:hover,
   -webkit-box-shadow: none;
   box-shadow: none;
   background-color: hsla(233, 10%, 18%, 1);
+}
+
+a:focus,
+input:focus,
+textarea:focus,
+.button:focus {
+  outline: 2px solid var(--title-color);
+  outline-offset: 0.2em;
 }
 
 /* Background glowing objects */
@@ -440,6 +448,11 @@ a:hover,
   margin-top: 1.5em;
   font-family: var(--ff-text);
   text-align: center;
+}
+
+.nav-list-item:hover > a {
+  color: var(--title-color);
+  transition: color 250ms ease-out;
 }
 
 /* Skills section */
@@ -770,7 +783,7 @@ a:hover,
 }
 
 .user-inputs:focus {
-  outline: 3px var(--title-color) solid;
+  outline-width: 3px;
 }
 
 #message {
@@ -801,7 +814,7 @@ a:hover,
   border-top: 2px solid var(--subtitle-color);
 }
 
-.footer-section > a {
+.footer-link {
   display: block;
   text-decoration: none;
   font-size: 1.25em;
@@ -809,12 +822,13 @@ a:hover,
   color: var(--text-color);
 }
 
-.footer-section > a:hover {
+.footer-link:hover {
   color: var(--subtitle-color);
 }
 
-.contact-links + #mail {
+#mail {
   margin: 0.5em 0 1.5em;
+  color: var(--subtitle-color);
 }
 
 /* For mobile devices smaller than the IPhone X */
@@ -1299,7 +1313,7 @@ a:hover,
   }
 
   .user-inputs:focus {
-    outline: 5px var(--title-color) solid;
+    outline-width: 5px;
   }
 
   #submit-button {
