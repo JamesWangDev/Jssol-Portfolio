@@ -814,7 +814,7 @@ textarea:focus,
   border-top: 2px solid var(--subtitle-color);
 }
 
-.footer-section > a {
+.footer-link {
   display: block;
   text-decoration: none;
   font-size: 1.25em;
@@ -822,7 +822,7 @@ textarea:focus,
   color: var(--text-color);
 }
 
-.footer-section > a:hover {
+.footer-link:hover {
   color: var(--subtitle-color);
 }
 
