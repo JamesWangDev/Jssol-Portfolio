@@ -71,8 +71,7 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-.nav-list-item:hover > a {
+a:hover {
   color: var(--title-color);
   transition: color 250ms ease-out;
 }
@@ -449,6 +448,11 @@ textarea:focus,
   margin-top: 1.5em;
   font-family: var(--ff-text);
   text-align: center;
+}
+
+.nav-list-item:hover > a {
+  color: var(--title-color);
+  transition: color 250ms ease-out;
 }
 
 /* Skills section */
