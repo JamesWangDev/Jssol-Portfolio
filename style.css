@@ -61,10 +61,8 @@ body::-webkit-scrollbar-thumb {
 
 body > * {
   background-color: var(--app-bg);
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden !important;
 }
 
 a {
@@ -340,6 +338,11 @@ textarea:focus,
   z-index: 10;
 }
 
+.nav-open .header-section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .header-section > a {
   color: inherit;
   font-size: inherit;
@@ -370,8 +373,65 @@ textarea:focus,
   }
 }
 
+.nav {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  padding: 1.75em;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: transparent;
+  transition: background-color 300ms ease-out;
+}
+
+.nav-open .nav {
+  background-color: var(--bg-color);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  z-index: 2000;
+  overflow-x: hidden;
+}
+
 .nav-list {
   display: none;
+}
+
+.nav-open .nav-list-link {
+  font-size: 1.25em;
+  font-weight: 500;
+  color: var(--subtitle-color);
+}
+
+.nav-open .nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  line-height: 2;
+  z-index: 3500;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-top: 1em;
+  background-color: var(--app-bg);
+  backdrop-filter: blur(25px);
+}
+
+.nav-open .ellipse-one {
+  z-index: 2500;
+}
+
+.nav-open .ellipse-two {
+  z-index: 2500;
 }
 
 .hamburger {
@@ -379,25 +439,50 @@ textarea:focus,
   width: 35px;
   height: 3px;
   background-color: var(--subtitle-color);
+  z-index: 5000;
+  align-self: flex-end;
 }
 
-.hamburger::before {
-  position: absolute;
-  content: '';
-  bottom: 10px;
-  width: inherit;
-  height: inherit;
-  background-color: inherit;
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  transition: all 300ms ease-in-out;
 }
 
+.hamburger::before,
 .hamburger::after {
   position: absolute;
   content: '';
-  top: 10px;
   width: inherit;
   height: inherit;
   background-color: inherit;
 }
+
+.hamburger::before {
+  bottom: 10px;
+}
+
+.hamburger::after {
+  top: 10px;
+}
+
+.nav-open #logo {
+  display: none;
+}
+
+.nav-open .hamburger {
+  transform: rotate(45deg);
+  align-self: flex-end;
+}
+
+.nav-open .hamburger::before {
+  opacity: 0;
+}
+
+.nav-open .hamburger::after {
+  transform: rotate(0.625turn) rotate(43deg) translateY(-1px) translateX(10px);
+}
+
 
 /* Main page content */
 .main-section {
