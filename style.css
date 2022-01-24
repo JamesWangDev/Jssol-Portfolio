@@ -483,7 +483,6 @@ textarea:focus,
   transform: rotate(0.625turn) rotate(43deg) translateY(-1px) translateX(10px);
 }
 
-
 /* Main page content */
 .main-section {
   display: -webkit-box;
