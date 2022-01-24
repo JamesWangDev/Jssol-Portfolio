@@ -31,17 +31,17 @@
   <body>
     <!-- Header section -->
     <header class="header-section">
-    <a href="#home">JS</a>
-    <nav class="navigation">
+    <a href="#home" id="logo">JS</a>
+    <nav class="nav">
+      <div class="hamburger" id="hamburger"></div>
       <ul class="nav-list">
-        <li class="nav-list-item"><a href="#home">Portfolio</a></li>
-        <li class="nav-list-item"><a href="#about">About</a></li>
-        <li class="nav-list-item"><a href="#projects">Work</a></li>
+        <li class="nav-list-item"><a class="nav-list-link" href="#home">Portfolio</a></li>
+        <li class="nav-list-item"><a class="nav-list-link" href="#about">About</a></li>
+        <li class="nav-list-item"><a class="nav-list-link" href="#projects">Work</a></li>
         <li class="nav-list-item">
-          <a aria-label="Send a message" href="#contact-me"><i aria-hidden="true" class="far fa-envelope"></i></a>
+          <a aria-label="Send a message" class="nav-list-link" href="#contact-me" id="message-icon"><i aria-hidden="true" class="far fa-envelope"></i></a>
         </li>
       </ul>
-      <div class="hamburger"></div>
     </nav>
     </header>
     <!-- Main page content -->
@@ -120,11 +120,11 @@
       <section class="about-me">
               <!-- Internal link to the projects -->
       <a href="index.html#projects" class="to-projects" id="first-to-projects">
+        <span>Work</span>
         <svg width="20" height="24" viewBox="0 0 19 23" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 12.8005L9.15 21.6505L18 12.8005" stroke="#C4C4C4"/>
           <path d="M9.1499 0.500488V21.8005" stroke="#C4C4C4"/>
         </svg>
-        <span>Work</span>
       </a>
       <section class="contact-links">
         <a aria-label="Reach out on Twitter" href="https://www.twitter.com/jsivahera" class="contact-link" id="twitter" title="Reach out on Twitter">
@@ -300,5 +300,8 @@
       </section>
       <a href="mailto:jsivahera@icloud.com" id="mail">jsivahera@icloud.com</a>
     </footer>
+
+    <!-- Scripts -->
+    <script src="./index.js"></script>
   </body>
 </html>
