@@ -570,6 +570,10 @@ textarea:focus,
   display: none;
 }
 
+#first-to-projects > svg {
+  margin-left: 0.25em;
+}
+
 @-webkit-keyframes bounce {
   0% {
     -webkit-transform: translateY(0);
