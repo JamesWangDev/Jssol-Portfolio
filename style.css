@@ -124,6 +124,14 @@ a:hover {
   background-color: hsla(233, 10%, 18%, 1);
 }
 
+#first-name {
+  display: none;
+}
+
+#last-name {
+  display: none;
+}
+
 a:focus,
 input:focus,
 textarea:focus,
@@ -1051,6 +1059,28 @@ textarea:focus,
   }
 }
 
+@media only screen and (min-width: 768px) {
+  #names {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1em;
+  }
+
+  #first-name {
+    display: block;
+  }
+
+  #last-name {
+    display: block;
+  }
+
+  #full-name {
+    display: none;
+  }
+}
+
 /* Desktop devices version */
 @media only screen and (min-width: 992px) {
   /* Laptops/desktops */
@@ -1132,6 +1162,14 @@ textarea:focus,
   .header-section {
     font-size: var(--fs-text);
     padding: 1.75em 6em;
+  }
+
+  .nav {
+    position: relative;
+    display: block;
+    padding: 0;
+    height: unset;
+    width: unset;
   }
 
   .nav-list {

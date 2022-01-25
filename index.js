@@ -26,9 +26,13 @@ const deviceType = () => {
     device = 'mobile';
     return device;
   }
-  return 'desktop';
+  return device = 'desktop';
 };
 deviceType();
 if (device === 'mobile') {
+  document.getElementById('message-icon').textContent = 'Contact';
+}
+
+if(navigator.userAgent.width <= 912) {
   document.getElementById('message-icon').textContent = 'Contact';
 }
