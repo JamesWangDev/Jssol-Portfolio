@@ -145,7 +145,7 @@ textarea:focus,
   display: none;
 }
 
-.pop-open .pop-up{
+.pop-open .pop-up {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -230,7 +230,7 @@ textarea:focus,
   width: 100%;
 }
 
-.project-links > button {
+.project-links > a {
   display: flex;
   align-items: center;
   justify-content: space-between;
