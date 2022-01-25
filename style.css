@@ -140,6 +140,120 @@ textarea:focus,
   outline-offset: 0.2em;
 }
 
+/* Popup window */
+.pop-up {
+  display: none;
+}
+
+.pop-open .pop-up{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 3em 2em;
+  background-color: var(--bg-color);
+  z-index: 1000;
+}
+
+.pop-article {
+  width: 100%;
+  height: 100%;
+  background-color: hsla(243, 100%, 96%, 0.5);
+  backdrop-filter: blur(20px);
+  border: 4px solid var(--subtitle-color);
+  border-radius: 0.125em;
+  padding: 1em;
+}
+
+.pop-article-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.pop-article-title {
+  color: var(--subtitle-color);
+  font-size: var(--fs-title);
+}
+
+.pop-article-close {
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+}
+
+.pop-close {
+  position: relative;
+  transform: rotate(45deg);
+}
+
+.pop-close::after {
+  position: absolute;
+  content: '';
+  transform: rotate(-90deg) translateY(-1.25em);
+}
+
+.pop-close,
+.pop-close::after {
+  width: 2.5em;
+  height: 4px;
+  background-color: var(--subtitle-color);
+}
+
+.project-image {
+  width: 100%;
+  height: 10em;
+  background-color: white;
+}
+
+.project-description {
+  padding: 0.5em 0.125em;
+  text-align: center;
+  color: var(--subtitle-color);
+  margin-bottom: 0.5em;
+}
+
+.project-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.5em;
+  width: 100%;
+}
+
+.project-links > button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75em;
+  width: 32%;
+  height: 3em;
+}
+
+.brand {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.pop-open .header-section,
+.pop-open .main-section,
+.pop-open .skills,
+.pop-open .about-me,
+.pop-open .projects-section,
+.pop-open .contact-section,
+.pop-open .footer-section {
+  display: none;
+}
+
 /* Background glowing objects */
 .circle-one {
   top: 125px;
