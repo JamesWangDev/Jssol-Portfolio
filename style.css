@@ -226,22 +226,40 @@ textarea:focus,
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 4.5em;
+  height: 6em;
   width: 100%;
 }
 
 .project-links > a {
   display: flex;
+  -webkit-box-align: center;
   align-items: center;
+  height: 3.25em;
+  color: var(--subtitle-color);
+  background-color: var(--btn-bg-color);
+  -webkit-box-pack: center;
   justify-content: space-between;
   padding: 0.75em;
-  width: 32%;
-  height: 3em;
+  width: 35%;
+  text-align: center;
+  font-size: 0.8em;
+  font-family: var(--ff-text);
+  border: none;
+  cursor: pointer;
+}
+
+.project-links > a:hover {
+  -webkit-box-shadow: 0 8px 16px 0 hsla(244, 96%, 72%, 0.48);
+  box-shadow: 0 8px 16px 0 hsla(244, 96%, 72%, 0.48);
+  background-color: var(--title-color);
+  -webkit-transition: -webkit-box-shadow ease-in 5ms;
+  -o-transition: box-shadow ease-in 5ms;
+  transition: box-shadow ease-in 5ms, -webkit-box-shadow ease-in 5ms;
 }
 
 .brand {
   display: inline-block;
-  margin-left: 1em;
+  margin-left: 0.25em;
 }
 
 .pop-open .header-section,
