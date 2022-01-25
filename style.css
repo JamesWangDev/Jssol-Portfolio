@@ -1240,6 +1240,10 @@ textarea:focus,
   .pop-article-title {
     font-size: 1.75em;
   }
+
+  .pop-article-close {
+    cursor: pointer;
+  }
   
   .pop-close::after {
     transform: rotate(-90deg) translateY(-0.75em);
