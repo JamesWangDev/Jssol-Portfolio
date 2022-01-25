@@ -497,7 +497,7 @@ textarea:focus,
   align-self: flex-end;
   z-index: 5000;
   width: 35px;
-  height: 4px;
+  height: 5px;
 }
 
 .nav-open .hamburger::before {
