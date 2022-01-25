@@ -455,11 +455,6 @@ textarea:focus,
   transform: rotate(45.52deg);
 }
 
-.nav-open .main-section,
-.nav-open .footer-section {
-  display: none;
-}
-
 .hamburger {
   position: relative;
   z-index: 5000;
@@ -528,6 +523,10 @@ textarea:focus,
   height: 100%;
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
+}
+
+.nav-open .main-section {
+  display: none;
 }
 
 .main-section > * {
@@ -932,6 +931,10 @@ textarea:focus,
   overflow-x: hidden;
   padding: 0 1.5em;
   border-top: 2px solid var(--subtitle-color);
+}
+
+.nav-open .footer-section {
+  display: none;
 }
 
 .footer-link {

@@ -4,11 +4,11 @@ const navLinks = document.querySelectorAll('.nav-list-link');
 
 hamburger.addEventListener('mouseup', (event) => {
   body.classList.toggle('nav-open');
-  event. stopPropagation();
+  event.stopPropagation();
 });
 window.addEventListener('mouseup', (event) => {
   body.classList.remove('nav-open');
-  event. stopPropagation();
+  event.stopPropagation();
 });
 
 navLinks.forEach((link) => link.addEventListener('click', () => {
@@ -26,13 +26,14 @@ const deviceType = () => {
     device = 'mobile';
     return device;
   }
-  return device = 'desktop';
+  device = 'desktop';
+  return device;
 };
 deviceType();
 if (device === 'mobile') {
   document.getElementById('message-icon').textContent = 'Contact';
 }
 
-if(navigator.userAgent.width <= 912) {
+if (navigator.userAgent.width <= 912) {
   document.getElementById('message-icon').textContent = 'Contact';
 }
