@@ -60,8 +60,8 @@ const projects = [
 ];
 
 function getTop(elem) {
-  let box = elem.getBoundingClientRect();
-  let top = box.top + window.pageYOffset;
+  const box = elem.getBoundingClientRect();
+  const top = box.top + window.pageYOffset;
   console.log(top);
 }
 
@@ -69,7 +69,7 @@ function setContent(elem) {
   console.log(elem);
 }
 
-openButtons.forEach(button => {
+openButtons.forEach((button) => {
   button.addEventListener('click', (event) => {
     getTop(event.target.parentElement);
     document.body.classList.add('pop-open');
