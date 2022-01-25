@@ -27,8 +27,8 @@ This is one of the five portfolio templates offered by Microverse.
 
 👤 **Jonathan Sivahera**
 
-- GitHub: [@jssol](https://github.com/jssol)
-- Twitter: [@jsivahera](https://twitter.com/jsivahera)
+- GitHub: [Jonathan Sivahera](https://github.com/jssol)
+- Twitter: [Jonathan Sivahera](https://twitter.com/jsivahera)
 - LinkedIn: [Jonathan Sivahera](https://linkedin.com/in/jsivahera)
 
 ## 🤝 Contributing
