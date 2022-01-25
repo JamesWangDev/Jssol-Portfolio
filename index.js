@@ -2,17 +2,18 @@ const { body } = document;
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.querySelectorAll('.nav-list-link');
 
-hamburger.addEventListener('click', () => {
+hamburger.addEventListener('mouseup', (event) => {
   body.classList.toggle('nav-open');
+  event.stopPropagation();
+});
+window.addEventListener('mouseup', (event) => {
+  body.classList.remove('nav-open');
+  event.stopPropagation();
 });
 
 navLinks.forEach((link) => link.addEventListener('click', () => {
   body.classList.remove('nav-open');
 }));
-
-document.addEventListener('scroll', () => {
-  body.classList.remove('nav-open');
-});
 
 let device = '';
 const deviceType = () => {
@@ -25,9 +26,14 @@ const deviceType = () => {
     device = 'mobile';
     return device;
   }
-  return 'desktop';
+  device = 'desktop';
+  return device;
 };
 deviceType();
 if (device === 'mobile') {
+  document.getElementById('message-icon').textContent = 'Contact';
+}
+
+if (navigator.userAgent.width <= 912) {
   document.getElementById('message-icon').textContent = 'Contact';
 }

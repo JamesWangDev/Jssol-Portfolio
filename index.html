@@ -31,8 +31,14 @@
   <body>
     <!-- Header section -->
     <header class="header-section">
-    <a href="#home" id="logo">JS</a>
+    <a href="./index.html" id="logo">JS</a>
     <nav class="nav">
+      <div class="ellipse-one">
+        
+      </div>
+      <div class="ellipse-two">
+        
+      </div>
       <div class="hamburger" id="hamburger"></div>
       <ul class="nav-list">
         <li class="nav-list-item"><a class="nav-list-link" href="#home">Portfolio</a></li>
@@ -251,10 +257,18 @@
         </p>
         <form action="https://formspree.io/f/mbjwdrry" method="POST" id="contact-me">
           <ul class="widgets">
-            <li class="widget">
-              <label for="name">
+            <li class="widget" id="names">
+              <label for="name" id="full-name">
                 Your name
                 <input type="text" name="name" id="name" class="user-inputs" placeholder="Jack Sparrow" maxlength="30" required>
+              </label>
+              <label for="f-name" id="first-name">
+                First name
+                <input type="text" name="f-name" id="f-name" class="user-inputs" placeholder="Jack" maxlength="30" required>
+              </label>
+              <label for="l-name" id="last-name">
+                Last name
+                <input type="text" name="l-name" id="l-name" class="user-inputs" placeholder="Sparrow" maxlength="30" required>
               </label>
             </li>
             <li class="widget">
