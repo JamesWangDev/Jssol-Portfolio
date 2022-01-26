@@ -270,30 +270,9 @@ textarea:focus,
   cursor: pointer;
 }
 
-.project-links > a:hover {
-  -webkit-box-shadow: 0 8px 16px 0 hsla(244, 96%, 72%, 0.48);
-  box-shadow: 0 8px 16px 0 hsla(244, 96%, 72%, 0.48);
-  background-color: var(--title-color);
-  -webkit-transition: -webkit-box-shadow ease-in 5ms;
-  -o-transition: box-shadow ease-in 5ms;
-  transition: box-shadow ease-in 5ms, -webkit-box-shadow ease-in 5ms;
-}
-
 .brand {
   display: inline-block;
   margin-left: 0.5em;
-}
-
-.pop-open .header-section,
-.pop-open .main-section,
-.pop-open .skills,
-.pop-open .about-me,
-.pop-open .projects-section,
-.pop-open .contact-section,
-.pop-open .footer-section {
-  display: none;
-  z-index: -5;
-  filter: blur(5px);
 }
 
 /* Background glowing objects */
@@ -498,6 +477,12 @@ textarea:focus,
   padding: 1.25em 1.75em;
 }
 
+.pop-open .header-section {
+  display: none;
+  z-index: -5;
+  filter: blur(5px);
+}
+
 .header-section > * {
   z-index: 10;
 }
@@ -517,6 +502,15 @@ textarea:focus,
   display: flex;
   -webkit-box-align: center;
   align-items: center;
+}
+
+.project-links > a:hover {
+  -webkit-box-shadow: 0 8px 16px 0 hsla(244, 96%, 72%, 0.48);
+  box-shadow: 0 8px 16px 0 hsla(244, 96%, 72%, 0.48);
+  background-color: var(--title-color);
+  -webkit-transition: -webkit-box-shadow ease-in 5ms;
+  -o-transition: box-shadow ease-in 5ms;
+  transition: box-shadow ease-in 5ms, -webkit-box-shadow ease-in 5ms;
 }
 
 .header-section > a:hover {
@@ -681,6 +675,12 @@ textarea:focus,
   backdrop-filter: blur(15px);
 }
 
+.pop-open .main-section {
+  display: none;
+  z-index: -5;
+  filter: blur(5px);
+}
+
 .nav-open .main-section {
   display: none;
 }
@@ -731,6 +731,12 @@ textarea:focus,
   width: 100%;
 }
 
+.pop-open .skills {
+  display: none;
+  z-index: -5;
+  filter: blur(5px);
+}
+
 .skills-list {
   width: 100%;
   list-style: none;
@@ -777,6 +783,12 @@ textarea:focus,
   -webkit-box-align: center;
   align-items: center;
   width: 100%;
+}
+
+.pop-open .about-me {
+  display: none;
+  z-index: -5;
+  filter: blur(5px);
 }
 
 .contact-links {
@@ -885,6 +897,12 @@ textarea:focus,
   text-align: start;
 }
 
+.pop-open .projects-section {
+  display: none;
+  z-index: -5;
+  filter: blur(5px);
+}
+
 .projects-title {
   margin-top: 1.5em;
   text-transform: uppercase;
@@ -987,6 +1005,12 @@ textarea:focus,
   text-align: center;
 }
 
+.pop-open .contact-section {
+  display: none;
+  z-index: -5;
+  filter: blur(5px);
+}
+
 .contact-title {
   text-transform: uppercase;
   font-size: var(--fs-title);
@@ -1087,6 +1111,12 @@ textarea:focus,
   overflow-x: hidden;
   padding: 0 1.5em;
   border-top: 2px solid var(--subtitle-color);
+}
+
+.pop-open .footer-section {
+  display: none;
+  z-index: -5;
+  filter: blur(5px);
 }
 
 .nav-open .footer-section {

@@ -1,4 +1,3 @@
-let position = 0;
 const popupTitle = document.querySelector('.pop-article-title');
 const popupImage = document.querySelector('.project-image');
 const technologies = Array.from(document.querySelectorAll('.technology'));
@@ -52,24 +51,26 @@ function getTop(elem) {
 }
 
 function setContent(article, projects) {
-  const index = 0;
-  for (const project of projects) {
+  projects.forEach((project) => {
     if (project.name === article.id) {
       popupTitle.innerText = project.title;
       popupImage.style.backgroundImage = `url(${project.image})`;
       live.href = project.live;
       source.href = project.source;
-      technologies.forEach((tech) => tech.innerText = project.technologies[technologies.indexOf(tech)]);
+      technologies.forEach((tech) => {
+        tech.innerText = project.technologies[technologies.indexOf(tech)];
+      });
     }
-  }
+  });
 }
 
 openButtons.forEach((button) => {
   button.addEventListener('click', (event) => {
     const article = event.target.parentElement.parentElement;
-    position = getTop(article);
+    const position = getTop(article);
     setContent(article, projects);
     document.body.classList.add('pop-open');
+    window.scrollBy(0, position);
   });
 });
 
