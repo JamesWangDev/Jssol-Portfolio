@@ -1,3 +1,9 @@
+let position = 0;
+const popupTitle = document.querySelector('.pop-article-title');
+const popupImage = document.querySelector('.project-image');
+const technologies = Array.from(document.querySelectorAll('.technology'));
+const live = document.getElementById('live');
+const source = document.getElementById('source');
 const openButtons = document.querySelectorAll('.project-btn');
 const closeButton = document.querySelector('.pop-article-close');
 const projects = [
@@ -6,12 +12,7 @@ const projects = [
     title: 'Calculator App',
     image: './assets/images/calculator.png',
     description: '',
-    technologies: {
-      one: 'html',
-      two: 'css',
-      three: 'javascript',
-      four: 'github',
-    },
+    technologies: ['html','css','javascript','cli'],
     live: 'https://danushindi.github.io/calculator/',
     source: 'https://github.com/DanUshindi/calculator',
   },
@@ -20,12 +21,7 @@ const projects = [
     title: 'E-Commerce Site',
     image: './assets/images/ecommerce.png',
     description: '',
-    technologies: {
-      one: 'html',
-      two: 'css',
-      three: 'javascript',
-      four: 'scss',
-    },
+    technologies: ['html','css','javascript','scss'],
     live: 'https://jssol.github.io/ecommerce-page/',
     source: 'https://github.com/jssol/ecommerce-page',
   },
@@ -34,44 +30,45 @@ const projects = [
     title: 'Order summary card',
     image: './assets/images/order.png',
     description: '',
-    technologies: {
-      one: 'html',
-      two: 'css',
-      three: 'javascript',
-      four: 'github',
-    },
+    technologies: ['html','css','javascript','github'],
     live: 'https://jssol.github.io/order-summary-card/',
-    source: 'https://github.com/jssol/order-summary-card',
+    source: 'https://github.com/jssol/order-summary-card/',
   },
   {
-    name: 'stats',
-    title: 'Stats preview card',
-    image: './assets/images/stats.png',
+    name: 'sunny',
+    title: 'Sunny side agency',
+    image: './assets/images/sunny.png',
     description: '',
-    technologies: {
-      one: 'html',
-      two: 'css',
-      three: 'javascript',
-      four: 'github',
-    },
-    live: 'https://jssol.github.io/stats-preview-card',
-    source: 'https://github.com/jssol/stats-preview-card',
-  },
+    technologies: ['html','css','javascript','github'],
+    live: 'https://jssol.github.io/synnysideproject/',
+    source: 'https://github.com/jssol/synnysideproject/',
+  }
 ];
 
 function getTop(elem) {
   const box = elem.getBoundingClientRect();
   const top = box.top + window.pageYOffset;
-  console.log(top);
+  return top;
 }
 
-function setContent(elem) {
-  console.log(elem);
+function setContent(article, projects) {
+  let index = 0;
+  for(let project of projects) {
+    if(project.name === article.id) {
+      popupTitle.innerText = project.title;
+      popupImage.style.backgroundImage = `url(${project.image})`;
+      live.href = project.live;
+      source.href = project.source;
+      technologies.forEach((tech) => tech.innerText = project.technologies[technologies.indexOf(tech)]);
+    }
+  }
 }
 
 openButtons.forEach((button) => {
   button.addEventListener('click', (event) => {
-    getTop(event.target.parentElement);
+    const article = event.target.parentElement.parentElement;
+    position = getTop(article);
+    setContent(article, projects);
     document.body.classList.add('pop-open');
   });
 });

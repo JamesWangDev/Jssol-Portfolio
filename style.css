@@ -218,8 +218,10 @@ textarea:focus,
 .project-image {
   width: 100%;
   aspect-ratio: 6 / 4;
-  /* height: 10em; */
-  background-color: white;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .project-description {
@@ -1256,10 +1258,7 @@ textarea:focus,
   }
   
   .project-image {
-    width: 100%;
     aspect-ratio: 16 / 7;
-    /* height: 10em; */
-    background-color: white;
   }
   
   .project-description {
