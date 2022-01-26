@@ -1,10 +1,10 @@
 const form = document.getElementById('contact-me');
 const msg = document.getElementById('error');
-const mail = form.elements["email"];
+const mail = form.elements.email;
 
 function isLowerCase(string) {
-  return (string !== string.toLowerCase()) ? false : true;
-};
+  return string === string.toLowerCase();
+}
 
 function showError() {
   msg.style.display = 'block';
@@ -12,12 +12,11 @@ function showError() {
 }
 
 form.addEventListener('submit', (event) => {
-  let result = isLowerCase(mail.value);
-  if(!result) {
+  const result = isLowerCase(mail.value);
+  if (!result) {
     event.preventDefault();
     showError();
-  }
-  else {
+  } else {
     form.submit();
   }
 });
