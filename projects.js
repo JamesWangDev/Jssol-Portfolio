@@ -1,6 +1,6 @@
 const popupTitle = document.querySelector('.pop-article-title');
 const popupImage = document.querySelector('.project-image');
-const technologies = Array.from(document.querySelectorAll('.technology'));
+const technologies = Array.from(document.querySelectorAll('.techno'));
 const live = document.getElementById('live');
 const source = document.getElementById('source');
 const openButtons = document.querySelectorAll('.project-btn');
