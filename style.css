@@ -1222,7 +1222,7 @@ textarea:focus,
   .pop-open .pop-up {
     padding: 5em 7.5em;
   }
-  
+
   .pop-article {
     display: flex;
     flex-direction: column;
@@ -1234,11 +1234,11 @@ textarea:focus,
     border-radius: 0.15em;
     padding: 2em;
   }
-  
+
   .pop-article-head {
     margin-bottom: 1.5em;
   }
-  
+
   .pop-article-title {
     font-size: 1.75em;
   }
@@ -1246,32 +1246,32 @@ textarea:focus,
   .pop-article-close {
     cursor: pointer;
   }
-  
+
   .pop-close::after {
     transform: rotate(-90deg) translateY(-0.75em);
   }
-  
+
   .pop-close,
   .pop-close::after {
     width: 1.5em;
     border-radius: 3px;
   }
-  
+
   .project-image {
     aspect-ratio: 16 / 7;
   }
-  
+
   .project-description {
     padding: 1em 10em;
     margin-bottom: 1em;
   }
-  
+
   .techstack {
     margin: 1.75em 0 1.25em;
     width: 30%;
     align-self: center;
   }
-  
+
   .project-links {
     flex-direction: row;
     align-self: center;

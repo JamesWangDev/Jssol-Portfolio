@@ -12,7 +12,7 @@ const projects = [
     title: 'Calculator App',
     image: './assets/images/calculator.png',
     description: '',
-    technologies: ['html','css','javascript','cli'],
+    technologies: ['html', 'css', 'javascript', 'cli'],
     live: 'https://danushindi.github.io/calculator/',
     source: 'https://github.com/DanUshindi/calculator',
   },
@@ -21,7 +21,7 @@ const projects = [
     title: 'E-Commerce Site',
     image: './assets/images/ecommerce.png',
     description: '',
-    technologies: ['html','css','javascript','scss'],
+    technologies: ['html', 'css', 'javascript', 'scss'],
     live: 'https://jssol.github.io/ecommerce-page/',
     source: 'https://github.com/jssol/ecommerce-page',
   },
@@ -30,7 +30,7 @@ const projects = [
     title: 'Order summary card',
     image: './assets/images/order.png',
     description: '',
-    technologies: ['html','css','javascript','github'],
+    technologies: ['html', 'css', 'javascript', 'github'],
     live: 'https://jssol.github.io/order-summary-card/',
     source: 'https://github.com/jssol/order-summary-card/',
   },
@@ -39,10 +39,10 @@ const projects = [
     title: 'Sunny side agency',
     image: './assets/images/sunny.png',
     description: '',
-    technologies: ['html','css','javascript','github'],
+    technologies: ['html', 'css', 'javascript', 'github'],
     live: 'https://jssol.github.io/synnysideproject/',
     source: 'https://github.com/jssol/synnysideproject/',
-  }
+  },
 ];
 
 function getTop(elem) {
@@ -52,9 +52,9 @@ function getTop(elem) {
 }
 
 function setContent(article, projects) {
-  let index = 0;
-  for(let project of projects) {
-    if(project.name === article.id) {
+  const index = 0;
+  for (const project of projects) {
+    if (project.name === article.id) {
       popupTitle.innerText = project.title;
       popupImage.style.backgroundImage = `url(${project.image})`;
       live.href = project.live;
