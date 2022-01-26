@@ -1071,6 +1071,20 @@ textarea:focus,
 
 #submit-button {
   width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#error {
+  display: none;
+  margin-bottom: 0.5em;
+  background-color: hsla(0, 0%, 100%, 0.16);
+  backdrop-filter: blur(5px);
+  border: 2px solid var(--subtitle-color);
+  text-align: center;
+  padding: 0.25em;
 }
 
 .user-inputs {

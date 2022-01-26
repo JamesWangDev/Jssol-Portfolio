@@ -36,4 +36,6 @@ if (device === 'mobile') {
 
 if (navigator.userAgent.width <= 912) {
   document.getElementById('message-icon').textContent = 'Contact';
+  document.getElementById('f-name').removeAttribute('required');
+  document.getElementById('l-name').removeAttribute('required');
 }
