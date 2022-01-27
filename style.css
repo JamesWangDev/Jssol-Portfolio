@@ -1838,6 +1838,10 @@ textarea:focus,
 }
 
 @media only screen and (min-width: 1100px) {
+.pop-open {
+  height: 120vh;
+}
+
   /* Large laptops and desktops */
   .contact-links {
     width: 25%;
