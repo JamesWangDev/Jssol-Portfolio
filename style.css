@@ -759,7 +759,6 @@ textarea:focus,
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  z-index: 5000;
 }
 
 .nav-open .hamburger::before {
