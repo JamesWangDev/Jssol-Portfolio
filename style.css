@@ -145,6 +145,7 @@ textarea:focus,
 .pop-open {
   height: 110vh;
 }
+
 .pop-up {
   display: none;
 }
@@ -1082,7 +1083,7 @@ textarea:focus,
 #error {
   display: none;
   margin-bottom: 0.5em;
-  background-color: hsla(0, 0%, 100%, 0.16); 
+  background-color: hsla(0, 0%, 100%, 0.16);
   border: 2px solid var(--subtitle-color);
   text-align: center;
   padding: 0.25em;
@@ -1314,7 +1315,7 @@ textarea:focus,
   .pop-open .pop-up {
     margin-top: 5em;
   }
-  
+
   .pop-article {
     display: none;
   }
@@ -1440,6 +1441,7 @@ textarea:focus,
   .project-links {
     width: 30%;
   }
+
   /* Background glowing objects */
   .circle-one {
     top: 50px;
