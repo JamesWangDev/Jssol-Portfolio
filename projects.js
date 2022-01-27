@@ -76,7 +76,7 @@ openButtons.forEach((button) => {
   });
 });
 
-closeButton.addEventListener('click', (event) => {
+closeButton.addEventListener('click', () => {
   window.scrollBy(0, position);
   document.body.classList.remove('pop-open');
 });
