@@ -64,18 +64,24 @@ function setContent(article, projects) {
   });
 }
 
+let article = '';
+let position = 0;
+
 openButtons.forEach((button) => {
   button.addEventListener('click', (event) => {
-    const article = event.target.parentElement.parentElement;
-    const position = getTop(article);
+    article = event.target.parentElement.parentElement;
+    position = getTop(article);
     setContent(article, projects);
     document.body.classList.add('pop-open');
-    window.scrollBy(0, position);
   });
 });
 
-closeButton.addEventListener('click', () => document.body.classList.remove('pop-open'));
+closeButton.addEventListener('click', () => {
+  window.scrollBy(0, position);
+  document.body.classList.remove('pop-open');
+});
 document.querySelector('.pop-article').addEventListener('mouseup', (event) => {
+  window.scrollBy(0, position);
   document.body.classList.remove('pop-open');
   event.stopPropagation();
 });
