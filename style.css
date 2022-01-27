@@ -144,10 +144,6 @@ textarea:focus,
 }
 
 /* Popup window */
-.pop-open {
-  height: 110vh;
-}
-
 .pop-up {
   display: none;
 }
@@ -1410,34 +1406,6 @@ textarea:focus,
   /* Contact section */
   .contact-section {
     width: 85%;
-  }
-}
-
-@media (orientation: portrait) and (max-width: 375px) {
-  .pop-open {
-    height: 140vh;
-  }
-}
-
-@media (orientation: portrait) and (max-width: 320px) {
-  .pop-open {
-    height: 155vh;
-  }
-}
-
-@media (orientation: portrait) and (max-width: 1024px) {
-  .pop-open {
-    height: 80vh;
-  }
-}
-
-@media (orientation: portrait) and (max-width: 540px) {
-  .pop-open {
-    height: 110vh;
-  }
-
-  .pop-open .pop-up {
-    margin-top: 6em;
   }
 }
 
