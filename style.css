@@ -1282,6 +1282,34 @@ textarea:focus,
   }
 }
 
+@media (orientation: portrait) and (max-width: 375px) {
+  .pop-open {
+    height: 140vh;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 320px) {
+  .pop-open {
+    height: 155vh;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 1024px) {
+  .pop-open {
+    height: 80vh;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 540px) {
+  .pop-open {
+    height: 110vh;
+  }
+
+  .pop-open .pop-up {
+    margin-top: 6em;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .pop-open .pop-up {
     margin-top: 5em;
@@ -1327,14 +1355,13 @@ textarea:focus,
   }
 
   .project-description {
-    padding: 1em 10em;
+    padding: 1em 3em;
     margin-bottom: 1em;
   }
 
   .techstack {
-    margin: 1.75em 0 1.25em;
-    width: 30%;
-    align-self: center;
+    margin: 1em 0 1.25em;
+    width: 65%;
   }
 
   .project-links {
@@ -1343,7 +1370,7 @@ textarea:focus,
     align-items: center;
     justify-content: space-between;
     height: auto;
-    width: 30%;
+    width: 60%;
   }
 
   .source {
@@ -1401,6 +1428,18 @@ textarea:focus,
     padding-bottom: 4em;
   }
 
+  .project-description {
+    padding: 1em 10em;
+  }
+
+  .techstack {
+    width: 30%;
+    align-self: center;
+  }
+
+  .project-links {
+    width: 30%;
+  }
   /* Background glowing objects */
   .circle-one {
     top: 50px;
