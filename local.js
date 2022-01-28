@@ -1,3 +1,6 @@
+/* global form */
+/* eslint no-undef: "error" */
+
 function getData() {
   const data = {
     'full-name': document.getElementById('name').value,
