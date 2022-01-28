@@ -3,9 +3,9 @@ function getData() {
     'full-name': document.getElementById('name').value,
     'first-name': document.getElementById('f-name').value,
     'last-name': document.getElementById('l-name').value,
-    'email': document.getElementById('email').value,
-    'message': document.getElementById('message').value
-  }
+    email: document.getElementById('email').value,
+    message: document.getElementById('message').value,
+  };
 
   return data;
 }
@@ -17,11 +17,11 @@ function localStore(userData) {
 
 function autofill() {
   const data = JSON.parse(localStorage.getItem('form-data'));
-  form.elements['name'].value = data['full-name'];
+  form.elements.name.value = data['full-name'];
   form.elements['f-name'].value = data['first-name'];
   form.elements['l-name'].value = data['last-name'];
-  form.elements['email'].value = data['email'];
-  form.elements['message'].value = data['message'];
+  form.elements.email.value = data.email;
+  form.elements.message.value = data.message;
 }
 
 form.addEventListener('input', (event) => {
@@ -29,6 +29,5 @@ form.addEventListener('input', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('form-data'))
-  autofill();
+  if (localStorage.getItem('form-data')) autofill();
 });
