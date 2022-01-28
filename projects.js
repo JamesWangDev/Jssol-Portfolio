@@ -72,6 +72,7 @@ openButtons.forEach((button) => {
     article = event.target.parentElement.parentElement;
     position = getTop(article);
     setContent(article, projects);
+    console.log(document.body.style.height);
     document.body.classList.add('pop-open');
   });
 });
