@@ -81,10 +81,13 @@ const showPop = (identifier) => {
       popHeader.append(popArticleTitle, popCloseBtn);
       popArticle.append(popHeader, popIllustration, popDescription, techstack, links);
       popArticle.addEventListener('mouseup', (e) => {
-        e.stopPropagation();
-        document.body.classList.remove('pop-open');
-        document.body.removeChild(popArticle);
-        currentPost.scrollIntoView();
+        if (e.target instanceof HTMLAnchorElement) {
+          e.target.blur();
+        } else {
+          document.body.classList.remove('pop-open');
+          document.body.removeChild(popArticle);
+          currentPost.scrollIntoView();
+        }
       });
       popCloseBtn.addEventListener('click', () => {
         document.body.classList.remove('pop-open');
