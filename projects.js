@@ -70,7 +70,7 @@ const showPop = (identifier) => {
       text of the printing and typesetting  
       ever since the 1500s, when an unknown 
       printer took a galley of type veris lapoa todoe.`;
-      popIllustration.className = 'image-placeholder';
+      popIllustration.className = 'image-place';
       popIllustration.innerHTML = `<img class="project-image" src=${project.image} alt=${project.title}/>`;
       techstack.className = 'techstack';
       project.technologies.forEach((tech) => {
