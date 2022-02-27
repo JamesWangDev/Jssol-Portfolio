@@ -248,11 +248,8 @@ textarea:focus,
 
 .project-image {
   width: 100%;
-  aspect-ratio: 6 / 4;
-  height: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 100%;
+  object-fit: cover;
 }
 
 .project-description {
@@ -1075,7 +1072,7 @@ textarea:focus,
 .image-placeholder {
   height: 220px;
   width: 100%;
-  background-color: var(--subtitle-color);
+  overflow: hidden;
 }
 
 .about-project {
@@ -1455,10 +1452,6 @@ textarea:focus,
   .pop-close::after {
     width: 1.5em;
     border-radius: 3px;
-  }
-
-  .project-image {
-    aspect-ratio: 16 / 7;
   }
 
   .project-description {
