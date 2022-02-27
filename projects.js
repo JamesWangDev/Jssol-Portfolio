@@ -1,9 +1,4 @@
-// const popupTitle = document.querySelector('.pop-article-title');
-// const popupImage = document.querySelector('.project-image');
-// const technologies = Array.from(document.querySelectorAll('.techno'));
-// const live = document.getElementById('live');
-// const source = document.getElementById('source');
-// const closeButton = document.querySelector('.pop-article-close');
+let currentPost = undefined;
 const projectSection = document.getElementById('projects');
 const projects = [
   {
@@ -52,12 +47,10 @@ const showPop = (identifier) => {
       const popHeader = document.createElement('div');
       const popArticleTitle = document.createElement('h2');
       const popCloseBtn = document.createElement('button');
-      const popIllustration = document.createElement('div');
+      const popIllustration = document.createElement('section');
       const popDescription = document.createElement('p');
       const techstack = document.createElement('ul');
       const links = document.createElement('div');
-      const liveBtn = document.createComment('a');
-      const sourceBtn = document.createComment('a');
 
       popArticle.classList.add('pop-up', 'pop-article');
       popHeader.className = 'pop-article-head';
@@ -65,8 +58,6 @@ const showPop = (identifier) => {
       popArticleTitle.textContent = project.title;
       popCloseBtn.className = 'pop-article-close';
       popCloseBtn.innerHTML = '<span class="pop-close"></span>';
-      popIllustration.className = 'project-illustration';
-      popIllustration.style.backgroundImage = `url(${project.image})`;
       popDescription.className = 'project-description';
       popDescription.textContent = `Lorem Ipsum is simply dummy text 
       of the printing and typesetting 
@@ -79,6 +70,8 @@ const showPop = (identifier) => {
       text of the printing and typesetting  
       ever since the 1500s, when an unknown 
       printer took a galley of type veris lapoa todoe.`;
+      popIllustration.className = 'image-placeholder';
+      popIllustration.innerHTML = `<img class="project-image" src=${project.image} alt=${project.title}/>`;
       techstack.className = 'techstack';
       project.technologies.forEach((tech) => {
         const li = document.createElement('li');
@@ -96,43 +89,46 @@ const showPop = (identifier) => {
         e.stopPropagation();
         document.body.classList.remove('pop-open');
         document.body.removeChild(popArticle);
+        currentPost.scrollIntoView();
       });
       popCloseBtn.addEventListener('click', () => {
         document.body.classList.remove('pop-open');
         document.body.removeChild(popArticle);
+        currentPost.scrollIntoView();
       });
     }
   });
   document.body.appendChild(popArticle);
   document.body.classList.add('pop-open');
-  popArticle.scrollIntoView(true);
+  document.body.scrollIntoView(true);
 };
 
 const setContent = () => {
   projects.forEach((project) => {
   const article = `<article class="project-card" id=${project.name}>
-  <section class="image-placeholder">
-  <img class="project-image" src=${project.image} alt=${project.title}/>
-  </section>
-  <section class="about-project">
-  <h3 class="project-card-title">${project.title}</h3>
-  <p class="project-card-description">
-    A daily selection of privately personalized reads; 
-    no accounts or sign-ups required has been the industry's standard 
-    dummy text ever since the 1500s, when an unknown printer took a standard dummy text.
-  </p>
-  <ul class="technologies">
-    <li class="technology">${project.technologies[0]}</li>
-    <li class="technology">${project.technologies[1]}</li>
-    <li class="technology">${project.technologies[2]}</li>
-    <li class="technology">${project.technologies[3]}</li>
-  </ul>
-  <button type="button" id='${project.name}-btn' class="button project-btn">See Project</button>
-  </section>
+    <section class="image-placeholder">
+      <img class="project-image" src=${project.image} alt=${project.title}/>
+    </section>
+    <section class="about-project">
+      <h3 class="project-card-title">${project.title}</h3>
+      <p class="project-card-description">
+        A daily selection of privately personalized reads; 
+        no accounts or sign-ups required has been the industry's standard 
+        dummy text ever since the 1500s, when an unknown printer took a standard dummy text.
+      </p>
+      <ul class="technologies">
+        <li class="technology">${project.technologies[0]}</li>
+        <li class="technology">${project.technologies[1]}</li>
+        <li class="technology">${project.technologies[2]}</li>
+        <li class="technology">${project.technologies[3]}</li>
+      </ul>
+      <button type="button" id='${project.name}-btn' class="button project-btn">See Project</button>
+    </section>
   </article>`;
 
   document.addEventListener('click',function(e){
     if(e.target && e.target.id === `${project.name}-btn`){
+      currentPost = e.target.parentElement.parentElement;
       showPop(`${project.name}-btn`);
     }
   });
