@@ -12,7 +12,7 @@ const projects = [
     title: 'Calculator App',
     image: './assets/images/calculator.png',
     description: '',
-    technologies: ['html', 'css', 'javascript', 'cli'],
+    technologies: ['html', 'javascript', 'css', 'cli'],
     live: 'https://danushindi.github.io/calculator/',
     source: 'https://github.com/DanUshindi/calculator',
   },
@@ -21,7 +21,7 @@ const projects = [
     title: 'E-Commerce Site',
     image: './assets/images/ecommerce.png',
     description: '',
-    technologies: ['html', 'css', 'javascript', 'scss'],
+    technologies: ['html', 'jQuery', 'javascript', 'scss'],
     live: 'https://jssol.github.io/ecommerce-page/',
     source: 'https://github.com/jssol/ecommerce-page',
   },
@@ -39,7 +39,7 @@ const projects = [
     title: 'Sunny side agency',
     image: './assets/images/sunny.png',
     description: '',
-    technologies: ['html', 'css', 'javascript', 'github'],
+    technologies: ['javascript', 'html', 'css', 'github'],
     live: 'https://jssol.github.io/synnysideproject/',
     source: 'https://github.com/jssol/synnysideproject/',
   },
@@ -59,10 +59,10 @@ function setContent() {
     dummy text ever since the 1500s, when an unknown printer took a standard dummy text.
   </p>
   <ul class="technologies">
-    <li class="technology">css</li>
-    <li class="technology">html</li>
-    <li class="technology">bootstrap</li>
-    <li class="technology">ruby</li>
+    <li class="technology">${project.technologies[0]}</li>
+    <li class="technology">${project.technologies[1]}</li>
+    <li class="technology">${project.technologies[2]}</li>
+    <li class="technology">${project.technologies[3]}</li>
   </ul>
   <button type="button" class="button project-btn">See Project</button>
   </section>
