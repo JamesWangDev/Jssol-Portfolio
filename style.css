@@ -42,6 +42,13 @@ body {
   position: relative;
 }
 
+body.pop-open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 0;
+}
+
 body::-webkit-scrollbar {
   width: 12px;
 }
@@ -158,16 +165,8 @@ textarea:focus,
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 80vw;
+  width: 90vw;
   height: auto;
-  margin-top: 6em;
-  z-index: 10000;
 }
 
 .pop-article {
@@ -253,7 +252,7 @@ textarea:focus,
 }
 
 .project-description {
-  padding: 0.75em 0.5em;
+  padding: 0.75em 0.35em;
   text-align: center;
   color: var(--subtitle-color);
   margin-bottom: 0.5em;
@@ -548,6 +547,7 @@ textarea:focus,
   filter: blur(15px);
   opacity: 0.5;
   z-index: -20;
+  display: none;
 }
 
 .header-section > * {
@@ -793,6 +793,7 @@ textarea:focus,
   filter: blur(15px);
   opacity: 0.5;
   z-index: -20;
+  display: none;
 }
 
 .nav-open .main-section {
@@ -852,6 +853,7 @@ textarea:focus,
   filter: blur(15px);
   opacity: 0.5;
   z-index: -20;
+  display: none;
 }
 
 .skills-list {
@@ -908,6 +910,7 @@ textarea:focus,
   filter: blur(15px);
   opacity: 0.5;
   z-index: -20;
+  display: none;
 }
 
 .contact-links {
@@ -1027,6 +1030,7 @@ textarea:focus,
   filter: blur(15px);
   opacity: 0.5;
   z-index: -20;
+  display: none;
 }
 
 .projects-title {
@@ -1145,6 +1149,7 @@ textarea:focus,
   filter: blur(15px);
   opacity: 0.5;
   z-index: -20;
+  display: none;
 }
 
 .contact-title {
@@ -1277,6 +1282,7 @@ textarea:focus,
   filter: blur(15px);
   opacity: 0.5;
   z-index: -20;
+  display: none;
 }
 
 .nav-open .footer-section {
@@ -1409,10 +1415,6 @@ textarea:focus,
 }
 
 @media only screen and (min-width: 768px) {
-  .pop-open .pop-up {
-    margin-top: 5em;
-  }
-
   .pop-article {
     display: none;
   }
