@@ -1,10 +1,11 @@
-const popupTitle = document.querySelector('.pop-article-title');
-const popupImage = document.querySelector('.project-image');
-const technologies = Array.from(document.querySelectorAll('.techno'));
-const live = document.getElementById('live');
-const source = document.getElementById('source');
-const openButtons = document.querySelectorAll('.project-btn');
-const closeButton = document.querySelector('.pop-article-close');
+// const popupTitle = document.querySelector('.pop-article-title');
+// const popupImage = document.querySelector('.project-image');
+// const technologies = Array.from(document.querySelectorAll('.techno'));
+// const live = document.getElementById('live');
+// const source = document.getElementById('source');
+// const openButtons = document.querySelectorAll('.project-btn');
+// const closeButton = document.querySelector('.pop-article-close');
+const projectSection = document.getElementById('projects');
 const projects = [
   {
     name: 'calculator',
@@ -44,45 +45,41 @@ const projects = [
   },
 ];
 
-function getTop(elem) {
-  const box = elem.getBoundingClientRect();
-  const top = box.top + window.pageYOffset;
-  return top;
-}
-
-function setContent(article, projects) {
+function setContent() {
   projects.forEach((project) => {
-    if (project.name === article.id) {
-      popupTitle.innerText = project.title;
-      popupImage.style.backgroundImage = `url(${project.image})`;
-      live.href = project.live;
-      source.href = project.source;
-      technologies.forEach((tech) => {
-        tech.innerText = project.technologies[technologies.indexOf(tech)];
-      });
-    }
+  const article = `<article class="project-card" id=${project.name}>
+  <section class="image-placeholder">
+  <img class="project-image" src=${project.image} alt=${project.title}/>
+  </section>
+  <section class="about-project">
+  <h3 class="project-card-title">${project.title}</h3>
+  <p class="project-card-description">
+    A daily selection of privately personalized reads; 
+    no accounts or sign-ups required has been the industry's standard 
+    dummy text ever since the 1500s, when an unknown printer took a standard dummy text.
+  </p>
+  <ul class="technologies">
+    <li class="technology">css</li>
+    <li class="technology">html</li>
+    <li class="technology">bootstrap</li>
+    <li class="technology">ruby</li>
+  </ul>
+  <button type="button" class="button project-btn">See Project</button>
+  </section>
+  </article>`;
+
+  projectSection.innerHTML += article;
   });
 }
 
-let article = '';
-let position = 0;
+// closeButton.addEventListener('click', () => {
+//   document.body.classList.remove('pop-open');
+// });
+// document.querySelector('.pop-article').addEventListener('mouseup', (event) => {
+//   document.body.classList.remove('pop-open');
+//   event.stopPropagation();
+// });
 
-openButtons.forEach((button) => {
-  button.addEventListener('click', (event) => {
-    article = event.target.parentElement.parentElement;
-    position = getTop(article);
-    setContent(article, projects);
-    console.log(document.body.style.height);
-    document.body.classList.add('pop-open');
-  });
-});
-
-closeButton.addEventListener('click', () => {
-  window.scrollBy(0, position);
-  document.body.classList.remove('pop-open');
-});
-document.querySelector('.pop-article').addEventListener('mouseup', (event) => {
-  window.scrollBy(0, position);
-  document.body.classList.remove('pop-open');
-  event.stopPropagation();
+document.addEventListener('DOMContentLoaded', () => {
+  setContent();
 });
