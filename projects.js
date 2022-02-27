@@ -1,41 +1,46 @@
-let currentPost = undefined;
+let currentPost;
 const projectSection = document.getElementById('projects');
 const projects = [
   {
     name: 'calculator',
     title: 'Calculator App',
     image: './assets/images/calculator.png',
-    description: '',
+    description: `A daily selection of privately personalized reads; 
+    no accounts or sign-ups required has been the industry's standard 
+    dummy text ever since the 1500s, when an unknown printer took a standard dummy text.`,
     technologies: ['html', 'javascript', 'css', 'cli'],
     live: 'https://danushindi.github.io/calculator/',
     source: 'https://github.com/DanUshindi/calculator',
   },
   {
-    name: 'ecommerce',
-    title: 'E-Commerce Site',
-    image: './assets/images/ecommerce.png',
-    description: '',
-    technologies: ['html', 'jQuery', 'javascript', 'scss'],
-    live: 'https://jssol.github.io/ecommerce-page/',
-    source: 'https://github.com/jssol/ecommerce-page',
-  },
-  {
-    name: 'order',
-    title: 'Order summary card',
-    image: './assets/images/order.png',
-    description: '',
-    technologies: ['html', 'css', 'javascript', 'github'],
-    live: 'https://jssol.github.io/order-summary-card/',
-    source: 'https://github.com/jssol/order-summary-card/',
+    name: 'todo',
+    title: 'Todo-list app',
+    image: './assets/images/todo.png',
+    description: `A simple todo list app that helps you keep track of the most important 
+    tasks of your busy day. Built with Javascript, Sass, Webpack`,
+    technologies: ['webpack', 'git', 'javascript', 'scss'],
+    live: 'https://jssol.github.io/todo-list/',
+    source: 'https://github.com/jssol/todo-list/',
   },
   {
     name: 'sunny',
-    title: 'Sunny side agency',
+    title: 'Sunny Side Agency',
     image: './assets/images/sunny.png',
-    description: '',
-    technologies: ['javascript', 'html', 'css', 'github'],
+    description: `A daily selection of privately personalized reads; 
+    no accounts or sign-ups required has been the industry's standard 
+    dummy text ever since the 1500s, when an unknown printer took a standard dummy text.`,
+    technologies: ['html', 'css', 'javascript', 'github'],
     live: 'https://jssol.github.io/synnysideproject/',
     source: 'https://github.com/jssol/synnysideproject/',
+  },
+  {
+    name: 'atr',
+    title: 'Africa Tech Report',
+    image: './assets/images/atr.png',
+    description: 'This is the first capstone project from microverse. I chose the theme of an annual tech magazine about the evolution of technology in Africa and all of its impact on people\'s lives.',
+    technologies: ['javascript', 'html', 'css3', 'git'],
+    live: 'https://github.com/jssol/africa-tech-report/',
+    source: 'https://jssol.github.io/africa-tech-report/',
   },
 ];
 
@@ -59,17 +64,7 @@ const showPop = (identifier) => {
       popCloseBtn.className = 'pop-article-close';
       popCloseBtn.innerHTML = '<span class="pop-close"></span>';
       popDescription.className = 'project-description';
-      popDescription.textContent = `Lorem Ipsum is simply dummy text 
-      of the printing and typesetting 
-      industry. Lorem Ipsum has been the 
-      industry's standard dummy text ever 
-      since the 1500s, when an unknown 
-      printer took a galley of type and 
-      scrambled it 1960s with the 
-      releaLorem Ipsum is simply dummy 
-      text of the printing and typesetting  
-      ever since the 1500s, when an unknown 
-      printer took a galley of type veris lapoa todoe.`;
+      popDescription.textContent = project.description;
       popIllustration.className = 'image-place';
       popIllustration.innerHTML = `<img class="project-image" src=${project.image} alt=${project.title}/>`;
       techstack.className = 'techstack';
@@ -105,17 +100,13 @@ const showPop = (identifier) => {
 
 const setContent = () => {
   projects.forEach((project) => {
-  const article = `<article class="project-card" id=${project.name}>
+    const article = `<article class="project-card" id=${project.name}>
     <section class="image-placeholder">
       <img class="project-image" src=${project.image} alt=${project.title}/>
     </section>
     <section class="about-project">
       <h3 class="project-card-title">${project.title}</h3>
-      <p class="project-card-description">
-        A daily selection of privately personalized reads; 
-        no accounts or sign-ups required has been the industry's standard 
-        dummy text ever since the 1500s, when an unknown printer took a standard dummy text.
-      </p>
+      <p class="project-card-description">${project.description}</p>
       <ul class="technologies">
         <li class="technology">${project.technologies[0]}</li>
         <li class="technology">${project.technologies[1]}</li>
@@ -126,15 +117,15 @@ const setContent = () => {
     </section>
   </article>`;
 
-  document.addEventListener('click',function(e){
-    if(e.target && e.target.id === `${project.name}-btn`){
-      currentPost = e.target.parentElement.parentElement;
-      showPop(`${project.name}-btn`);
-    }
+    document.addEventListener('click', (e) => {
+      if (e.target && e.target.id === `${project.name}-btn`) {
+        currentPost = e.target.parentElement.parentElement;
+        showPop(`${project.name}-btn`);
+      }
+    });
+    projectSection.innerHTML += article;
   });
-  projectSection.innerHTML += article;
-  });
-}
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   setContent();
