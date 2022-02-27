@@ -543,10 +543,6 @@ textarea:focus,
 }
 
 .pop-open .header-section {
-  -webkit-filter: blur(15px);
-  filter: blur(15px);
-  opacity: 0.5;
-  z-index: -20;
   display: none;
 }
 
@@ -713,11 +709,14 @@ textarea:focus,
   transform: rotate(45.52deg);
 }
 
-.hamburger {
-  position: relative;
-  z-index: 5000;
-  -ms-flex-item-align: end;
+#nav-toggle {
+  border: none;
+  background-color: transparent;
   align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
 }
 
 .hamburger,
@@ -726,9 +725,15 @@ textarea:focus,
   -webkit-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
-  width: 35px;
-  height: 3px;
+  width: 2.25rem;
+  height: 0.2rem;
   background-color: var(--subtitle-color);
+  display: block;
+}
+
+.hamburger {
+  position: relative;
+  -ms-flex-item-align: end;
 }
 
 .hamburger::before,
@@ -764,9 +769,9 @@ textarea:focus,
 }
 
 .nav-open .hamburger::after {
-  -webkit-transform: rotate(0.625turn) rotate(43deg) translateY(-1px) translateX(10px);
-  -ms-transform: rotate(0.625turn) rotate(43deg) translateY(-1px) translateX(10px);
-  transform: rotate(0.625turn) rotate(43deg) translateY(-1px) translateX(10px);
+  -webkit-transform: rotate(0.625turn) rotate(45deg) translate(0.75em, 0);
+  -ms-transform: rotate(0.625turn) rotate(45deg) translate(0.75em, 0);
+  transform: rotate(0.625turn) rotate(45deg) translate(0.75em, 0);
 }
 
 /* Main page content */
@@ -789,10 +794,6 @@ textarea:focus,
 }
 
 .pop-open .main-section {
-  -webkit-filter: blur(15px);
-  filter: blur(15px);
-  opacity: 0.5;
-  z-index: -20;
   display: none;
 }
 
@@ -849,10 +850,6 @@ textarea:focus,
 }
 
 .pop-open .skills {
-  -webkit-filter: blur(15px);
-  filter: blur(15px);
-  opacity: 0.5;
-  z-index: -20;
   display: none;
 }
 
@@ -906,10 +903,6 @@ textarea:focus,
 }
 
 .pop-open .about-me {
-  -webkit-filter: blur(15px);
-  filter: blur(15px);
-  opacity: 0.5;
-  z-index: -20;
   display: none;
 }
 
@@ -1026,10 +1019,6 @@ textarea:focus,
 }
 
 .pop-open .projects-section {
-  -webkit-filter: blur(15px);
-  filter: blur(15px);
-  opacity: 0.5;
-  z-index: -20;
   display: none;
 }
 
@@ -1074,9 +1063,14 @@ textarea:focus,
 }
 
 .image-placeholder {
-  height: 220px;
+  height: 200px;
   width: 100%;
   overflow: hidden;
+}
+
+.image-place {
+  height: 200px;
+  width: 100%;
 }
 
 .about-project {
@@ -1145,10 +1139,6 @@ textarea:focus,
 }
 
 .pop-open .contact-section {
-  -webkit-filter: blur(15px);
-  filter: blur(15px);
-  opacity: 0.5;
-  z-index: -20;
   display: none;
 }
 
@@ -1278,10 +1268,6 @@ textarea:focus,
 }
 
 .pop-open .footer-section {
-  -webkit-filter: blur(15px);
-  filter: blur(15px);
-  opacity: 0.5;
-  z-index: -20;
   display: none;
 }
 
@@ -1333,6 +1319,11 @@ textarea:focus,
   .image-placeholder {
     height: 180px;
     width: 100%;
+  }
+
+  .image-place {
+    width: 100%;
+    height: 180px;
   }
 
   .project-card-title {
@@ -1828,6 +1819,11 @@ textarea:focus,
     height: 380px;
     width: 55%;
     background-color: var(--subtitle-color);
+  }
+
+  .image-place {
+    width: 100%;
+    height: auto;
   }
 
   .about-project {
