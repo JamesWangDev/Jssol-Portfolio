@@ -26,12 +26,10 @@ const projects = [
     name: 'guru',
     title: 'Film Guru',
     image: './assets/images/guru.png',
-    description: `A daily selection of privately personalized reads; 
-    no accounts or sign-ups required has been the industry's standard 
-    dummy text ever since the 1500s, when an unknown printer took a standard dummy text.`,
-    technologies: ['html', 'css', 'javascript', 'github'],
-    live: 'https://jssol.github.io/synnysideproject/',
-    source: 'https://github.com/jssol/synnysideproject/',
+    description: `This project is the second capstone project from Microverse. We had to select an API that provides data about a topic that you like and then build the webapp around it. The webapp will have 2 or 3 user interfaces (depending on the size of your team).`,
+    technologies: ['html', 'css', 'javascript', 'webpack'],
+    live: 'https://jssol.github.io/api-based-webapp/',
+    source: 'https://github.com/jssol/api-based-webapp/',
   },
   {
     name: 'atr',
