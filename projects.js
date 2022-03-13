@@ -23,9 +23,9 @@ const projects = [
     source: 'https://github.com/jssol/todo-list/',
   },
   {
-    name: 'sunny',
-    title: 'Sunny Side Agency',
-    image: './assets/images/sunny.png',
+    name: 'guru',
+    title: 'Film Guru',
+    image: './assets/images/guru.png',
     description: `A daily selection of privately personalized reads; 
     no accounts or sign-ups required has been the industry's standard 
     dummy text ever since the 1500s, when an unknown printer took a standard dummy text.`,
