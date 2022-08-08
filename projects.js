@@ -77,12 +77,12 @@ const showPop = (identifier) => {
 
       popHeader.append(popArticleTitle, popCloseBtn);
       popArticle.append(popHeader, popIllustration, popDescription, techstack, links);
-      popArticle.addEventListener('mouseup', (e) => {
-        e.stopPropagation();
-        document.body.classList.remove('pop-open');
-        document.body.removeChild(popArticle);
-        currentPost.scrollIntoView();
-      });
+      // popArticle.addEventListener('mouseup', (e) => {
+      //   e.stopPropagation();
+      //   document.body.classList.remove('pop-open');
+      //   document.body.removeChild(popArticle);
+      //   currentPost.scrollIntoView();
+      // });
       popCloseBtn.addEventListener('click', () => {
         document.body.classList.remove('pop-open');
         document.body.removeChild(popArticle);
@@ -92,27 +92,28 @@ const showPop = (identifier) => {
   });
   document.body.appendChild(popArticle);
   document.body.classList.add('pop-open');
-  document.body.scrollIntoView(true);
+  // document.body.scrollIntoView(true);
 };
 
 const setContent = () => {
   projects.forEach((project) => {
-    const article = `<article class="project-card" id=${project.name}>
-    <section class="image-placeholder">
-      <img class="project-image" src=${project.image} alt=${project.title}/>
-    </section>
-    <section class="about-project">
-      <h3 class="project-card-title">${project.title}</h3>
-      <p class="project-card-description">${project.description}</p>
-      <ul class="technologies">
-        <li class="technology">${project.technologies[0]}</li>
-        <li class="technology">${project.technologies[1]}</li>
-        <li class="technology">${project.technologies[2]}</li>
-        <li class="technology">${project.technologies[3]}</li>
-      </ul>
-      <button type="button" id='${project.name}-btn' class="button project-btn">See Project</button>
-    </section>
-  </article>`;
+    const article =
+      `<article class="project-card" id=${project.name}>
+        <section class="image-placeholder">
+          <img class="project-image" src=${project.image} alt=${project.title}/>
+        </section>
+        <section class="about-project">
+          <h3 class="project-card-title">${project.title}</h3>
+          <p class="project-card-description">${project.description}</p>
+          <ul class="technologies">
+            <li class="technology">${project.technologies[0]}</li>
+            <li class="technology">${project.technologies[1]}</li>
+            <li class="technology">${project.technologies[2]}</li>
+            <li class="technology">${project.technologies[3]}</li>
+          </ul>
+          <button type="button" id='${project.name}-btn' class="button project-btn">See Project</button>
+        </section>
+      </article>`;
 
     document.addEventListener('click', (e) => {
       if (e.target && e.target.id === `${project.name}-btn`) {
