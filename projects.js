@@ -2,43 +2,42 @@ let currentPost;
 const projectSection = document.getElementById('projects');
 const projects = [
   {
-    name: 'calculator',
-    title: 'Calculator App',
-    image: './assets/images/calculator.png',
-    description: `A daily selection of privately personalized reads; 
-    no accounts or sign-ups required has been the industry's standard 
-    dummy text ever since the 1500s, when an unknown printer took a standard dummy text.`,
-    technologies: ['html', 'javascript', 'css', 'cli'],
-    live: 'https://danushindi.github.io/calculator/',
-    source: 'https://github.com/DanUshindi/calculator',
+    name: "culturescape",
+    title: "Culturescape",
+    image: "./assets/images/home.png",
+    description: `Here you can let go of your imagination and discover amazing facts about countries around the world. From legal facts to cultural facts, here you will find what you need to impress your friends and family.`,
+    technologies: ["react", "redux", "sass", "tailwind"],
+    live: "https://culturescape.netlify.app/",
+    source: "https://github.com/jssol/metrics-webapp",
   },
   {
-    name: 'todo',
-    title: 'Todo-list app',
-    image: './assets/images/todo.png',
-    description: `A simple todo list app that helps you keep track of the most important 
-    tasks of your busy day. Built with Javascript, Sass, Webpack`,
-    technologies: ['webpack', 'git', 'javascript', 'scss'],
-    live: 'https://jssol.github.io/todo-list/',
-    source: 'https://github.com/jssol/todo-list/',
+    name: "space",
+    title: "Space traveller's Hub",
+    image: "./assets/images/rockets.png",
+    description:
+      "A single page app where users can book space rockets and missions!",
+    technologies: ["javascript", "react", "tailwind", "bootstrap"],
+    live: "https://amiraabouhadid.github.io/space_travelers_hub/",
+    source: "https://github.com/jssol/space_travelers_hub",
   },
   {
-    name: 'guru',
-    title: 'Film Guru',
-    image: './assets/images/guru.png',
+    name: "guru",
+    title: "Film Guru",
+    image: "./assets/images/guru.png",
     description: `This project is the second capstone project from Microverse. We had to select an API that provides data about a topic that you like and then build the webapp around it. The webapp will have 2 or 3 user interfaces (depending on the size of your team).`,
-    technologies: ['html', 'css', 'javascript', 'webpack'],
-    live: 'https://jssol.github.io/api-based-webapp/',
-    source: 'https://github.com/jssol/api-based-webapp/',
+    technologies: ["html", "css", "javascript", "webpack"],
+    live: "https://jssol.github.io/api-based-webapp/",
+    source: "https://github.com/jssol/api-based-webapp/",
   },
   {
-    name: 'atr',
-    title: 'Africa Tech Report',
-    image: './assets/images/atr.png',
-    description: 'This is the first capstone project from microverse. I chose the theme of an annual tech magazine about the evolution of technology in Africa and all of its impact on people\'s lives.',
-    technologies: ['javascript', 'html', 'css3', 'git'],
-    live: 'https://github.com/jssol/africa-tech-report/',
-    source: 'https://jssol.github.io/africa-tech-report/',
+    name: "todo",
+    title: "Todo-list app",
+    image: "./assets/images/todo.png",
+    description: `A simple todo list app that helps you keep track of the most important
+    tasks of your busy day. Built with Javascript, Sass, Webpack`,
+    technologies: ["webpack", "git", "javascript", "scss"],
+    live: "https://jssol.github.io/todo-list/",
+    source: "https://github.com/jssol/todo-list/",
   },
 ];
 
