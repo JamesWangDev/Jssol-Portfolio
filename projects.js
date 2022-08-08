@@ -77,12 +77,18 @@ const showPop = (identifier) => {
 
       popHeader.append(popArticleTitle, popCloseBtn);
       popArticle.append(popHeader, popIllustration, popDescription, techstack, links);
-      // popArticle.addEventListener('mouseup', (e) => {
-      //   e.stopPropagation();
-      //   document.body.classList.remove('pop-open');
-      //   document.body.removeChild(popArticle);
-      //   currentPost.scrollIntoView();
-      // });
+      popArticle.querySelectorAll('a').addEventListener('mouseup', (e) => {
+        e.stopPropagation();
+      });
+      popArticle.querySelectorAll("a").addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+      popArticle.addEventListener('mouseup', (e) => {
+        e.stopPropagation();
+        document.body.classList.remove('pop-open');
+        document.body.removeChild(popArticle);
+        currentPost.scrollIntoView();
+      });
       popCloseBtn.addEventListener('click', () => {
         document.body.classList.remove('pop-open');
         document.body.removeChild(popArticle);
@@ -92,7 +98,7 @@ const showPop = (identifier) => {
   });
   document.body.appendChild(popArticle);
   document.body.classList.add('pop-open');
-  // document.body.scrollIntoView(true);
+  document.body.scrollIntoView(true);
 };
 
 const setContent = () => {
