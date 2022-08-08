@@ -34,7 +34,7 @@ const projects = [
     title: "Todo-list app",
     image: "./assets/images/todo.png",
     description: `A simple todo list app that helps you keep track of the most important
-    tasks of your busy day. Built with Javascript, Sass, Webpack`,
+    tasks of your busy day. Built with Javascript, Sass, Webpack.`,
     technologies: ["webpack", "git", "javascript", "scss"],
     live: "https://jssol.github.io/todo-list/",
     source: "https://github.com/jssol/todo-list/",
