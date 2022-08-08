@@ -81,6 +81,7 @@ const showPop = (identifier) => {
         e.stopPropagation();
       });
       popArticle.addEventListener('mouseup', (e) => {
+        e.stopPropagation();
         document.body.classList.remove('pop-open');
         document.body.removeChild(popArticle);
         currentPost.scrollIntoView();
