@@ -9,7 +9,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "extends": ["airbnb-base"],
+  "extends": ["airbnb-base", "next/core-web-vitals"],
   "rules": {
     "no-shadow": "off",
     "no-param-reassign": "off",
@@ -20,6 +20,7 @@
   },
   "ignorePatterns": [
     "dist/",
-    "build/"
+    "build/",
+    "public/"
   ]
 }
