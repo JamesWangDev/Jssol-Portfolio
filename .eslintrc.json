@@ -4,18 +4,26 @@
     "es6": true,
     "jest": true
   },
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "extends": ["airbnb-base", "next/core-web-vitals"],
+  "extends": ["airbnb-base", "next/core-web-vitals", "eslint-config-next", "plugin:react/recommended", "plugin:react-hooks/recommended"],
   "rules": {
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/react-in-jsx-scope": "off",
+    "import/no-unresolved": "off",
     "no-shadow": "off",
     "no-param-reassign": "off",
     "eol-last": "off",
+    "no-unused-vars": 0,
+    "@typescript-eslint/no-unused-vars": 0,
     "import/extensions": [ 1, {
-      "js": "always", "json": "always"
+      "json": "always"
     }]
   },
   "ignorePatterns": [
