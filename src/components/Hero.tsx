@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { NavContext } from './NavContext';
+import styles from '@/styles/Hero.module.scss';
 
 function Hero() {
+  const { isNavOpen } = useContext(NavContext);
+
   return (
-    <div>Hero Section</div>
+    <section className={`${styles.container} ${isNavOpen && styles.hidden}`}>Hero Section</section>
   );
 }
 

@@ -1,15 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
-
-$primary-bg: #1b1b1e;
-$secondary-bg: #212123;
-$form-bg: #101010;
-$primary: #fff;
-$secondary: #7d7c84;
-$accent: #db4747;
-$green: #22b07d;
-$orange: #f19d2a;
-$red: #db4747;
-$blue: #376aed;
+@import 'design';
 
 *,
 *::after,
@@ -32,6 +21,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Poppins', Verdana, Geneva, Tahoma, serif;
+  font-size: 12px;
 }
 
 h1,
@@ -50,17 +40,6 @@ a {
   cursor: pointer;
 }
 
-a:hover a::after {
-  position: absolute;
-  content: '';
-  top: 0.25rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 0.25rem;
-  background-color: currentColor;
-}
-
 button {
   color: $primary;
   background-color: $accent;
@@ -69,4 +48,183 @@ button {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  border: none;
+}
+
+ul, ol {
+  list-style: none;
+  line-height: 2;
+}
+
+/* Navigation styles */
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+  color: $primary;
+
+  &.nav_open {
+    height: 100vh;
+    z-index: 10;
+  }
+}
+
+.navbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.5rem;
+  width: 3.5rem;
+  margin: 1rem 1rem 0 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  background-color: transparent;
+}
+
+.hamburger {
+  position: relative;
+
+  &,
+  &::after,
+  &::before {
+    width: 3rem;
+    height: .125rem;
+    display: block;
+    background-color: $primary;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+  }
+
+  &::before {
+    bottom: .8rem;
+  }
+
+  &::after {
+    top: .8rem;
+  }
+
+  .nav_open & {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .nav_open &::before {
+    opacity: 0;
+    transition: none;
+  }
+
+  .nav_open &::after {
+    top: 0;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+
+  .nav_open &,
+  .nav_open &::after {
+    height: .1025rem;
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+.nav_open .mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+  font-size: 1.5rem;
+  margin-top: 8rem;
+
+  .navlist {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    column-gap: 2rem;
+
+    .navlist_item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .navlist_item_index {
+        display: inline-block;
+        font-weight: 200;
+        position: relative;
+        color: $secondary;
+        left: -1.5rem;
+        bottom: -1.5rem;
+        height: fit-content;
+        font-size: 1rem;
+      }
+
+      .navlist_item_link {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.desktop {
+  display: none;
+}
+/* End Navigation styles */
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  a:hover a::after {
+    position: absolute;
+    content: '';
+    top: 0.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 0.25rem;
+    background-color: currentColor;
+  }
+}
+
+/* Disable animations for users who do not want them */
+@media (prefers-reduced-motion) {
+  .example-one {
+    animation: none;
+  }
+
+  .example-two {
+    transform: none;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  body {
+    font-size: 18px;
+  }
 }
