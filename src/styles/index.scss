@@ -27,7 +27,10 @@ body {
 
 body {
   color: $primary;
-  background: $primary-bg;
+  background-image: url('../assets/background.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Poppins', Verdana, Geneva, Tahoma, serif;
 }
 
