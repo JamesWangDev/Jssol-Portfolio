@@ -230,8 +230,21 @@ ul, ol {
   position: absolute;
   background-color: $accent;
   border-radius: 50%;
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+#hello {
+  position: relative;
+
+  .blob {
+    top: 3em;
+    right: 0;
+  }
+}
+
+.highlight {
+  color: $accent;
 }
 
 .desktop_nav {
