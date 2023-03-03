@@ -256,18 +256,18 @@ ul, ol {
             color: $accent;
             transition: .25s ease-in-out;
           }
+        }
 
-          &.in_view .navlist_item_link::after {
-            position: absolute;
-            content: '';
-            border-radius: 50%;
-            background-color: currentColor;
-            bottom: 50%;
-            transform: translateY(50%);
-            left: -.5rem;
-            transform-origin: center;
-            animation: show_up 250ms ease-in-out 25ms 1 alternate both;
-          }
+        &.in_view .navlist_item_link::after {
+          position: absolute;
+          content: '';
+          border-radius: 50%;
+          background-color: currentColor;
+          bottom: 50%;
+          transform: translateY(50%);
+          left: -.5rem;
+          transform-origin: center;
+          animation: show_up 250ms ease-in-out 25ms 1 alternate both;
         }
       }
     }
