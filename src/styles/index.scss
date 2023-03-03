@@ -10,7 +10,7 @@
 
 /* width */
 *::-webkit-scrollbar {
-  width: .5rem;
+  width: .425rem;
 }
 
 /* Track */
@@ -259,7 +259,7 @@ ul, ol {
   .desktop_nav {
     position: fixed;
     display: flex;
-    right: 2rem;
+    right: 1.25rem;
     top: 50%;
     transform: translateY(-50%);
 
