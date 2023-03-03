@@ -37,7 +37,7 @@ function Hero() {
 
   return (
     <section id="hello" className={`${styles.container} ${isNavOpen && styles.hidden}`}>
-      <Title index='01' title='Jonathan Sivahera' subtitle="Hello, I'm" />
+      <Title index='01' title='Jonathan Sivahera' subtitle="Hello, I'm" variant='one' />
       <p className={styles.copy}>
         I'm a <span className="highlight">full-stack software developer</span> passionate about creating top-quality software.
         <br />

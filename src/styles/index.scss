@@ -261,18 +261,30 @@ ul, ol {
 
   .section_title {
     font-size: 4.25em;
+    width: 50%;
   }
 
   .upper_div {
     display: flex;
-    flex-direction: column;
     line-height: 1;
+  }
 
-    .title_index {
-      font-size: 4rem;
-      font-weight: 100;
-      color: $secondary;
-    }
+  .one {
+    flex-direction: column;
+  }
+
+  .two {
+    flex-direction: row;
+    align-items: baseline;
+    position: relative;
+    left: -3rem;
+    gap: .25rem;
+  }
+
+  .title_index {
+    font-size: 4rem;
+    font-weight: 100;
+    color: $secondary;
   }
 }
 /* End custom title styles */
