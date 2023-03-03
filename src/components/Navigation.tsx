@@ -29,20 +29,19 @@ function Navigation() {
   useEffect(() => {
     const onHashChange = (hash) => {
       const links = document.getElementById('desktop_nav')?.getElementsByClassName('navlist_item_link');
-      for (let i = 0; i < links?.length; i++) {
-        if (hash.slice(2) == links[i].textContent?.toLowerCase()) {
+      for (let i = 0; i < links?.length; i += 1) {
+        if (hash.slice(2) === links[i].textContent?.toLowerCase()) {
           links[i].parentElement.classList.add('in_view');
-          console.log(links[i].parentElement);
         } else {
           links[i].parentElement.classList.remove('in_view');
         }
       }
     };
 
-    router.events.on("hashChangeStart", onHashChange);
+    router.events.on('hashChangeStart', onHashChange);
 
     return () => {
-      router.events.off("hashChangeStart", onHashChange);
+      router.events.off('hashChangeStart', onHashChange);
     };
   }, [router.events]);
 
