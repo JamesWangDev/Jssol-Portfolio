@@ -252,6 +252,31 @@ ul, ol {
 }
 /* End Navigation styles */
 
+/* Custom title styles */
+.title_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+
+  .section_title {
+    font-size: 4.25em;
+  }
+
+  .upper_div {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+
+    .title_index {
+      font-size: 4rem;
+      font-weight: 100;
+      color: $secondary;
+    }
+  }
+}
+/* End custom title styles */
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a:hover a::after {
