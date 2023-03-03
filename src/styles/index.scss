@@ -8,6 +8,10 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   max-width: 100vw;
@@ -193,7 +197,7 @@ ul, ol {
   }
 }
 
-.desktop {
+.desktop_nav {
   display: none;
 }
 /* End Navigation styles */
@@ -226,5 +230,61 @@ ul, ol {
 @media only screen and (min-width: 720px) {
   body {
     font-size: 18px;
+  }
+
+  .navigation {
+    display: none;
+  }
+  .desktop_nav {
+    position: fixed;
+    display: flex;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .navlist {
+      display: flex;
+      flex-direction: column;
+      row-gap: 3rem;
+
+      .navlist_item {
+        writing-mode: vertical-rl;
+        text-orientation: sideways;
+
+        .navlist_item_link {
+          position: relative;
+          color: $primary;
+
+          &:hover {
+            color: $accent;
+            transition: .25s ease-in-out;
+          }
+
+          &.in_view .navlist_item_link::after {
+            position: absolute;
+            content: '';
+            border-radius: 50%;
+            background-color: currentColor;
+            bottom: 50%;
+            transform: translateY(50%);
+            left: -.5rem;
+            transform-origin: center;
+            animation: show_up 250ms ease-in-out 25ms 1 alternate both;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes show_up {
+  from {
+    width: 0;
+    height: 0;
+  }
+  to {
+    width: .5rem;
+    height: .5rem;
   }
 }
