@@ -27,13 +27,13 @@ function Navigation() {
   const router = useRouter();
 
   useEffect(() => {
-    const onHashChange = (hash) => {
-      const links = document.getElementById('desktop_nav')?.getElementsByClassName('navlist_item_link');
+    const onHashChange = (hash: string) => {
+      const links = document.getElementById('desktop_nav')?.getElementsByClassName('navlist_item_link') || [];
       for (let i = 0; i < links?.length; i += 1) {
         if (hash.slice(2) === links[i].textContent?.toLowerCase()) {
-          links[i].parentElement.classList.add('in_view');
+          links[i].parentElement?.classList.add('in_view');
         } else {
-          links[i].parentElement.classList.remove('in_view');
+          links[i].parentElement?.classList.remove('in_view');
         }
       }
     };
@@ -66,6 +66,7 @@ function Navigation() {
               ))
             }
           </ul>
+          <div className="blob" />
         </section>
       </nav>
       <section id='desktop_nav' className='desktop_nav'>

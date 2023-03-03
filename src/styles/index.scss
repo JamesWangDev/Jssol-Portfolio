@@ -217,6 +217,21 @@ ul, ol {
       }
     }
   }
+
+  .blob {
+    width: 2rem;
+    height: 2rem;
+    top: 85%;
+    left: 15%;
+  }
+}
+
+.blob {
+  position: absolute;
+  background-color: $accent;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
 }
 
 .desktop_nav {
