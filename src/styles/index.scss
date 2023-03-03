@@ -187,6 +187,7 @@ ul, ol {
   height: 100%;
   font-size: 1.5rem;
   margin-top: 8rem;
+  animation: reveal .25s ease-in-out .125s 1 alternate both;
 
   .navlist {
     width: 100%;
@@ -290,7 +291,7 @@ ul, ol {
           transform: translateY(50%);
           left: -.5rem;
           transform-origin: center;
-          animation: show_up 250ms ease-in-out 25ms 1 alternate both;
+          animation: show_up 250ms ease-in-out 1 alternate both;
         }
       }
     }
@@ -306,5 +307,14 @@ ul, ol {
   to {
     width: .5rem;
     height: .5rem;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
