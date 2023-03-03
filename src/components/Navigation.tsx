@@ -30,7 +30,7 @@ function Navigation() {
 
   return (
     <>
-      <nav className={`navigation ${isNavOpen ? "nav_open" : ""}`}>
+      <nav className={`navigation ${isNavOpen ? 'nav_open' : ''}`}>
         <button type='button' className='navbutton' aria-label='Mobile navigation button' onClick={handleClick}>
           <span className='hamburger' />
         </button>
@@ -59,7 +59,7 @@ function Navigation() {
         </ul>
       </section>
     </>
-  )
+  );
 }
 
 export default Navigation;

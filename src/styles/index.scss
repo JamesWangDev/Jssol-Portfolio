@@ -8,10 +8,6 @@
   margin: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 html,
 body {
   max-width: 100vw;
@@ -26,6 +22,7 @@ body {
   background-size: cover;
   font-family: 'Poppins', Verdana, Geneva, Tahoma, serif;
   font-size: 12px;
+  scroll-behavior: smooth;
 }
 
 h1,

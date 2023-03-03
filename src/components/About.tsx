@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
-import { NavContext } from './NavContext';
 import styles from '@/styles/About.module.scss';
+import { NavContext } from './NavContext';
 
 function Hero() {
   const { isNavOpen } = useContext(NavContext);
