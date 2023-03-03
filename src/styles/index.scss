@@ -82,6 +82,7 @@ ul, ol {
 
 /* Navigation styles */
 .navigation {
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -119,7 +120,7 @@ ul, ol {
   &,
   &::after,
   &::before {
-    width: 3rem;
+    width: 2.5rem;
     height: .125rem;
     display: block;
     background-color: $primary;
@@ -183,7 +184,7 @@ ul, ol {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60%;
+  width: 50%;
   height: 100%;
   font-size: 1.5rem;
   margin-top: 8rem;
