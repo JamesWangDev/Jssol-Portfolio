@@ -1,11 +1,14 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import {
   FaGithub, FaLinkedin, FaAngellist, FaTwitter, FaMediumM,
 } from 'react-icons/fa';
 import styles from '@/styles/Hero.module.scss';
 import { NavContext } from './NavContext';
 import BreakpointToggle from './BreakpointToggle';
+import VisibilityToggle from './VisibilityToggle';
+import autoVisibilityToggler from '@/utils/autoVisibilityToggler';
 import Title from './Title';
 
 const socialLinks = [
@@ -35,8 +38,13 @@ const socialLinks = [
   },
 ];
 
-function Hero({ variant }) {
+const Hero = ({ variant, isVisible }) => {
   const { isNavOpen } = useContext(NavContext);
+  const router = useRouter();
+
+  useEffect(() => {
+    autoVisibilityToggler(isVisible, router, "/", "hello");
+  }, [isVisible]);
 
   return (
     <section id="hello" className={`${styles.container} ${isNavOpen && styles.hidden}`}>
@@ -64,6 +72,6 @@ function Hero({ variant }) {
       <div className="blob" />
     </section>
   );
-}
+};
 
-export default BreakpointToggle(Hero);
+export default VisibilityToggle(BreakpointToggle(Hero));

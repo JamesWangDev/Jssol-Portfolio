@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 
-const withVisibilityToggle = (WrappedComponent) => {
+const VisibilityToggle = (WrappedComponent) => {
   const EnhancedComponent = (props) => {
     const [isVisible, setIsVisible] = useState(false);
 
+    const handleChange = (visible) => {
+      setIsVisible(visible);
+    };
+
     return (
       <VisibilitySensor
-        onChange={(visible) => setIsVisible(visible)}
+        onChange={handleChange}
         partialVisibility={true}
+        scrollCheck={true}
       >
         <WrappedComponent {...props} isVisible={isVisible} />
       </VisibilitySensor>
@@ -18,4 +23,4 @@ const withVisibilityToggle = (WrappedComponent) => {
   return EnhancedComponent;
 };
 
-export default withVisibilityToggle;
+export default VisibilityToggle;
