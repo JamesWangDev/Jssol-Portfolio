@@ -11,7 +11,7 @@ const BreakpointToggle = (WrappedComponent) => {
         } else {
           setVariant('one');
         }
-      })
+      });
     }, []);
 
     return (

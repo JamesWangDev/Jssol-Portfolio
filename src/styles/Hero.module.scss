@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   width: 90%;
-  margin-top: 4rem;
+  padding-top: 4rem;
 
   .copy {
     margin-top: 2rem;
@@ -55,4 +55,34 @@
 
 .hidden {
   opacity: 0;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 40%;
+    padding-top: 8rem;
+    right: -5%;
+
+    .links {
+      display: flex;
+      align-items: center;
+      width: 80%;
+
+      .works_link {
+        font-size: 1.25rem;
+        width: max-content;
+      }
+
+      .line {
+        margin: 0 1rem;
+        width: 15%;
+      }
+
+      .solist {
+        width: 50%;
+        font-size: 1.5rem;
+      }
+    }
+  }
 }

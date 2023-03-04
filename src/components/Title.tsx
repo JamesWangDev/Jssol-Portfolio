@@ -1,7 +1,8 @@
 import React from 'react';
 
-const Title = ({ index, title, subtitle, variant }) => {
-  return (
+const Title = ({
+  index, title, subtitle, variant,
+}) => (
     <section className='title_container'>
       <h2 className='section_title'>{title}</h2>
       <div className={`upper_div ${variant}`}>
@@ -9,7 +10,6 @@ const Title = ({ index, title, subtitle, variant }) => {
         <p className='section_subtitle'>{subtitle}</p>
       </div>
     </section>
-  );
-};
+);
 
 export default Title;

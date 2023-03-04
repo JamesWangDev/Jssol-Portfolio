@@ -89,10 +89,10 @@ ul, ol {
   align-items: flex-end;
   width: 100%;
   color: $primary;
+  z-index: 10;
 
   &.nav_open {
     height: 100vh;
-    z-index: 10;
   }
 }
 
@@ -230,15 +230,16 @@ ul, ol {
   position: absolute;
   background-color: $accent;
   border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
+  z-index: -10;
 }
 
 #hello {
   position: relative;
 
   .blob {
-    top: 3em;
+    top: 6em;
     right: 0;
   }
 }
@@ -322,12 +323,14 @@ ul, ol {
   .navigation {
     display: none;
   }
+
   .desktop_nav {
     position: fixed;
     display: flex;
     right: 1.25rem;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 10;
 
     .navlist {
       display: flex;
@@ -360,6 +363,14 @@ ul, ol {
           animation: show_up 250ms ease-in-out 1 alternate both;
         }
       }
+    }
+  }
+
+  #hello {
+    .blob {
+      top: 8em;
+      width: 6rem;
+      height: 6rem;
     }
   }
 }
