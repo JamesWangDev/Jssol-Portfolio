@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaAngellist, FaTwitter, FaMediumM } from 'react-icons/fa';
 import { NavContext } from './NavContext';
+import BreakpointToggle from './BreakpointToggle';
 import Title from './Title';
 import styles from '@/styles/Hero.module.scss';
 
@@ -32,12 +33,12 @@ const socialLinks = [
   },
 ];
 
-function Hero() {
+function Hero({ variant }) {
   const { isNavOpen } = useContext(NavContext);
 
   return (
     <section id="hello" className={`${styles.container} ${isNavOpen && styles.hidden}`}>
-      <Title index='01' title='Jonathan Sivahera' subtitle="Hello, I'm" variant='one' />
+      <Title index='01' title='Jonathan Sivahera' subtitle="Hello, I'm" variant={variant} />
       <p className={styles.copy}>
         I'm a <span className="highlight">full-stack software developer</span> passionate about creating top-quality software.
         <br />
@@ -63,4 +64,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default BreakpointToggle(Hero);
