@@ -1,53 +1,22 @@
 import React, { useContext, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import {
-  FaGithub, FaLinkedin, FaAngellist, FaTwitter, FaMediumM,
-} from 'react-icons/fa';
 import styles from '@/styles/Hero.module.scss';
+import autoVisibilityToggler from '@/utils/autoVisibilityToggler';
+import socialLinks from '@/utils/socialLinks';
 import { NavContext } from './NavContext';
 import BreakpointToggle from './BreakpointToggle';
 import VisibilityToggle from './VisibilityToggle';
-import autoVisibilityToggler from '@/utils/autoVisibilityToggler';
 import Title from './Title';
 
-const socialLinks = [
-  {
-    icon: <FaGithub />,
-    link: 'https://github.com/jssol',
-  },
-  {
-    icon: <FaLinkedin />,
-    link: 'https://www.linkedin.com/in/jsivahera/',
-  },
-  {
-    icon: 'OK',
-    link: 'https://remoteok.com/@jsivahera',
-  },
-  {
-    icon: <FaAngellist />,
-    link: 'https://angel.co/u/jsivahera',
-  },
-  {
-    icon: <FaTwitter />,
-    link: 'https://twitter.com/jsivahera',
-  },
-  {
-    icon: <FaMediumM />,
-    link: 'https://medium.com/@josivahera',
-  },
-];
-
-const Hero = ({ variant, isVisible }) => {
+const Hero = ({ componentRef, variant, isVisible }) => {
   const { isNavOpen } = useContext(NavContext);
-  const router = useRouter();
 
   useEffect(() => {
-    autoVisibilityToggler(isVisible, router, "/", "hello");
+    autoVisibilityToggler(isVisible, 'hello');
   }, [isVisible]);
 
   return (
-    <section id="hello" className={`${styles.container} ${isNavOpen && styles.hidden}`}>
+    <section ref={componentRef} id="hello" className={`${styles.container} ${isNavOpen && styles.hidden}`}>
       <Title index='01' title='Jonathan Sivahera' subtitle="Hello, I'm" variant={variant} />
       <p className={styles.copy}>
         I&#39;m a <span className="highlight">full-stack software developer</span> passionate about creating top-quality software.

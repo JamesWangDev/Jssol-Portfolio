@@ -1,13 +1,20 @@
 import React, { useContext, useEffect } from 'react';
-import styles from '@/styles/Contact.module.scss';
+import styles from '@/styles/Portfolio.module.scss';
+import autoVisibilityToggler from '@/utils/autoVisibilityToggler';
 import { NavContext } from './NavContext';
+import BreakpointToggle from './BreakpointToggle';
+import VisibilityToggle from './VisibilityToggle';
 
-function Hero() {
+function Contact({ componentRef, variant, isVisible }) {
   const { isNavOpen } = useContext(NavContext);
 
+  useEffect(() => {
+    autoVisibilityToggler(isVisible, 'contact');
+  }, [isVisible]);
+
   return (
-    <section id="contact" className={`${styles.container} ${isNavOpen && styles.hidden}`}>Services Section</section>
+    <section ref={componentRef} id="contact" className={`${styles.container} ${isNavOpen && styles.hidden}`}>Services Section</section>
   );
 }
 
-export default Hero;
+export default VisibilityToggle(BreakpointToggle(Contact));

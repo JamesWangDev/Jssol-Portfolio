@@ -1,13 +1,20 @@
 import React, { useContext, useEffect } from 'react';
-import styles from '@/styles/About.module.scss';
+import styles from '@/styles/Portfolio.module.scss';
+import autoVisibilityToggler from '@/utils/autoVisibilityToggler';
 import { NavContext } from './NavContext';
+import BreakpointToggle from './BreakpointToggle';
+import VisibilityToggle from './VisibilityToggle';
 
-function Hero() {
+function About({ componentRef, variant, isVisible }) {
   const { isNavOpen } = useContext(NavContext);
 
+  useEffect(() => {
+    autoVisibilityToggler(isVisible, 'services');
+  }, [isVisible]);
+
   return (
-    <section id="services" className={`${styles.container} ${isNavOpen && styles.hidden}`}>About Section</section>
+    <section ref={componentRef} id="services" className={`${styles.container} ${isNavOpen && styles.hidden}`}>About Section</section>
   );
 }
 
-export default Hero;
+export default VisibilityToggle(BreakpointToggle(About));

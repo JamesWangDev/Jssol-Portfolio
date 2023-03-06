@@ -26,22 +26,22 @@ function Navigation() {
   const { toggleNav, isNavOpen } = useContext(NavContext);
   const router = useRouter();
 
-  useEffect(() => {
-    const onHashChange = (hash: string) => {
-      const links = document.getElementById('desktop_nav')?.getElementsByClassName('navlist_item_link') || [];
-      for (let i = 0; i < links?.length; i += 1) {
-        if (hash.slice(2) === links[i].textContent?.toLowerCase()) {
-          links[i].parentElement?.classList.add('in_view');
-        } else {
-          links[i].parentElement?.classList.remove('in_view');
-        }
+  const handleHashChange = (hash: string) => {
+    const links = document.getElementById('desktop_nav')?.getElementsByClassName('navlist_item_link') || [];
+    for (let i = 0; i < links?.length; i += 1) {
+      if (hash.slice(2) === links[i].textContent?.toLowerCase()) {
+        links[i].parentElement?.classList.add('in_view');
+      } else {
+        links[i].parentElement?.classList.remove('in_view');
       }
-    };
+    }
+  };
 
-    router.events.on('hashChangeStart', onHashChange);
+  useEffect(() => {
+    router.events.on('hashChangeStart', handleHashChange);
 
     return () => {
-      router.events.off('hashChangeStart', onHashChange);
+      router.events.off('hashChangeStart', handleHashChange);
     };
   }, [router.events]);
 

@@ -1,13 +1,22 @@
 import React, { useContext, useEffect } from 'react';
 import styles from '@/styles/Portfolio.module.scss';
+import autoVisibilityToggler from '@/utils/autoVisibilityToggler';
 import { NavContext } from './NavContext';
+import BreakpointToggle from './BreakpointToggle';
+import VisibilityToggle from './VisibilityToggle';
 
-function Hero() {
+const Portfolio = ({ componentRef, variant, isVisible }) => {
   const { isNavOpen } = useContext(NavContext);
 
-  return (
-    <section id="portfolio" className={`${styles.container} ${isNavOpen && styles.hidden}`}>Portfolio Section</section>
-  );
-}
+  useEffect(() => {
+    autoVisibilityToggler(isVisible, 'portfolio');
+  }, [isVisible]);
 
-export default Hero;
+  return (
+    <section ref={componentRef} id="portfolio" className={`${styles.container} ${isNavOpen && styles.hidden}`}>
+      Portfolio section
+    </section>
+  );
+};
+
+export default VisibilityToggle(BreakpointToggle(Portfolio));
