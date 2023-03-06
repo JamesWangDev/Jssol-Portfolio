@@ -1,7 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const VisibilityToggle = (WrappedComponent) => {
-  const EnhancedComponent = (props) => {
+interface VisibilityToggleInterface {
+  WrappedComponent: React.FC;
+}
+
+const VisibilityToggle: React.FC<VisibilityToggleInterface> = (WrappedComponent) => {
+  const EnhancedComponent = (props: object) => {
     const [isVisible, setIsVisible] = useState(false);
     const componentRef = useRef(null);
 
@@ -14,13 +18,12 @@ const VisibilityToggle = (WrappedComponent) => {
         const rect = el.getBoundingClientRect();
         const visibleTop = Math.max(rect.top, 0);
         const visibleBottom = Math.min(rect.bottom, windowHeight);
-        return Math.abs(visibleBottom - visibleTop);
+        return visibleBottom - visibleTop;
       };
 
       const handleScroll = () => {
         const componentHeight = getVisibleHeight(component);
         const isVisibleEnough = Math.floor((componentHeight / windowHeight) * 100) > 80;
-        console.log(`isVisibleEnough: ${isVisibleEnough} \n componentHeight: ${componentHeight} \n windowHeight: ${windowHeight}`);
         setIsVisible(isVisibleEnough);
       };
 
