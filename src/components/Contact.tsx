@@ -5,7 +5,13 @@ import { NavContext } from './NavContext';
 import BreakpointToggle from './BreakpointToggle';
 import VisibilityToggle from './VisibilityToggle';
 
-function Contact({ componentRef, variant, isVisible }) {
+interface Props {
+  componentRef: React.RefObject<HTMLElement>;
+  variant: string;
+  isVisible: boolean;
+}
+
+const Contact: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
   const { isNavOpen } = useContext(NavContext);
 
   useEffect(() => {
@@ -15,6 +21,6 @@ function Contact({ componentRef, variant, isVisible }) {
   return (
     <section ref={componentRef} id="contact" className={`${styles.container} ${isNavOpen && styles.hidden}`}>Services Section</section>
   );
-}
+};
 
 export default VisibilityToggle(BreakpointToggle(Contact));

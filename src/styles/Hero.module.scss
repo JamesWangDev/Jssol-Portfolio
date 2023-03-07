@@ -30,7 +30,7 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      row-gap: .25rem;
+      row-gap: 0.25rem;
       font-size: 2rem;
 
       .solist_item {
@@ -43,7 +43,7 @@
           align-items: center;
           justify-content: center;
           color: $primary;
-          transition: .25s ease-in-out;
+          transition: 0.25s ease-in-out;
 
           &:hover {
             color: $accent;
@@ -57,7 +57,6 @@
 .hidden {
   opacity: 0;
 }
-
 
 @media only screen and (min-width: 768px) {
   .container {

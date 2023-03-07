@@ -5,7 +5,13 @@ import { NavContext } from './NavContext';
 import BreakpointToggle from './BreakpointToggle';
 import VisibilityToggle from './VisibilityToggle';
 
-function About({ componentRef, variant, isVisible }) {
+interface Props {
+  componentRef: React.RefObject<HTMLElement>;
+  variant: string;
+  isVisible: boolean;
+}
+
+const About: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
   const { isNavOpen } = useContext(NavContext);
 
   useEffect(() => {
@@ -15,6 +21,6 @@ function About({ componentRef, variant, isVisible }) {
   return (
     <section ref={componentRef} id="services" className={`${styles.container} ${isNavOpen && styles.hidden}`}>About Section</section>
   );
-}
+};
 
 export default VisibilityToggle(BreakpointToggle(About));

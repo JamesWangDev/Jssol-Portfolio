@@ -5,7 +5,13 @@ import { NavContext } from './NavContext';
 import BreakpointToggle from './BreakpointToggle';
 import VisibilityToggle from './VisibilityToggle';
 
-const Portfolio = ({ componentRef, variant, isVisible }) => {
+interface Props {
+  componentRef: React.RefObject<HTMLElement>;
+  variant: string;
+  isVisible: boolean;
+}
+
+const Portfolio: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
   const { isNavOpen } = useContext(NavContext);
 
   useEffect(() => {

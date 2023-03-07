@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-const BreakpointToggle = (WrappedComponent) => {
-  const EnhancedComponent = (props) => {
+interface Props {
+  WrappedComponent: JSX.Element;
+}
+
+const BreakpointToggle: React.FC<Props> = (WrappedComponent) => {
+  const EnhancedComponent: React.FC<{props: object}> = (props) => {
     const [variant, setVariant] = useState('one');
 
     useEffect(() => {

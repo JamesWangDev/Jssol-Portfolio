@@ -10,7 +10,7 @@
 
 /* width */
 *::-webkit-scrollbar {
-  width: .425rem;
+  width: 0.425rem;
 }
 
 /* Track */
@@ -75,7 +75,8 @@ button {
   border: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
   line-height: 2;
 }
@@ -107,10 +108,10 @@ ul, ol {
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
   background-color: transparent;
 }
 
@@ -121,17 +122,17 @@ ul, ol {
   &::after,
   &::before {
     width: 2.5rem;
-    height: .125rem;
+    height: 0.125rem;
     display: block;
     background-color: $primary;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: .25s ease-in-out;
-    -moz-transition: .25s ease-in-out;
-    -o-transition: .25s ease-in-out;
-    transition: .25s ease-in-out;
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
   }
 
   &::after,
@@ -143,11 +144,11 @@ ul, ol {
   }
 
   &::before {
-    bottom: .8rem;
+    bottom: 0.8rem;
   }
 
   &::after {
-    top: .8rem;
+    top: 0.8rem;
   }
 
   .nav_open & {
@@ -172,12 +173,21 @@ ul, ol {
 
   .nav_open &,
   .nav_open &::after {
-    height: .1025rem;
+    height: 0.1025rem;
   }
 }
 
 .mobile {
   display: none;
+}
+
+.blob {
+  position: absolute;
+  background-color: $accent;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  z-index: -10;
 }
 
 .nav_open .mobile {
@@ -188,7 +198,7 @@ ul, ol {
   height: 100%;
   font-size: 1.5rem;
   margin-top: 8rem;
-  animation: reveal .25s ease-in-out .125s 1 alternate both;
+  animation: reveal 0.25s ease-in-out 0.125s 1 alternate both;
 
   .navlist {
     width: 100%;
@@ -208,7 +218,6 @@ ul, ol {
         color: $secondary;
         left: -1.5rem;
         bottom: -1.5rem;
-        height: fit-content;
         font-size: 1rem;
       }
 
@@ -224,15 +233,6 @@ ul, ol {
     top: 85%;
     left: 15%;
   }
-}
-
-.blob {
-  position: absolute;
-  background-color: $accent;
-  border-radius: 50%;
-  width: 5rem;
-  height: 5rem;
-  z-index: -10;
 }
 
 #hello {
@@ -251,6 +251,7 @@ ul, ol {
 .desktop_nav {
   display: none;
 }
+
 /* End Navigation styles */
 
 /* Custom title styles */
@@ -279,7 +280,7 @@ ul, ol {
     align-items: baseline;
     position: relative;
     left: -3rem;
-    gap: .25rem;
+    gap: 0.25rem;
   }
 
   .title_index {
@@ -288,6 +289,7 @@ ul, ol {
     color: $secondary;
   }
 }
+
 /* End custom title styles */
 
 /* Enable hover only on non-touch devices */
@@ -347,7 +349,7 @@ ul, ol {
 
           &:hover {
             color: $accent;
-            transition: .25s ease-in-out;
+            transition: 0.25s ease-in-out;
           }
         }
 
@@ -358,7 +360,7 @@ ul, ol {
           background-color: currentColor;
           bottom: 50%;
           transform: translateY(50%);
-          left: -.5rem;
+          left: -0.5rem;
           transform-origin: center;
           animation: show_up 250ms ease-in-out 1 alternate both;
         }
@@ -375,15 +377,15 @@ ul, ol {
   }
 }
 
-
 @keyframes show_up {
   from {
     width: 0;
     height: 0;
   }
+
   to {
-    width: .5rem;
-    height: .5rem;
+    width: 0.5rem;
+    height: 0.5rem;
   }
 }
 
@@ -391,6 +393,7 @@ ul, ol {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

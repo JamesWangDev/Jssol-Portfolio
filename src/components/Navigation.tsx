@@ -1,28 +1,10 @@
 import React, { useContext, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import navLinks from '@/utils/navLinks';
 import { NavContext } from './NavContext';
 
-const navLinks = [
-  {
-    name: 'Hello',
-    link: '#hello',
-  },
-  {
-    name: 'Portfolio',
-    link: '#portfolio',
-  },
-  {
-    name: 'Services',
-    link: '#services',
-  },
-  {
-    name: 'Contact',
-    link: '#contact',
-  },
-];
-
-function Navigation() {
+const Navigation: React.FC<any> = () => {
   const { toggleNav, isNavOpen } = useContext(NavContext);
   const router = useRouter();
 
@@ -82,6 +64,6 @@ function Navigation() {
       </section>
     </>
   );
-}
+};
 
 export default Navigation;

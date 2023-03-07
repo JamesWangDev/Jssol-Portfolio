@@ -5,7 +5,11 @@ export const NavContext = createContext({
   toggleNav: () => {},
 });
 
-const NavProvider = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+const NavProvider: React.FC<Props> = ({ children }) => {
   const [isNavOpen, setisNavOpen] = useState(false);
 
   const toggleNav = () => {

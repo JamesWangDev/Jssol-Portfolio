@@ -20,6 +20,8 @@
     "no-shadow": "off",
     "no-param-reassign": "off",
     "eol-last": "off",
+    "no-undef": "off",
+    "no-restricted-globals": "off",
     "no-unused-vars": 0,
     "@typescript-eslint/no-unused-vars": 0,
     "import/extensions": [ 1, {

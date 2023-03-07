@@ -1,10 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, {
+  useState, useRef, useEffect, ReactElement,
+} from 'react';
 
-interface VisibilityToggleInterface {
-  WrappedComponent: React.FC;
+interface Props {
+  WrappedComponent: JSX.Element;
 }
 
-const VisibilityToggle: React.FC<VisibilityToggleInterface> = (WrappedComponent) => {
+const VisibilityToggle: React.FC<Props> = (WrappedComponent) => {
   const EnhancedComponent = (props: object) => {
     const [isVisible, setIsVisible] = useState(false);
     const componentRef = useRef(null);

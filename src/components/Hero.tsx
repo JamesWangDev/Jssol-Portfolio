@@ -9,7 +9,13 @@ import BreakpointToggle from './BreakpointToggle';
 import VisibilityToggle from './VisibilityToggle';
 import Title from './Title';
 
-const Hero = ({ componentRef, variant, isVisible }) => {
+interface Props {
+  componentRef: React.RefObject<HTMLElement>;
+  variant: string;
+  isVisible: boolean;
+}
+
+const Hero: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
   const { isNavOpen } = useContext(NavContext);
 
   useEffect(() => {
