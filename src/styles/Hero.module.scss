@@ -1,0 +1,88 @@
+@import 'design';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding-top: 4rem;
+
+  .copy {
+    margin-top: 2rem;
+  }
+
+  .links {
+    margin: 3.5rem 0;
+    font-size: 1.5em;
+    font-weight: 600;
+
+    .works_link:hover {
+      text-decoration: underline;
+    }
+
+    .line {
+      margin: 1rem 0;
+      width: 25%;
+      background-color: $primary;
+    }
+
+    .solist {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      row-gap: 0.25rem;
+      font-size: 2rem;
+
+      .solist_item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .solist_item_link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $primary;
+          transition: 0.25s ease-in-out;
+
+          &:hover {
+            color: $accent;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 40%;
+    padding-top: 8rem;
+    right: -5%;
+
+    .links {
+      display: flex;
+      align-items: center;
+      width: 80%;
+
+      .works_link {
+        font-size: 1.25rem;
+        width: max-content;
+      }
+
+      .line {
+        margin: 0 1rem;
+        width: 15%;
+      }
+
+      .solist {
+        width: 50%;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
