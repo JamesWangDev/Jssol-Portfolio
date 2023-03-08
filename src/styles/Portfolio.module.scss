@@ -1,6 +1,6 @@
 @import 'design';
 
-$small-height: 18rem;
+$small-height: 14rem;
 
 .container {
   display: flex;
@@ -45,6 +45,8 @@ $small-height: 18rem;
 }
 
 @media only screen and (min-width: 768px) {
+  $small-height: 18rem;
+
   .title_container {
     width: 75%;
   }
