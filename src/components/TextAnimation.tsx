@@ -3,16 +3,19 @@ import React, {
 } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { useInView } from 'react-intersection-observer';
-import Portfolio from '@/components/Portfolio';
 
 interface Props {
   type: string;
   delay: number;
   children: ReactNode;
+  className?: string;
+  threshold?: number;
 }
 
-const TextAnimation: React.FC<Props> = ({ type, delay, children }) => {
-  const [ref, inView] = useInView({ threshold: 0.5 }); // detect when element is 50% in viewport
+const TextAnimation: React.FC<Props> = ({
+  type, delay, children, className = '', threshold = 0.5,
+}) => {
+  const [ref, inView] = useInView({ threshold }); // detect when element is 50% in viewport
   const [animation, setAnimation] = useState({});
 
   const fadeUp = useSpring({
@@ -63,7 +66,7 @@ const TextAnimation: React.FC<Props> = ({ type, delay, children }) => {
   }, [type, fadeUp, fadeDown, fadeRight, fadeLeft]);
 
   return (
-    <animated.div ref={ref} style={animation}>
+    <animated.div className={className} ref={ref} style={animation}>
       {children}
     </animated.div>
   );

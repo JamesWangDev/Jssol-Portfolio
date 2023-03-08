@@ -3,10 +3,10 @@ import Link from 'next/link';
 import styles from '@/styles/Hero.module.scss';
 import autoVisibilityToggler from '@/utils/autoVisibilityToggler';
 import socialLinks from '@/utils/socialLinks';
-import TextAnimation from './TextAnimation';
 import { NavContext } from './NavContext';
 import BreakpointToggle from './BreakpointToggle';
 import VisibilityToggle from './VisibilityToggle';
+import TextAnimation from './TextAnimation';
 import Title from './Title';
 
 interface Props {

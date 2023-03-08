@@ -1,9 +1,100 @@
+@import 'design';
+
+$small-height: 18rem;
+
 .container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  align-items: center;
+  width: 100%;
+}
+
+.title_container {
+  width: 90%;
+}
+
+.cards {
+  width: 100vw;
+  margin: 2rem 0;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.one {
+  border-top: 0.5px solid $secondary;
+}
+
+.one,
+.two,
+.three,
+.four,
+.five,
+.six {
+  height: $small-height;
+  border-bottom: 0.5px solid $secondary;
 }
 
 .hidden {
   opacity: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .title_container {
+    width: 75%;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-areas:
+      "one three three"
+      "two three three"
+      "four four five"
+      "four four six";
+  }
+
+  .one {
+    grid-area: one;
+    height: $small-height;
+    border-top: 0.5px solid $secondary;
+    border-bottom: 0.5px solid $secondary;
+  }
+
+  .two {
+    grid-area: two;
+    height: $small-height;
+    border-bottom: 0.5px solid $secondary;
+  }
+
+  .three {
+    grid-area: three;
+    height: calc(2 * $small-height);
+    border-top: 0.5px solid $secondary;
+    border-left: 0.5px solid $secondary;
+    border-bottom: 0.5px solid $secondary;
+  }
+
+  .four {
+    grid-area: four;
+    height: calc(2 * $small-height);
+    border-right: 0.5px solid $secondary;
+    border-bottom: 0.5px solid $secondary;
+  }
+
+  .five {
+    grid-area: five;
+    height: $small-height;
+  }
+
+  .six {
+    grid-area: six;
+    height: $small-height;
+    border-top: 0.5px solid $secondary;
+    border-bottom: 0.5px solid $secondary;
+  }
 }
