@@ -1,6 +1,9 @@
 import React, { useContext, useEffect } from 'react';
+import Image from 'next/image';
+import { FaChevronRight } from 'react-icons/fa';
 import styles from '@/styles/Portfolio.module.scss';
 import autoVisibilityToggler from '@/utils/autoVisibilityToggler';
+import projects from '@/utils/projects';
 import { NavContext } from './NavContext';
 import BreakpointToggle from './BreakpointToggle';
 import VisibilityToggle from './VisibilityToggle';
@@ -12,57 +15,6 @@ interface Props {
   variant: string;
   isVisible: boolean;
 }
-
-const projects = [
-  {
-    title: 'Project 1',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl.',
-    image: '/images/project-1.png',
-    live: '',
-    github: '',
-    alias: 'one',
-  },
-  {
-    title: 'Project 2',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl.',
-    image: '/images/project-1.png',
-    live: '',
-    github: '',
-    alias: 'two',
-  },
-  {
-    title: 'Project 3',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl.',
-    image: '/images/project-1.png',
-    live: '',
-    github: '',
-    alias: 'three',
-  },
-  {
-    title: 'Project 4',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl.',
-    image: '/images/project-1.png',
-    live: '',
-    github: '',
-    alias: 'four',
-  },
-  {
-    title: 'Project 5',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl.',
-    image: '/images/project-1.png',
-    live: '',
-    github: '',
-    alias: 'five',
-  },
-  {
-    title: 'Project 6',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl.',
-    image: '/images/project-1.png',
-    live: '',
-    github: '',
-    alias: 'six',
-  },
-];
 
 const Portfolio: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
   const { isNavOpen } = useContext(NavContext);
@@ -82,7 +34,26 @@ const Portfolio: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
         {projects.map((project, index) => (
           <TextAnimation className={styles[project.alias]} key={index} type="fade_down" delay={index * 0.1} threshold={0.1}>
             <div className={styles.card}>
-              {project.title}
+              <Image src={project.image} alt={project.title} fill className={styles.image} />
+              <div className={styles.content}>
+                <div>
+                  <p className={styles.title}>{project.title}</p>
+                  <ul className={styles.stack}>
+                    {project.stack.map((tech) => (
+                      <li key={tech} className={styles.tech}>{tech}</li>
+                    ))}
+                  </ul>
+                </div>
+                <p className={styles.subtitle}>
+                  <TextAnimation type="fade_left" delay={5}>
+                    {project.subtitle}
+                  </TextAnimation>
+                </p>
+                <button type="button" className="button" aria-label="See more about the project">
+                  <span className="sr-only">See this project</span>
+                  <FaChevronRight />
+                </button>
+              </div>
             </div>
           </TextAnimation>
         ))}

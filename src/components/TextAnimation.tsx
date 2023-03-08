@@ -63,7 +63,7 @@ const TextAnimation: React.FC<Props> = ({
       default:
         setAnimation(fadeDown);
     }
-  }, [type, fadeUp, fadeDown, fadeRight, fadeLeft]);
+  }, [type, fadeUp, fadeDown, fadeRight, fadeLeft, setAnimation]);
 
   return (
     <animated.div className={className} ref={ref} style={animation}>
