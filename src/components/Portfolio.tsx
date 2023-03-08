@@ -80,7 +80,7 @@ const Portfolio: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
       </section>
       <section className={styles.cards}>
         {projects.map((project, index) => (
-          <TextAnimation className={styles[project.alias]} key={index} type="fade_down" delay={index * 0.1} threshold={0.25}>
+          <TextAnimation className={styles[project.alias]} key={index} type="fade_down" delay={index * 0.1} threshold={0.1}>
             <div className={styles.card}>
               {project.title}
             </div>
