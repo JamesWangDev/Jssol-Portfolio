@@ -77,7 +77,7 @@ const projects = [
   {
     title: 'Culturescape',
     subtitle:
-      'A webapp for exploring the diverse and fascinating countries of the world',
+      'A Website for Exploring Countries of the World',
     description: [
       'With our comprehensive database of legal and cultural facts, you can discover everything you need to know about countries around the globe. From basic information like capital cities and populations to specific facts about local customs, traditions, and historical events, Culturescape has you covered.',
       "Our platform lets your imagination run wild and inspires your curiosity about the world. Whether you're an avid traveler or someone who loves learning new things, Culturescape is the perfect place for curious minds. Our easy-to-use platform lets you search for information based on country or topic and quickly find the facts you need.",

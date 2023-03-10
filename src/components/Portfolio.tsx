@@ -25,11 +25,9 @@ const Portfolio: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
 
   return (
     <section ref={componentRef} id="portfolio" className={`${styles.container} ${isNavOpen && styles.hidden}`}>
-      <section className={styles.title_container}>
-        <TextAnimation type="fade_left" delay={0}>
-          <Title index='02' title='Portfolio' subtitle="My recent work" variant={variant} />
-        </TextAnimation>
-      </section>
+      <TextAnimation className={styles.title_container} type="fade_right" delay={0}>
+        <Title index='02' title='Portfolio' subtitle="My recent work" variant={variant} />
+      </TextAnimation>
       <section className={styles.cards}>
         {projects.map((project, index) => (
           <TextAnimation className={styles[project.alias]} key={index} type="fade_down" delay={index * 0.1} threshold={0.1}>
