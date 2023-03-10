@@ -1,6 +1,7 @@
 import comigra from '@/assets/comigra.png';
 import velmar from '@/assets/velmar.png';
 import neutral from '@/assets/neutral.png';
+import culturescape from '@/assets/culturescape.png';
 
 const projects = [
   {
@@ -60,7 +61,7 @@ const projects = [
     alias: 'four',
   },
   {
-    title: 'Project 5',
+    title: 'WiseFin',
     subtitle: 'Lorem ipsum consectetur elit.',
     description: [
       'Neutral is a digital agency platform that provides software development services to businesses, focusing on building and maintaining mobile and web applications. The platform has collaborated with 10+ commerce in the Democratic Republic of Congo (DRC).',
@@ -74,17 +75,18 @@ const projects = [
     alias: 'five',
   },
   {
-    title: 'Project 6',
-    subtitle: 'Lorem ipsum consectetur elit.',
+    title: 'Culturescape',
+    subtitle:
+      'A webapp for exploring the diverse and fascinating countries of the world',
     description: [
-      'Neutral is a digital agency platform that provides software development services to businesses, focusing on building and maintaining mobile and web applications. The platform has collaborated with 10+ commerce in the Democratic Republic of Congo (DRC).',
-      'The primary goal of the Neutral platform is to provide businesses with access to reliable and affordable software development services. Neutral accomplishes this goal by leveraging the expertise of its team of experienced software developers, who work closely with businesses to design, develop, and maintain custom software solutions that meet their specific needs.',
-      "Neutral's services include mobile and web application development, application maintenance and support, software testing and quality assurance, and custom software development. The platform uses agile methodologies to ensure we deliver software development services on time, within budget, and to the highest quality standards.",
+      'With our comprehensive database of legal and cultural facts, you can discover everything you need to know about countries around the globe. From basic information like capital cities and populations to specific facts about local customs, traditions, and historical events, Culturescape has you covered.',
+      "Our platform lets your imagination run wild and inspires your curiosity about the world. Whether you're an avid traveler or someone who loves learning new things, Culturescape is the perfect place for curious minds. Our easy-to-use platform lets you search for information based on country or topic and quickly find the facts you need.",
+      'So why wait? Join the Culturescape community today and start exploring the world. Whether you plan your next trip or looking to expand your horizons, Culturescape is the perfect place to start.',
     ],
-    image: comigra,
-    stack: ['JavaScript', 'React', 'Tailwind', 'DaisyUI'],
-    live: '',
-    github: '',
+    image: culturescape,
+    stack: ['Tailwind', 'React', 'Redux', 'TDD'],
+    live: 'https://culturescape.netlify.app/',
+    github: 'https://github.com/jssol/metrics-webapp',
     alias: 'six',
   },
 ];

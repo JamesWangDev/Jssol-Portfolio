@@ -26,7 +26,7 @@ const Portfolio: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
   return (
     <section ref={componentRef} id="portfolio" className={`${styles.container} ${isNavOpen && styles.hidden}`}>
       <section className={styles.title_container}>
-        <TextAnimation type="fade_right" delay={0}>
+        <TextAnimation type="fade_left" delay={0}>
           <Title index='02' title='Portfolio' subtitle="My recent work" variant={variant} />
         </TextAnimation>
       </section>
@@ -44,11 +44,9 @@ const Portfolio: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
                     ))}
                   </ul>
                 </div>
-                <p className={styles.subtitle}>
-                  <TextAnimation type="fade_left" delay={5}>
-                    {project.subtitle}
-                  </TextAnimation>
-                </p>
+                <TextAnimation className={styles.subtitle} type="fade_left" delay={2.5}>
+                  {project.subtitle}
+                </TextAnimation>
                 <button type="button" className="button" aria-label="See more about the project">
                   <span className="sr-only">See this project</span>
                   <FaChevronRight />
