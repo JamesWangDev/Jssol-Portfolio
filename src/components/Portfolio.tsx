@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaChevronRight } from 'react-icons/fa';
 import styles from '@/styles/Portfolio.module.scss';
 import autoVisibilityToggler from '@/utils/autoVisibilityToggler';
@@ -31,9 +32,15 @@ const Portfolio: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
       <section className={styles.cards}>
         {projects.map((project, index) => (
           <TextAnimation className={styles[project.alias]} key={index} type="fade_down" delay={index * 0.1} threshold={0.1}>
-            <div className={styles.card}>
-              <Image src={project.image} alt={project.title} fill className={styles.image} priority />
-              <div className={styles.content}>
+            <article className={styles.card}>
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className={styles.image}
+                priority
+              />
+              <section className={styles.content}>
                 <div>
                   <p className={styles.title}>{project.title}</p>
                   <ul className={styles.stack}>
@@ -45,12 +52,12 @@ const Portfolio: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
                 <TextAnimation className={styles.subtitle} type="fade_left" delay={2.5}>
                   {project.subtitle}
                 </TextAnimation>
-                <button type="button" className="button" aria-label="See more about the project">
+                <Link className="button" href={`/projects/${project.alias}`}>
                   <span className="sr-only">See this project</span>
                   <FaChevronRight />
-                </button>
-              </div>
-            </div>
+                </Link>
+              </section>
+            </article>
           </TextAnimation>
         ))}
       </section>

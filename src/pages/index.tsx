@@ -8,7 +8,7 @@ import Contact from '@/components/Contact';
 import NavProvider, { NavContext } from '@/components/NavContext';
 import styles from '@/styles/Home.module.scss';
 
-export default function Home() {
+const Home = () => {
   const { isNavOpen } = useContext(NavContext);
 
   return (
@@ -28,4 +28,6 @@ export default function Home() {
       </main>
     </NavProvider>
   );
-}
+};
+
+export default Home;

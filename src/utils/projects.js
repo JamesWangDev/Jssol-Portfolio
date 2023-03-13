@@ -35,7 +35,7 @@ const projects = [
   },
   {
     title: 'Neutral',
-    subtitle: 'A Digital Agency Platform for Software Development Services',
+    subtitle: 'A Digital Agency for Software Development Services',
     description: [
       'Neutral is a digital agency platform that provides software development services to businesses, focusing on building and maintaining mobile and web applications. The platform has collaborated with 10+ commerce in the Democratic Republic of Congo (DRC).',
       'The primary goal of the Neutral platform is to provide businesses with access to reliable and affordable software development services. Neutral accomplishes this goal by leveraging the expertise of its team of experienced software developers, who work closely with businesses to design, develop, and maintain custom software solutions that meet their specific needs.',
