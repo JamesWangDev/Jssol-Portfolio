@@ -32,7 +32,7 @@ const Portfolio: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
         {projects.map((project, index) => (
           <TextAnimation className={styles[project.alias]} key={index} type="fade_down" delay={index * 0.1} threshold={0.1}>
             <div className={styles.card}>
-              <Image src={project.image} alt={project.title} fill className={styles.image} />
+              <Image src={project.image} alt={project.title} fill className={styles.image} priority />
               <div className={styles.content}>
                 <div>
                   <p className={styles.title}>{project.title}</p>
