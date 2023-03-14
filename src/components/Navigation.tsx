@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import TextAnimation from './TextAnimation';
 import navLinks from '@/utils/navLinks';
+import TextAnimation from './TextAnimation';
 import { NavContext } from './NavContext';
 
 const Navigation: React.FC<any> = () => {

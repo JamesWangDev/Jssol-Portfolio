@@ -18,11 +18,11 @@ interface Props {
     github: string;
     alias: string;
   };
-  next_alias: string;
-  prev_alias: string;
+  nextAlias: string;
+  prevAlias: string;
 }
 
-const Project: React.FC<Props> = ({ project, next_alias, prev_alias }) => {
+const Project: React.FC<Props> = ({ project, nextAlias, prevAlias }) => {
   const {
     title,
     description,
@@ -63,22 +63,22 @@ const Project: React.FC<Props> = ({ project, next_alias, prev_alias }) => {
           </section>
           <section className={styles.links}>
             <Link href={live} className={styles.link}>
-              <span>See live</span>
+              <span className={styles.span}>See live</span>
               <BsArrowUpRightCircle />
             </Link>
             <Link href={github} className={styles.link}>
-              <span>See source</span>
+              <span className={styles.span}>See source</span>
               <FaGithub />
             </Link>
           </section>
         </section>
         <section className={styles.nav}>
-        <Link href={`/projects/${prev_alias}`} className={styles.nav_link}>
+        <Link href={`/projects/${prevAlias}`} className={styles.nav_link}>
           <FaChevronLeft />
-          <span>Prev</span>
+          <span className={styles.span}>Prev</span>
         </Link>
-        <Link href={`/projects/${next_alias}`} className={styles.nav_link}>
-          <span>Next</span>
+        <Link href={`/projects/${nextAlias}`} className={styles.nav_link}>
+          <span className={styles.span}>Next</span>
           <FaChevronRight />
         </Link>
         </section>
@@ -97,8 +97,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const project = await projects.filter((project) => project.alias === params.alias)[0];
+  const idx = projects.indexOf(project);
+  const prevAlias = projects[idx - 1].alias;
+  const nextAlias = projects[idx + 1].alias;
 
-  return { props: { project, prev_alias: projects[projects.indexOf(project) - 1].alias, next_alias: projects[projects.indexOf(project) + 1].alias } };
+  return { props: { project, prevAlias, nextAlias } };
 }
 
 export default Project;

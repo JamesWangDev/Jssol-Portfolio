@@ -70,21 +70,21 @@
       .stack {
         display: flex;
         align-items: center;
-        gap: .5rem;
+        gap: 0.5rem;
         margin: 1rem 0;
 
         .tech {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: .125rem .75rem;
+          padding: 0.125rem 0.75rem;
           background-color: rgba(16, 16, 16, 0.5);
           font-weight: 300;
         }
       }
 
       .para + .para {
-        margin-top: .75rem;
+        margin-top: 0.75rem;
       }
     }
 
@@ -92,22 +92,16 @@
       display: flex;
       flex-direction: column;
       align-self: flex-start;
-      gap: .5rem;
+      gap: 0.5rem;
       margin: 1rem 0;
 
       .link {
         display: flex;
         align-items: center;
-        gap: .25rem;
+        gap: 0.25rem;
 
         &:hover {
           text-decoration: underline;
-        }
-
-        span {
-          display: flex;
-          align-items: center;
-          justify-content: center;
         }
       }
     }
@@ -124,19 +118,19 @@
       display: flex;
       align-items: center;
       color: $primary;
-      gap: .25rem;
-      transition: .25s ease-in-out;
+      gap: 0.25rem;
+      transition: 0.25s ease-in-out;
 
       &:hover {
         color: $accent;
       }
-
-      span {
-        display: flex;
-        align-items: center;
-      }
     }
   }
+}
+
+.span {
+  display: flex;
+  align-items: center;
 }
 
 .hidden {
