@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer';
 interface Props {
   type: string;
   delay: number;
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
   threshold?: number;
 }

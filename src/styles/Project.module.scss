@@ -87,6 +87,55 @@
         margin-top: .75rem;
       }
     }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      gap: .5rem;
+      margin: 1rem 0;
+
+      .link {
+        display: flex;
+        align-items: center;
+        gap: .25rem;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  .nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+
+    .nav_link {
+      display: flex;
+      align-items: center;
+      color: $primary;
+      gap: .25rem;
+      transition: .25s ease-in-out;
+
+      &:hover {
+        color: $accent;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+      }
+    }
   }
 }
 

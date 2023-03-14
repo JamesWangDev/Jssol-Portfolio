@@ -58,7 +58,6 @@ h6 {
 }
 
 a {
-  position: relative;
   color: $accent;
   text-decoration: none;
   cursor: pointer;
@@ -318,31 +317,6 @@ ol {
 
 /* End custom title styles */
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a:hover a::after {
-    position: absolute;
-    content: '';
-    top: 0.25rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 0.25rem;
-    background-color: currentColor;
-  }
-}
-
-/* Disable animations for users who do not want them */
-@media (prefers-reduced-motion) {
-  .example-one {
-    animation: none;
-  }
-
-  .example-two {
-    transform: none;
-  }
-}
-
 @media only screen and (min-width: 768px) {
   body {
     font-size: 18px;
@@ -376,6 +350,7 @@ ol {
           &:hover {
             color: $accent;
             transition: 0.25s ease-in-out;
+            text-decoration: none;
           }
         }
 

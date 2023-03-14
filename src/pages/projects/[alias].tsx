@@ -61,7 +61,7 @@ const Project: React.FC<Props> = ({ project, next_alias, prev_alias }) => {
               <p key={`para${index}`} className={styles.para}>{paragraph}</p>
             ))}
           </section>
-          <section>
+          <section className={styles.links}>
             <Link href={live} className={styles.link}>
               <span>See live</span>
               <BsArrowUpRightCircle />
@@ -72,7 +72,7 @@ const Project: React.FC<Props> = ({ project, next_alias, prev_alias }) => {
             </Link>
           </section>
         </section>
-        <section>
+        <section className={styles.nav}>
         <Link href={`/projects/${prev_alias}`} className={styles.nav_link}>
           <FaChevronLeft />
           <span>Prev</span>
