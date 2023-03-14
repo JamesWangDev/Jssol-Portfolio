@@ -1,7 +1,7 @@
 import React, {
   useState, useEffect, ReactNode, ReactElement,
 } from 'react';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from '@react-spring/web';
 import { useInView } from 'react-intersection-observer';
 
 interface Props {
