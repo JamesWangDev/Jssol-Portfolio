@@ -25,7 +25,9 @@ interface Props {
   projectCount: number;
 }
 
-const Project: React.FC<Props> = ({ project, nextAlias, prevAlias, idx, projectCount }) => {
+const Project: React.FC<Props> = ({
+  project, nextAlias, prevAlias, idx, projectCount,
+}) => {
   const {
     title,
     description,
@@ -68,11 +70,11 @@ const Project: React.FC<Props> = ({ project, nextAlias, prevAlias, idx, projectC
                 ))}
               </section>
               <section className={styles.links}>
-                <a href={live} target='_blank' className={styles.link}>
+                <a href={live} target='_blank' className={styles.link} rel="noreferrer">
                   <span className={styles.span}>See live</span>
                   <BsArrowUpRightCircleFill />
                 </a>
-                <a href={github} target='_blank' className={styles.link}>
+                <a href={github} target='_blank' className={styles.link} rel="noreferrer">
                   <span className={styles.span}>See source</span>
                   <FaGithub />
                 </a>
@@ -84,7 +86,11 @@ const Project: React.FC<Props> = ({ project, nextAlias, prevAlias, idx, projectC
             <FaChevronLeft />
             <span className={styles.span}>Prev</span>
           </Link>
-          <p className={styles.counter}><span className={styles.idx}>0{idx + 1}</span> of 0{projectCount}</p>
+          <p className={styles.counter}>
+            <span className={styles.idx}>0{idx + 1}</span>
+            {' '}
+            of 0{projectCount}
+          </p>
           <Link href={`/projects/${nextAlias}`} className={styles.nav_link}>
             <span className={styles.span}>Next</span>
             <FaChevronRight />
@@ -121,7 +127,11 @@ export async function getStaticProps({ params }) {
     nextAlias = projects[idx + 1].alias;
   }
 
-  return { props: { project, prevAlias, nextAlias, idx, projectCount } };
+  return {
+    props: {
+      project, prevAlias, nextAlias, idx, projectCount,
+    },
+  };
 }
 
 export default Project;

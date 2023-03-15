@@ -8,11 +8,6 @@
   margin: 0;
 }
 
-*:focus {
-  outline: 1px solid $accent;
-  outline-offset: 0.25rem;
-}
-
 /* width */
 *::-webkit-scrollbar {
   width: 0.425rem;
@@ -66,6 +61,11 @@ a {
   color: $accent;
   text-decoration: none;
   cursor: pointer;
+}
+
+a:focus-visible {
+  outline: 0.5px solid currentColor;
+  outline-offset: 0.25rem;
 }
 
 button {
