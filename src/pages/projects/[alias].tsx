@@ -98,8 +98,20 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const project = await projects.filter((project) => project.alias === params.alias)[0];
   const idx = projects.indexOf(project);
-  const prevAlias = projects[idx - 1].alias;
-  const nextAlias = projects[idx + 1].alias;
+  let prevAlias;
+  let nextAlias;
+  if (idx === 0) {
+    prevAlias = 'six';
+  } else {
+    prevAlias = projects[idx - 1].alias;
+  }
+  if (idx === 5) {
+    nextAlias = 'one';
+  } else {
+    nextAlias = projects[idx + 1].alias;
+  }
+
+
 
   return { props: { project, prevAlias, nextAlias } };
 }
