@@ -128,6 +128,15 @@
         color: $accent;
       }
     }
+
+    .counter {
+      font-weight: 300;
+      color: $secondary;
+
+      .idx {
+        color: $primary;
+      }
+    }
   }
 }
 

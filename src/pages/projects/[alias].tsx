@@ -21,9 +21,11 @@ interface Props {
   };
   nextAlias: string;
   prevAlias: string;
+  idx: number;
+  projectCount: number;
 }
 
-const Project: React.FC<Props> = ({ project, nextAlias, prevAlias }) => {
+const Project: React.FC<Props> = ({ project, nextAlias, prevAlias, idx, projectCount }) => {
   const {
     title,
     description,
@@ -82,6 +84,7 @@ const Project: React.FC<Props> = ({ project, nextAlias, prevAlias }) => {
             <FaChevronLeft />
             <span className={styles.span}>Prev</span>
           </Link>
+          <p className={styles.counter}><span className={styles.idx}>0{idx + 1}</span> of 0{projectCount}</p>
           <Link href={`/projects/${nextAlias}`} className={styles.nav_link}>
             <span className={styles.span}>Next</span>
             <FaChevronRight />
@@ -94,7 +97,7 @@ const Project: React.FC<Props> = ({ project, nextAlias, prevAlias }) => {
 };
 
 export async function getStaticPaths() {
-  const paths = await projects.map((project) => ({
+  const paths = projects.map((project) => ({
     params: { alias: project.alias },
   }));
 
@@ -102,8 +105,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const project = await projects.filter((project) => project.alias === params.alias)[0];
+  const project = projects.filter((project) => project.alias === params.alias)[0];
   const idx = projects.indexOf(project);
+  const projectCount = projects.length;
   let prevAlias;
   let nextAlias;
   if (idx === 0) {
@@ -117,7 +121,7 @@ export async function getStaticProps({ params }) {
     nextAlias = projects[idx + 1].alias;
   }
 
-  return { props: { project, prevAlias, nextAlias } };
+  return { props: { project, prevAlias, nextAlias, idx, projectCount } };
 }
 
 export default Project;

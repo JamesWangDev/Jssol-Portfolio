@@ -8,6 +8,11 @@
   margin: 0;
 }
 
+*:focus {
+  outline: 1px solid $accent;
+  outline-offset: 0.25rem;
+}
+
 /* width */
 *::-webkit-scrollbar {
   width: 0.425rem;
