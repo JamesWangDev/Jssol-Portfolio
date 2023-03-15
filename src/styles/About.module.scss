@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   width: 90%;
+  min-height: 100vh;
   margin-top: 3rem;
 
   .about {
@@ -82,6 +83,7 @@
     flex-direction: row-reverse;
     align-items: center;
     width: 75%;
+    margin: 0 auto;
     gap: 2rem;
 
     .about {
