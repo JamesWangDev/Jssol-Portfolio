@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaChevronLeft, FaChevronRight, FaGithub } from 'react-icons/fa';
 import { BsArrowUpRightCircle } from 'react-icons/bs';
+import TextAnimation from '@/components/TextAnimation';
 import styles from '@/styles/Project.module.scss';
 import projects from '@/utils/projects';
 
@@ -38,51 +39,54 @@ const Project: React.FC<Props> = ({ project, nextAlias, prevAlias }) => {
           <title>{title}</title>
           <meta name="description" content={description[0]} />
       </Head>
-      <main className={styles.container}>
-        <Link href="/#portfolio" className={styles.back_link}>
-          <span className={styles.back} />
-        </Link>
-        <h2 className={styles.title}>{title}</h2>
-        <section className={styles.content}>
-          <div className={styles.image_container}>
-            <Image
-              src={image}
-              alt={title}
-              className={styles.image}
-            />
-          </div>
-          <section className={styles.info}>
-            <ul className={styles.stack}>
-              {stack.map((tech) => (
-                <li key={tech} className={styles.tech}>{tech}</li>
+      <TextAnimation type='fade_up' delay={2.5} threshold={0.05}>
+        <main className={styles.container}>
+          <Link href="/#portfolio" className={styles.back_link}>
+            <span className={styles.back} />
+          </Link>
+          <h2 className={styles.title}>{title}</h2>
+          <section className={styles.content}>
+            <div className={styles.image_container}>
+              <Image
+                src={image}
+                alt={title}
+                className={styles.image}
+                priority
+              />
+            </div>
+            <section className={styles.info}>
+              <ul className={styles.stack}>
+                {stack.map((tech) => (
+                  <li key={tech} className={styles.tech}>{tech}</li>
+                ))}
+              </ul>
+              {description.map((paragraph, index) => (
+                <p key={`para${index}`} className={styles.para}>{paragraph}</p>
               ))}
-            </ul>
-            {description.map((paragraph, index) => (
-              <p key={`para${index}`} className={styles.para}>{paragraph}</p>
-            ))}
+            </section>
+            <section className={styles.links}>
+              <Link href={live} className={styles.link}>
+                <span className={styles.span}>See live</span>
+                <BsArrowUpRightCircle />
+              </Link>
+              <Link href={github} className={styles.link}>
+                <span className={styles.span}>See source</span>
+                <FaGithub />
+              </Link>
+            </section>
           </section>
-          <section className={styles.links}>
-            <Link href={live} className={styles.link}>
-              <span className={styles.span}>See live</span>
-              <BsArrowUpRightCircle />
-            </Link>
-            <Link href={github} className={styles.link}>
-              <span className={styles.span}>See source</span>
-              <FaGithub />
-            </Link>
+          <section className={styles.nav}>
+          <Link href={`/projects/${prevAlias}`} className={styles.nav_link}>
+            <FaChevronLeft />
+            <span className={styles.span}>Prev</span>
+          </Link>
+          <Link href={`/projects/${nextAlias}`} className={styles.nav_link}>
+            <span className={styles.span}>Next</span>
+            <FaChevronRight />
+          </Link>
           </section>
-        </section>
-        <section className={styles.nav}>
-        <Link href={`/projects/${prevAlias}`} className={styles.nav_link}>
-          <FaChevronLeft />
-          <span className={styles.span}>Prev</span>
-        </Link>
-        <Link href={`/projects/${nextAlias}`} className={styles.nav_link}>
-          <span className={styles.span}>Next</span>
-          <FaChevronRight />
-        </Link>
-        </section>
-      </main>
+        </main>
+      </TextAnimation>
     </>
   );
 };
@@ -110,8 +114,6 @@ export async function getStaticProps({ params }) {
   } else {
     nextAlias = projects[idx + 1].alias;
   }
-
-
 
   return { props: { project, prevAlias, nextAlias } };
 }
