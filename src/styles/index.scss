@@ -58,10 +58,14 @@ h6 {
 }
 
 a {
-  position: relative;
   color: $accent;
   text-decoration: none;
   cursor: pointer;
+}
+
+a:focus-visible {
+  outline: 0.5px solid currentColor;
+  outline-offset: 0.25rem;
 }
 
 button {
@@ -79,6 +83,36 @@ ul,
 ol {
   list-style: none;
   line-height: 2;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: $primary;
+  background-color: $accent;
+  transition: 0.25s ease-in-out;
+  width: fit-content;
+
+  &:hover {
+    box-shadow: 0 0 5px 2px $accent-alpha;
+  }
+
+  &:active {
+    box-shadow: inset 0 0 5px 2px rgba(0, 0, 0, 0.7);
+  }
+}
+
+.sr-only {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
 }
 
 /* Navigation styles */
@@ -292,31 +326,6 @@ ol {
 
 /* End custom title styles */
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a:hover a::after {
-    position: absolute;
-    content: '';
-    top: 0.25rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 0.25rem;
-    background-color: currentColor;
-  }
-}
-
-/* Disable animations for users who do not want them */
-@media (prefers-reduced-motion) {
-  .example-one {
-    animation: none;
-  }
-
-  .example-two {
-    transform: none;
-  }
-}
-
 @media only screen and (min-width: 768px) {
   body {
     font-size: 18px;
@@ -350,6 +359,7 @@ ol {
           &:hover {
             color: $accent;
             transition: 0.25s ease-in-out;
+            text-decoration: none;
           }
         }
 

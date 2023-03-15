@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import navLinks from '@/utils/navLinks';
+import TextAnimation from './TextAnimation';
 import { NavContext } from './NavContext';
 
 const Navigation: React.FC<any> = () => {
@@ -48,7 +49,7 @@ const Navigation: React.FC<any> = () => {
               ))
             }
           </ul>
-          <div className="blob" />
+          <TextAnimation type="fade_right" className="blob" delay={5} />
         </section>
       </nav>
       <section id='desktop_nav' className='desktop_nav'>

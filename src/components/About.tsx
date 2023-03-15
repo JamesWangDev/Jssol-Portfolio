@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import styles from '@/styles/Portfolio.module.scss';
+import styles from '@/styles/About.module.scss';
 import autoVisibilityToggler from '@/utils/autoVisibilityToggler';
 import { NavContext } from './NavContext';
 import BreakpointToggle from './BreakpointToggle';

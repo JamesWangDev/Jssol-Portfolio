@@ -1,71 +1,68 @@
 import React, {
   useState, useEffect, ReactNode, ReactElement,
 } from 'react';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from '@react-spring/web';
 import { useInView } from 'react-intersection-observer';
-import Portfolio from '@/components/Portfolio';
 
 interface Props {
   type: string;
   delay: number;
-  children: ReactNode;
+  children?: ReactNode;
+  className?: string;
+  threshold?: number;
 }
 
-const TextAnimation: React.FC<Props> = ({ type, delay, children }) => {
-  const [ref, inView] = useInView({ threshold: 0.5 }); // detect when element is 50% in viewport
-  const [animation, setAnimation] = useState({});
+const TextAnimation: React.FC<Props> = ({
+  type, delay, children, className = '', threshold = 0.5,
+}) => {
+  const [ref, inView] = useInView({ threshold }); // detect when element is 50% in viewport
 
-  const fadeUp = useSpring({
-    opacity: inView ? 1 : 0, // animate opacity from 0 to 1 when in viewport
-    transform: inView ? 'translateY(0%)' : 'translateY(-3%)', // animate translateX from -100% to 0% when in viewport
-    config: { duration: 300 }, // animation duration in milliseconds
-    delay: 100 * delay, // delay animation by 250 milliseconds
-  });
-
-  const fadeDown = useSpring({
-    opacity: inView ? 1 : 0, // animate opacity from 0 to 1 when in viewport
-    transform: inView ? 'translateY(0%)' : 'translateY(3%)', // animate translateX from -100% to 0% when in viewport
-    config: { duration: 300 }, // animation duration in milliseconds
-    delay: 100 * delay, // delay animation by 250 milliseconds
-  });
-
-  const fadeRight = useSpring({
-    opacity: inView ? 1 : 0, // animate opacity from 0 to 1 when in viewport
-    transform: inView ? 'translateX(0%)' : 'translateX(-3%)', // animate translateX from -100% to 0% when in viewport
-    config: { duration: 300 }, // animation duration in milliseconds
-    delay: 100 * delay, // delay animation by 250 milliseconds
-  });
-
-  const fadeLeft = useSpring({
-    opacity: inView ? 1 : 0, // animate opacity from 0 to 1 when in viewport
-    transform: inView ? 'translateX(0%)' : 'translateX(3%)', // animate translateX from -100% to 0% when in viewport
-    config: { duration: 300 }, // animation duration in milliseconds
-    delay: 100 * delay, // delay animation by 250 milliseconds
-  });
-
-  useEffect(() => {
+  const getAnimation = () => {
     switch (type) {
       case 'fade_up':
-        setAnimation(fadeUp);
-        break;
+        return {
+          opacity: inView ? 1 : 0,
+          transform: inView ? 'translateY(0%)' : 'translateY(-3%)',
+          config: { duration: 300 },
+          delay: 100 * delay,
+        };
       case 'fade_down':
-        setAnimation(fadeDown);
-        break;
+        return {
+          opacity: inView ? 1 : 0,
+          transform: inView ? 'translateY(0%)' : 'translateY(3%)',
+          config: { duration: 300 },
+          delay: 100 * delay,
+        };
       case 'fade_right':
-        setAnimation(fadeRight);
-        break;
+        return {
+          opacity: inView ? 1 : 0,
+          transform: inView ? 'translateX(0%)' : 'translateX(-3%)',
+          config: { duration: 300 },
+          delay: 100 * delay,
+        };
       case 'fade_left':
-        setAnimation(fadeLeft);
-        break;
+        return {
+          opacity: inView ? 1 : 0,
+          transform: inView ? 'translateX(0%)' : 'translateX(3%)',
+          config: { duration: 300 },
+          delay: 100 * delay,
+        };
       default:
-        setAnimation(fadeDown);
+        return {
+          opacity: inView ? 1 : 0,
+          transform: inView ? 'translateY(0%)' : 'translateY(3%)',
+          config: { duration: 300 },
+          delay: 100 * delay,
+        };
     }
-  }, [type, fadeUp, fadeDown, fadeRight, fadeLeft]);
+  };
+
+  const animation = useSpring(getAnimation());
 
   return (
-    <animated.div ref={ref} style={animation}>
+    <animated.span className={className} ref={ref} style={animation}>
       {children}
-    </animated.div>
+    </animated.span>
   );
 };
 
