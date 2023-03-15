@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaChevronLeft, FaChevronRight, FaGithub } from 'react-icons/fa';
-import { BsArrowUpRightCircle } from 'react-icons/bs';
+import { BsArrowUpRightCircleFill } from 'react-icons/bs';
 import TextAnimation from '@/components/TextAnimation';
 import styles from '@/styles/Project.module.scss';
 import projects from '@/utils/projects';
@@ -54,25 +54,27 @@ const Project: React.FC<Props> = ({ project, nextAlias, prevAlias }) => {
                 priority
               />
             </div>
-            <section className={styles.info}>
-              <ul className={styles.stack}>
-                {stack.map((tech) => (
-                  <li key={tech} className={styles.tech}>{tech}</li>
+            <section className={styles.info_container}>
+              <section className={styles.info}>
+                <ul className={styles.stack}>
+                  {stack.map((tech) => (
+                    <li key={tech} className={styles.tech}>{tech}</li>
+                  ))}
+                </ul>
+                {description.map((paragraph, index) => (
+                  <p key={`para${index}`} className={styles.para}>{paragraph}</p>
                 ))}
-              </ul>
-              {description.map((paragraph, index) => (
-                <p key={`para${index}`} className={styles.para}>{paragraph}</p>
-              ))}
-            </section>
-            <section className={styles.links}>
-              <Link href={live} className={styles.link}>
-                <span className={styles.span}>See live</span>
-                <BsArrowUpRightCircle />
-              </Link>
-              <Link href={github} className={styles.link}>
-                <span className={styles.span}>See source</span>
-                <FaGithub />
-              </Link>
+              </section>
+              <section className={styles.links}>
+                <a href={live} target='_blank' className={styles.link}>
+                  <span className={styles.span}>See live</span>
+                  <BsArrowUpRightCircleFill />
+                </a>
+                <a href={github} target='_blank' className={styles.link}>
+                  <span className={styles.span}>See source</span>
+                  <FaGithub />
+                </a>
+              </section>
             </section>
           </section>
           <section className={styles.nav}>

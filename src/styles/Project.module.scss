@@ -40,7 +40,9 @@
   }
 
   .title {
-    font-size: 3.25em;
+    font-size: 2.5em;
+    font-weight: 400;
+    font-family: 'Poppins', Verdana, Geneva, Tahoma, serif;
     margin: 0 0 1rem;
   }
 
@@ -140,6 +142,39 @@
 
 @media only screen and (min-width: 768px) {
   .container {
-    width: 90%;
+    .back_link {
+      .back {
+        margin: 2rem 0;
+      }
+    }
+
+    .content {
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+
+      .image_container {
+        width: 60%;
+      }
+
+      .info_container {
+        width: 40%;
+      }
+
+      .links {
+        flex-direction: row;
+        align-self: flex-start;
+        gap: 2rem;
+        margin: 1rem 0;
+
+        .link {
+          gap: 0.5rem;
+        }
+      }
+    }
+
+    .nav {
+      margin: 2rem 0;
+    }
   }
 }
