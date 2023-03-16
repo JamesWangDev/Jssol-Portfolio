@@ -41,10 +41,10 @@ const About: React.FC<Props> = ({ componentRef, isVisible }) => {
           </p>
         </TextAnimation>
         <TextAnimation type="fade_down" delay={0}>
-          <Link href="/resume" className={styles.resume_link}>
-            <span className="span">View my Resume</span>
+          <a href="/resume.pdf" target='_blank' className={styles.resume_link}>
+            <span className="span">Get my Resume</span>
             <BsArrowUpRightCircleFill />
-          </Link>
+          </a>
           <Link className={`button ${styles.button}`} href='/#contact'>
             Start collaboration
           </Link>
