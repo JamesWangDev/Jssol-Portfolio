@@ -31,7 +31,7 @@ $small-height: 14rem;
   .image {
     object-fit: cover;
     object-position: top;
-    transition: 0.5s ease-in-out;
+    transition: object-position 0.5s 0.5s ease-in-out;
     z-index: -10;
   }
 
