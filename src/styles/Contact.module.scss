@@ -6,7 +6,6 @@
   align-items: center;
   background-color: $secondary-bg;
   width: 100%;
-  min-height: 100vh;
 
   .title_container {
     width: 90%;
@@ -17,6 +16,11 @@
       font-size: 4.25em;
     }
   }
+
+  .text {
+    width: 90%;
+    margin: 2rem 0;
+  }
 }
 
 .hidden {
@@ -25,9 +29,15 @@
 
 @media only screen and (min-width: 768px) {
   .container {
+    min-height: 100vh;
+
     .title_container {
-      width: 55%;
+      width: 40%;
       margin-top: 6rem;
+    }
+
+    .text {
+      width: 40%;
     }
   }
 }

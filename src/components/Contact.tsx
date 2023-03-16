@@ -53,6 +53,14 @@ const Contact: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
       <TextAnimation type="fade_right" delay={0} className={styles.title_container}>
         <Title index='04' title='Get started' subtitle="Interested in collaborating?" variant={variant} className={styles.title} />
       </TextAnimation>
+      <TextAnimation type="fade_down" delay={0} className={styles.text}>
+        <p>
+          Thanks for visiting! I am excited about us working together and bringing your ideas to life.
+          Do you have a project in mind? Or do you want to chat about potential collaborations? I would love to hear from you.
+          <br />
+          Don&#39;t hesitate to reach out - let&#39;s make something cool together!
+        </p>
+      </TextAnimation>
       <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
         {({ isSubmitting }) => (
           <Form>
