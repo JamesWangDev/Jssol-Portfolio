@@ -48,6 +48,15 @@ body {
   font-size: 12px;
 }
 
+textarea,
+input {
+  font-family: 'Poppins', Verdana, Geneva, Tahoma, serif;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 h1,
 h2,
 h3,

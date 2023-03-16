@@ -28,7 +28,7 @@ const Contact: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
   const validationSchema = Yup.object({
     name: Yup.string().required('Name is required'),
     email: Yup.string().email('Invalid email address').required('Email is required'),
-    message: Yup.string().required('Message is required'),
+    message: Yup.string().required('Message is required').max(500, 'Max characters reached'),
   });
 
   const onSubmit = async (values: object, { resetForm }: any) => {
@@ -63,23 +63,29 @@ const Contact: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
       </TextAnimation>
       <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
         {({ isSubmitting }) => (
-          <Form>
-            <div>
-              <label htmlFor="name">Name</label>
-              <Field type="text" id="name" name="name" />
-              <ErrorMessage name="name" />
+          <Form className={styles.form}>
+            <div className={styles.input_container}>
+              <label className={styles.label} htmlFor="name">Your name</label>
+              <Field type="text" id="name" name="name" className={styles.input} />
+              <span className={styles.error}>
+                <ErrorMessage name="name" />
+              </span>
             </div>
-            <div>
-              <label htmlFor="email">Email</label>
-              <Field type="email" id="email" name="email" />
-              <ErrorMessage name="email" />
+            <div className={styles.input_container}>
+              <label className={styles.label} htmlFor="email">Your email</label>
+              <Field type="email" id="email" name="email" className={styles.input} />
+              <span className={styles.error}>
+                <ErrorMessage name="email" />
+              </span>
             </div>
-            <div>
-              <label htmlFor="message">Message</label>
-              <Field as="textarea" id="message" name="message" />
-              <ErrorMessage name="message" />
+            <div className={styles.area_container}>
+              <label className={styles.label} htmlFor="message">Your message</label>
+              <Field as="textarea" id="message" name="message" className={styles.textarea} maxLength="501" />
+              <span className={styles.error}>
+                <ErrorMessage name="message" />
+              </span>
             </div>
-            <button type="submit" disabled={isSubmitting}>Submit</button>
+            <button className={`button ${styles.button}`} type="submit" disabled={isSubmitting}>Start collaboration</button>
           </Form>
         )}
       </Formik>
