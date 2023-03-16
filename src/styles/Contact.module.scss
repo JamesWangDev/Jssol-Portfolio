@@ -103,6 +103,11 @@
   margin-top: 0.5rem;
 }
 
+.toast {
+  background-color: $form-bg;
+  color: $accent;
+}
+
 @media only screen and (min-width: 768px) {
   .container {
     min-height: 100vh;

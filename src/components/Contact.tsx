@@ -1,6 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Formik, Field, ErrorMessage, Form } from 'formik';
 import * as Yup from 'yup';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 import styles from '@/styles/Contact.module.scss';
 import autoVisibilityToggler from '@/utils/autoVisibilityToggler';
 import { NavContext } from './NavContext';
@@ -17,7 +19,6 @@ interface Props {
 
 const Contact: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
   const { isNavOpen } = useContext(NavContext);
-  const [alertMessage, setAlertMessage] = useState('');
 
   useEffect(() => {
     autoVisibilityToggler(isVisible, 'contact');
@@ -42,9 +43,9 @@ const Contact: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
 
     if (response.ok) {
       resetForm();
-      setAlertMessage('Message sent successfully!');
+      toast.error("Message sent!");
     } else {
-      setAlertMessage('Something went wrong :( Please try again!');
+      toast.error("Something went wrong :( Try again!");
     }
   };
 
@@ -89,6 +90,19 @@ const Contact: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
           </Form>
         )}
       </Formik>
+      <ToastContainer
+        position="bottom-left"
+        autoClose={2500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable={false}
+        pauseOnHover={false}
+        theme="dark"
+        toastClassName={styles.toast}
+      />
       <TextAnimation type="fade_left" className="blob" delay={0} />
     </section>
   );
