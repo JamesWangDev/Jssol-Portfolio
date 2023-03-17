@@ -73,3 +73,33 @@
     }
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    padding: 2rem 10rem;
+    // gap: 2rem;
+
+    &:before {
+      background-color: transparent;
+    }
+
+    .link {
+      margin-top: 0;
+      text-align: left;
+      flex: 1;
+    }
+
+    .solist {
+      flex: 1;
+      font-size: 1.5rem;
+    }
+
+    .copy {
+      flex: 1.5;
+      width: max-content;
+      margin-bottom: 0;
+      text-align: right;
+    }
+  }
+}

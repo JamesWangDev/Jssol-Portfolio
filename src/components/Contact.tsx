@@ -86,7 +86,7 @@ const Contact: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
                 <ErrorMessage name="message" />
               </span>
             </div>
-            <button className={`button ${styles.button}`} type="submit" disabled={isSubmitting}>Start collaboration</button>
+            <button className={`button ${styles.button}`} type="submit" disabled={isSubmitting}>Send</button>
           </Form>
         )}
       </Formik>
