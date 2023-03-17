@@ -48,6 +48,15 @@ body {
   font-size: 12px;
 }
 
+textarea,
+input {
+  font-family: 'Poppins', Verdana, Geneva, Tahoma, serif;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -278,6 +287,16 @@ p {
   }
 }
 
+#contact {
+  position: relative;
+
+  .blob {
+    top: 4em;
+    right: 2em;
+    z-index: 0;
+  }
+}
+
 .highlight {
   color: $accent;
 }
@@ -294,6 +313,11 @@ p {
   display: flex;
   flex-direction: column-reverse;
   align-items: flex-start;
+
+  p,
+  h2 {
+    line-height: 1.2;
+  }
 
   .section_title {
     font-size: 4.25em;
@@ -313,7 +337,7 @@ p {
     flex-direction: row;
     align-items: baseline;
     position: relative;
-    left: -3rem;
+    left: -3.5rem;
     gap: 0.25rem;
   }
 
@@ -381,6 +405,14 @@ p {
   #hello {
     .blob {
       top: 8em;
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+
+  #contact {
+    .blob {
+      right: 20em;
       width: 6rem;
       height: 6rem;
     }
