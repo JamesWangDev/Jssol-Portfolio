@@ -1,0 +1,75 @@
+@import 'design';
+
+.container {
+  width: 100%;
+  position: relative;
+  background-color: $secondary-bg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 1px;
+    background-color: $secondary;
+  }
+
+  .link {
+    width: 90%;
+    margin-top: 1rem;
+    text-align: left;
+
+    .resume_link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      width: fit-content;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .solist {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2rem;
+    width: 90%;
+
+    .solist_item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .solist_item_link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $primary;
+        transition: 0.25s ease-in-out;
+
+        &:hover {
+          color: $accent;
+        }
+      }
+    }
+  }
+
+  .copy {
+    width: 90%;
+    margin-bottom: 1rem;
+    text-align: left;
+
+    .love {
+      color: $accent;
+    }
+  }
+}
