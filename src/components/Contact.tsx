@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from 'react';
-import { Formik, Field, ErrorMessage, Form } from 'formik';
+import {
+  Formik, Field, ErrorMessage, Form,
+} from 'formik';
 import * as Yup from 'yup';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
@@ -43,9 +45,9 @@ const Contact: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
 
     if (response.ok) {
       resetForm();
-      toast.error("Message sent!");
+      toast.error('Message sent!');
     } else {
-      toast.error("Something went wrong :( Try again!");
+      toast.error('Something went wrong :( Try again!');
     }
   };
 
@@ -56,8 +58,10 @@ const Contact: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
       </TextAnimation>
       <TextAnimation type="fade_down" delay={0} className={styles.text}>
         <p>
-          Thanks for visiting! I am excited about us working together and bringing your ideas to life.
-          Do you have a project in mind? Or do you want to chat about potential collaborations? I would love to hear from you.
+          Thanks for visiting!
+          I am excited about us working together and bringing your ideas to life.
+          Do you have a project in mind? Or do you want to chat about potential collaborations?
+          I would love to hear from you.
           <br />
           Don&#39;t hesitate to reach out - let&#39;s make something cool together!
         </p>

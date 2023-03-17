@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import styles from '@/styles/Footer.module.scss';
 import { BsArrowUpRightCircleFill } from 'react-icons/bs';
-import TextAnimation from './TextAnimation';
 import socialLinks from '@/utils/socialLinks';
+import TextAnimation from './TextAnimation';
 
 const Footer: React.FC<{}> = () => {
   const [year, setYear] = useState(0);
