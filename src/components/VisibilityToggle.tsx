@@ -2,11 +2,7 @@ import React, {
   useState, useRef, useEffect, ReactElement,
 } from 'react';
 
-interface Props {
-  WrappedComponent: JSX.Element;
-}
-
-const VisibilityToggle: React.FC<Props> = (WrappedComponent) => {
+const VisibilityToggle = (WrappedComponent: any) => {
   const EnhancedComponent = (props: object) => {
     const [isVisible, setIsVisible] = useState(false);
     const componentRef = useRef(null);
@@ -16,7 +12,7 @@ const VisibilityToggle: React.FC<Props> = (WrappedComponent) => {
       const { window } = globalThis;
       const windowHeight = window.innerHeight;
 
-      const getVisibleHeight = (el: HTMLElement): number => {
+      const getVisibleHeight = (el: any): number => {
         const rect = el.getBoundingClientRect();
         const visibleTop = Math.max(rect.top, 0);
         const visibleBottom = Math.min(rect.bottom, windowHeight);

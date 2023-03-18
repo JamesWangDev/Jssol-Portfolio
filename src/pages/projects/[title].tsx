@@ -110,7 +110,7 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: { title: string } }) {
   const project = projects.filter((project) => formatURL(project.title) === params.title)[0];
   const idx = projects.indexOf(project);
   const projectCount = projects.length;

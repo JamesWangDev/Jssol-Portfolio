@@ -55,8 +55,9 @@ const Home = () => {
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-TPP11FR44F"
         strategy="afterInteractive"
+        defer
       />
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script id="google-analytics" strategy="afterInteractive" defer>
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
