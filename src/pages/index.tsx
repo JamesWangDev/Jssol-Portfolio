@@ -50,18 +50,21 @@ const Home = () => {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <link rel="icon" href="/favicon.ico" />
         <title>Portfolio • Jonathan Sivahera</title>
-
-        {/*
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-C0JBK824VG"></script>
-        <script>
+      </Head>
+      {/* Global site tag (gtag.js) - Google Analytics */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-TPP11FR44F"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-C0JBK824VG');
-        </script> */}
-      </Head>
+          gtag('config', 'G-TPP11FR44F');
+        `}
+      </Script>
       <main className={styles.main}>
         <Navigation />
         <Hero />
