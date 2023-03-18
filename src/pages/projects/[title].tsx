@@ -7,6 +7,7 @@ import { BsArrowUpRightCircleFill } from 'react-icons/bs';
 import TextAnimation from '@/components/TextAnimation';
 import styles from '@/styles/Project.module.scss';
 import projects from '@/utils/projects';
+import formatURL from '@/utils/formatURL';
 
 interface Props {
   project: {
@@ -17,16 +18,15 @@ interface Props {
     stack: string[];
     live: string;
     github: string;
-    alias: string;
   };
-  nextAlias: string;
-  prevAlias: string;
+  nextTitle: string;
+  prevTitle: string;
   idx: number;
   projectCount: number;
 }
 
 const Project: React.FC<Props> = ({
-  project, nextAlias, prevAlias, idx, projectCount,
+  project, nextTitle, prevTitle, idx, projectCount,
 }) => {
   const {
     title,
@@ -82,7 +82,7 @@ const Project: React.FC<Props> = ({
             </section>
           </section>
           <section className={styles.nav}>
-          <Link href={`/projects/${prevAlias}`} className={styles.nav_link}>
+          <Link href={`/projects/${prevTitle}`} className={styles.nav_link}>
             <FaChevronLeft />
             <span className={styles.span}>Prev</span>
           </Link>
@@ -91,7 +91,7 @@ const Project: React.FC<Props> = ({
             {' '}
             of 0{projectCount}
           </p>
-          <Link href={`/projects/${nextAlias}`} className={styles.nav_link}>
+          <Link href={`/projects/${nextTitle}`} className={styles.nav_link}>
             <span className={styles.span}>Next</span>
             <FaChevronRight />
           </Link>
@@ -104,32 +104,34 @@ const Project: React.FC<Props> = ({
 
 export async function getStaticPaths() {
   const paths = projects.map((project) => ({
-    params: { alias: project.alias },
+    params: { title: formatURL(project.title) },
   }));
 
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  const project = projects.filter((project) => project.alias === params.alias)[0];
+  const project = projects.filter((project) => formatURL(project.title) === params.title)[0];
   const idx = projects.indexOf(project);
   const projectCount = projects.length;
-  let prevAlias;
-  let nextAlias;
+  let prevTitle;
+  let nextTitle;
   if (idx === 0) {
-    prevAlias = 'six';
+    prevTitle = projects[projectCount - 1].title;
   } else {
-    prevAlias = projects[idx - 1].alias;
+    prevTitle = projects[idx - 1].title;
   }
-  if (idx === 5) {
-    nextAlias = 'one';
+  if (idx === (projectCount - 1)) {
+    nextTitle = projects[0].title;
   } else {
-    nextAlias = projects[idx + 1].alias;
+    nextTitle = projects[idx + 1].title;
   }
+  prevTitle = formatURL(prevTitle);
+  nextTitle = formatURL(nextTitle);
 
   return {
     props: {
-      project, prevAlias, nextAlias, idx, projectCount,
+      project, prevTitle, nextTitle, idx, projectCount,
     },
   };
 }

@@ -5,6 +5,7 @@ import { FaChevronRight } from 'react-icons/fa';
 import styles from '@/styles/Portfolio.module.scss';
 import autoVisibilityToggler from '@/utils/autoVisibilityToggler';
 import projects from '@/utils/projects';
+import formatURL from '@/utils/formatURL';
 import { NavContext } from './NavContext';
 import BreakpointToggle from './BreakpointToggle';
 import VisibilityToggle from './VisibilityToggle';
@@ -52,7 +53,7 @@ const Portfolio: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
                 <TextAnimation className={styles.subtitle} type="fade_left" delay={2.5}>
                   {project.subtitle}
                 </TextAnimation>
-                <Link className="button" href={`/projects/${project.alias}`}>
+                <Link className="button" href={`/projects/${formatURL(project.title)}`}>
                   <span className="sr-only">See this project</span>
                   <FaChevronRight />
                 </Link>
