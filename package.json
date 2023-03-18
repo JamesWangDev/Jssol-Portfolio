@@ -24,6 +24,7 @@
     "react-intersection-observer": "^9.4.3",
     "react-toastify": "^9.1.1",
     "sass": "^1.58.3",
+    "sharp": "^0.31.3",
     "typescript": "4.9.5",
     "typescript-eslint": "^0.0.1-alpha.0",
     "yup": "^1.0.2"
