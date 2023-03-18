@@ -25,7 +25,7 @@ const Footer: React.FC<{}> = () => {
           socialLinks.map((item, idx) => (
             <li key={item.link} className={styles.solist_item}>
               <TextAnimation type="fade_down" delay={1 + idx}>
-                <a className={styles.solist_item_link} href={item.link} target='_blank' rel="noreferrer">{item.icon}</a>
+                <a className={styles.solist_item_link} aria-label={item.label} href={item.link} target='_blank' rel="noreferrer">{item.icon}</a>
               </TextAnimation>
             </li>
           ))

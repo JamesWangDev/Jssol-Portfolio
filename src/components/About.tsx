@@ -55,7 +55,7 @@ const About: React.FC<Props> = ({ componentRef, isVisible }) => {
           skills.map((skill, index) => (
             <TextAnimation key={skill.name} className={styles.skill} type="fade_right" delay={index * 0.1} threshold={0.25}>
               <div className={styles.icon}>{skill.icon}</div>
-              <h6 className={styles.name}>{skill.name}</h6>
+              <h3 className={styles.name}>{skill.name}</h3>
               <ul className={styles.list}>
                 {
                   skill.list.map((item, index) => (

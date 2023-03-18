@@ -46,7 +46,7 @@ const Hero: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
               socialLinks.map((item, idx) => (
                 <li key={item.link} className={styles.solist_item}>
                   <TextAnimation type="fade_left" delay={4 + idx}>
-                    <a className={styles.solist_item_link} href={item.link} target='_blank' rel="canonical noreferrer">{item.icon}</a>
+                    <a className={styles.solist_item_link} href={item.link} aria-label={item.label} target='_blank' rel="canonical noreferrer">{item.icon}</a>
                   </TextAnimation>
                 </li>
               ))
