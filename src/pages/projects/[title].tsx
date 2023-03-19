@@ -55,7 +55,6 @@ const Project: React.FC<Props> = ({
                 src={image}
                 alt={title}
                 className={styles.image}
-                priority
               />
             </div>
             <section className={styles.info_container}>
