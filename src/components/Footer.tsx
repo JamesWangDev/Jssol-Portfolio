@@ -24,14 +24,14 @@ const Footer: React.FC<{}> = () => {
         {
           socialLinks.map((item, idx) => (
             <li key={item.link} className={styles.solist_item}>
-              <TextAnimation type="fade_down" delay={1 + idx}>
+              <TextAnimation type="fade_down" delay={0 + idx}>
                 <a className={styles.solist_item_link} aria-label={item.label} href={item.link} target='_blank' rel="noreferrer">{item.icon}</a>
               </TextAnimation>
             </li>
           ))
         }
       </ul>
-      <TextAnimation type="fade_down" delay={6} className={styles.copy}>
+      <TextAnimation type="fade_down" delay={0} className={styles.copy}>
         <p>
         Made with <span className={styles.love}>&#10084;</span> by Jonathan Sivahera  • {year}
         </p>
