@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import Head from 'next/head';
 import { Partytown } from '@builder.io/partytown/react';
-import Script from 'next/script';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import Portfolio from '@/components/Portfolio';

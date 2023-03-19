@@ -25,6 +25,7 @@
     "no-restricted-globals": "off",
     "no-unused-vars": 0,
     "@typescript-eslint/no-unused-vars": 0,
+    "@next/next/next-script-for-ga": "off",
     "import/extensions": [ 1, {
       "json": "always"
     }]
