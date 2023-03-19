@@ -16,6 +16,7 @@
   "rules": {
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "react/react-in-jsx-scope": "off",
+    "react/no-unknown-property": "off",
     "import/no-unresolved": "off",
     "no-shadow": "off",
     "no-param-reassign": "off",
