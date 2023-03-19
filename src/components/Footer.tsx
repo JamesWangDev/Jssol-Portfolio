@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styles from '@/styles/Footer.module.scss';
 import { BsArrowUpRightCircleFill } from 'react-icons/bs';
 import socialLinks from '@/utils/socialLinks';
+import { NavContext } from './NavContext';
 import TextAnimation from './TextAnimation';
 
 const Footer: React.FC<{}> = () => {
   const [year, setYear] = useState(0);
+  const { isNavOpen } = useContext(NavContext);
+
   useEffect(() => {
     const date = new Date();
     const currentYear = date.getFullYear();
@@ -13,7 +16,7 @@ const Footer: React.FC<{}> = () => {
   }, []);
 
   return (
-    <footer className={styles.container}>
+    <footer className={`${styles.container} ${isNavOpen && styles.hidden}`}>
       <TextAnimation type="fade_down" delay={0} className={styles.link}>
         <a href="/resume.pdf" target='_blank' className={styles.resume_link}>
           <span className="span">Get my Resume</span>
