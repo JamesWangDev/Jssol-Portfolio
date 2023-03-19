@@ -59,8 +59,8 @@ const Home = () => {
 
         {/* Global site tag (gtag.js) - Google Analytics using Partytown web worker */}
         <Partytown debug={true} forward={['dataLayer.push']} />
-        <script src="https://www.googletagmanager.com/gtag/js?id=G-TPP11FR44F" type="text/partytown" defer />
-        <script id="google-analytics" type="text/partytown" dangerouslySetInnerHTML={{ __html: analyticsScript }} defer />
+        <script src="https://www.googletagmanager.com/gtag/js?id=G-TPP11FR44F" type="text/partytown" defer={true} />
+        <script id="google-analytics" type="text/partytown" dangerouslySetInnerHTML={{ __html: analyticsScript }} defer={true} />
       </Head>
       <main className={styles.main}>
         <Navigation />
