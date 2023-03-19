@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import styles from '@/styles/Footer.module.scss';
+import { FaHeart } from 'react-icons/fa';
 import { BsArrowUpRightCircleFill } from 'react-icons/bs';
 import socialLinks from '@/utils/socialLinks';
 import { NavContext } from './NavContext';
@@ -36,7 +37,7 @@ const Footer: React.FC<{}> = () => {
       </ul>
       <TextAnimation type="fade_down" delay={0} className={styles.copy}>
         <p>
-        Made with <span className={styles.love}>&#10084;</span> by Jonathan Sivahera  • {year}
+        Made with <FaHeart className={styles.love} /> by Jonathan Sivahera  • {year}
         </p>
       </TextAnimation>
     </footer>

@@ -54,10 +54,9 @@ const Home = () => {
       {/* Global site tag (gtag.js) - Google Analytics */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-TPP11FR44F"
-        strategy="afterInteractive"
-        defer
+        strategy="worker"
       />
-      <Script id="google-analytics" strategy="afterInteractive" defer>
+      <Script id="google-analytics" strategy="worker">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
