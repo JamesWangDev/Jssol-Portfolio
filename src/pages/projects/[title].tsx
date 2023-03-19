@@ -4,10 +4,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaChevronLeft, FaChevronRight, FaGithub } from 'react-icons/fa';
 import { BsArrowUpRightCircleFill } from 'react-icons/bs';
+import { Poppins } from '@next/font/google';
 import TextAnimation from '@/components/TextAnimation';
 import styles from '@/styles/Project.module.scss';
 import projects from '@/utils/projects';
 import formatURL from '@/utils/formatURL';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400'],
+});
 
 interface Props {
   project: {
@@ -48,7 +54,7 @@ const Project: React.FC<Props> = ({
           <Link href="/#portfolio" className={styles.back_link}>
             <span className={styles.back} />
           </Link>
-          <h2 className={styles.title}>{title}</h2>
+          <h2 className={`${styles.title} ${poppins.className}`}>{title}</h2>
           <section className={styles.content}>
             <div className={styles.image_container}>
               <Image
