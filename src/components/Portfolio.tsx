@@ -32,34 +32,32 @@ const Portfolio: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
       </TextAnimation>
       <section className={styles.cards}>
         {projects.map((project, index) => (
-          <TextAnimation className={styles[project.alias]} key={index} type="fade_down" delay={index * 0.1} threshold={0.1}>
-            <article className={styles.card}>
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className={styles.image}
-                priority
-              />
-              <section className={styles.content}>
-                <div>
-                  <p className={styles.title}>{project.title}</p>
-                  <ul className={styles.stack}>
-                    {project.stack.map((tech) => (
-                      <li key={tech} className={styles.tech}>{tech}</li>
-                    ))}
-                  </ul>
-                </div>
-                <TextAnimation className={styles.subtitle} type="fade_left" delay={2.5}>
-                  {project.subtitle}
-                </TextAnimation>
-                <Link className="button" href={`/projects/${formatURL(project.title)}`}>
-                  <span className="sr-only">See this project</span>
-                  <FaChevronRight />
-                </Link>
-              </section>
-            </article>
-          </TextAnimation>
+          <article key={project.title} className={`${styles.card} ${styles[project.alias]}`}>
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className={styles.image}
+              sizes="(max-width: 767px) 100vw, (min-width: 768px) 30vw, (min-width: 768px) 60vw"
+            />
+            <section className={styles.content}>
+              <div>
+                <p className={styles.title}>{project.title}</p>
+                <ul className={styles.stack}>
+                  {project.stack.map((tech) => (
+                    <li key={tech} className={styles.tech}>{tech}</li>
+                  ))}
+                </ul>
+              </div>
+              <TextAnimation className={styles.subtitle} type="fade_left" delay={0}>
+                {project.subtitle}
+              </TextAnimation>
+              <Link className="button" href={`/projects/${formatURL(project.title)}`}>
+                <span className="sr-only">See this project</span>
+                <FaChevronRight />
+              </Link>
+            </section>
+          </article>
         ))}
       </section>
     </section>

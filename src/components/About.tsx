@@ -39,8 +39,6 @@ const About: React.FC<Props> = ({ componentRef, isVisible }) => {
             I&#39;ve worked with developers worldwide,
             sharpening my communication and teamwork skills.
           </p>
-        </TextAnimation>
-        <TextAnimation type="fade_down" delay={0}>
           <a href="/resume.pdf" target='_blank' className={styles.resume_link}>
             <span className="span">Get my Resume</span>
             <BsArrowUpRightCircleFill />

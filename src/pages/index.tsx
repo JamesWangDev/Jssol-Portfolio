@@ -1,17 +1,23 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Head from 'next/head';
-import Script from 'next/script';
+import { Partytown } from '@builder.io/partytown/react';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import Portfolio from '@/components/Portfolio';
 import About from '@/components/About';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import NavProvider, { NavContext } from '@/components/NavContext';
+import NavProvider from '@/components/NavContext';
 import styles from '@/styles/Home.module.scss';
 
 const Home = () => {
-  const { isNavOpen } = useContext(NavContext);
+  const analyticsScript = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-TPP11FR44F');
+  `;
 
   return (
     <NavProvider>
@@ -50,22 +56,12 @@ const Home = () => {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <link rel="icon" href="/favicon.ico" />
         <title>Portfolio • Jonathan Sivahera</title>
-      </Head>
-      {/* Global site tag (gtag.js) - Google Analytics */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-TPP11FR44F"
-        strategy="afterInteractive"
-        defer
-      />
-      <Script id="google-analytics" strategy="afterInteractive" defer>
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
 
-          gtag('config', 'G-TPP11FR44F');
-        `}
-      </Script>
+        {/* Global site tag (gtag.js) - Google Analytics using Partytown web worker */}
+        <Partytown debug={true} forward={['dataLayer.push']} />
+        <script src="https://www.googletagmanager.com/gtag/js?id=G-TPP11FR44F" type="text/partytown" defer={true} />
+        <script id="google-analytics" type="text/partytown" dangerouslySetInnerHTML={{ __html: analyticsScript }} defer={true} />
+      </Head>
       <main className={styles.main}>
         <Navigation />
         <Hero />

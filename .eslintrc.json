@@ -16,6 +16,7 @@
   "rules": {
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "react/react-in-jsx-scope": "off",
+    "react/no-unknown-property": "off",
     "import/no-unresolved": "off",
     "no-shadow": "off",
     "no-param-reassign": "off",
@@ -24,6 +25,7 @@
     "no-restricted-globals": "off",
     "no-unused-vars": 0,
     "@typescript-eslint/no-unused-vars": 0,
+    "@next/next/next-script-for-ga": "off",
     "import/extensions": [ 1, {
       "json": "always"
     }]

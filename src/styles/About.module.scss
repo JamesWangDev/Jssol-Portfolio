@@ -22,7 +22,10 @@
     }
 
     .about_me {
+      display: flex;
+      flex-direction: column;
       margin: 1rem 0;
+      gap: 1rem;
     }
   }
 
@@ -91,6 +94,7 @@
 
       .about_me {
         margin: 2rem 0;
+        gap: 2rem;
       }
     }
 

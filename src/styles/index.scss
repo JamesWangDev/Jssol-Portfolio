@@ -44,26 +44,14 @@ body {
 body {
   color: $primary;
   background-image: url('../assets/background.svg');
-  font-family: 'Poppins', Verdana, Geneva, Tahoma, serif;
   font-size: 12px;
 }
 
 textarea,
 input {
-  font-family: 'Poppins', Verdana, Geneva, Tahoma, serif;
-
   &:focus {
     outline: none;
   }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Playfair Display', 'Courier New', Courier, sans-serif;
 }
 
 a {
