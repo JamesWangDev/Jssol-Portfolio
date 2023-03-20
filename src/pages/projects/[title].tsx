@@ -61,6 +61,7 @@ const Project: React.FC<Props> = ({
                 src={image}
                 alt={title}
                 className={styles.image}
+                sizes="(max-width: 767px) 90vw, (min-width: 768px) 60vw"
               />
             </div>
             <section className={styles.info_container}>

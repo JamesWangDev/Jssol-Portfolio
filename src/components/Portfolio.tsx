@@ -38,6 +38,7 @@ const Portfolio: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
               alt={project.title}
               fill
               className={styles.image}
+              sizes="(max-width: 767px) 100vw, (min-width: 768px) 30vw, (min-width: 768px) 60vw"
             />
             <section className={styles.content}>
               <div>

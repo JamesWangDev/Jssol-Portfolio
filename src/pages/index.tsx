@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import { Partytown } from '@builder.io/partytown/react';
 import Navigation from '@/components/Navigation';
