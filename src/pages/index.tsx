@@ -9,6 +9,7 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import NavProvider from '@/components/NavContext';
 import styles from '@/styles/Home.module.scss';
+import profile from '@/assets/profile.jpeg';
 
 const Home = () => {
   const analyticsScript = `
@@ -24,31 +25,33 @@ const Home = () => {
       <Head>
         {/* Author meta tags info */}
         <meta name="author" content="Jonathan Sivahera" />
-        <meta
-          name="description"
-          content="I'm a full-stack software developer passionate about creating top-quality software.
-          Want to build a new product, feature, or website?
-          I can help you achieve your goals. Check out my work and contact me if you like what you see!"
-        />
 
         {/* Open Graph meta tags info */}
         <meta property="og:title" content="Portfolio • Jonathan Sivahera" />
-        <meta property="og:type" content="article" />
-        <meta property="og:image" content="/profile.jpeg" />
-        <meta property="og:url" content="https://sivahera.tech" />
         <meta
           property="og:description"
           content="I'm a full-stack software developer passionate about creating top-quality software.
           Want to build a new product, feature, or website?
           I can help you achieve your goals. Check out my work and contact me if you like what you see!"
         />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content={`${profile}`} />
+        <meta name="og:image:alt" content="A headshot image of Jonathan Sivahera" />
+        <meta property="og:url" content="https://www.sivahera.tech/" />
         <meta property="og:site_name" content="Portfolio • Jonathan Sivahera" />
 
         {/* Twitter meta tags info */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:image" content={`${profile}`} />
         <meta name="twitter:image:alt" content="A headshot image of Jonathan Sivahera" />
         <meta name="twitter:site" content="https://twitter.com/jsivahera" />
         <meta name="twitter:creator" content="@jsivahera" />
+        <meta
+          property="twitter:description"
+          content="I'm a full-stack software developer passionate about creating top-quality software.
+          Want to build a new product, feature, or website?
+          I can help you achieve your goals. Check out my work and contact me if you like what you see!"
+        />
 
         {/* Other meta tags info */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -56,6 +59,12 @@ const Home = () => {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <link rel="icon" href="/favicon.ico" />
         <title>Portfolio • Jonathan Sivahera</title>
+        <meta
+          property="description"
+          content="I'm a full-stack software developer passionate about creating top-quality software.
+          Want to build a new product, feature, or website?
+          I can help you achieve your goals. Check out my work and contact me if you like what you see!"
+        />
 
         {/* Global site tag (gtag.js) - Google Analytics using Partytown web worker */}
         <Partytown debug={true} forward={['dataLayer.push']} />
