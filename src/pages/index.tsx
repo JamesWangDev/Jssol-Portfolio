@@ -35,14 +35,14 @@ const Home = () => {
           I can help you achieve your goals. Check out my work and contact me if you like what you see!"
         />
         <meta property="og:type" content="article" />
-        <meta property="og:image" content={`${profile}`} />
+        <meta property="og:image" content="https://www.sivahera.tech/screenshot.png" />
         <meta name="og:image:alt" content="A headshot image of Jonathan Sivahera" />
         <meta property="og:url" content="https://www.sivahera.tech/" />
         <meta property="og:site_name" content="Portfolio • Jonathan Sivahera" />
 
         {/* Twitter meta tags info */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:image" content={`${profile}`} />
+        <meta property="twitter:image" content="https://www.sivahera.tech/screenshot.png" />
         <meta name="twitter:image:alt" content="A headshot image of Jonathan Sivahera" />
         <meta name="twitter:site" content="https://twitter.com/jsivahera" />
         <meta name="twitter:creator" content="@jsivahera" />
