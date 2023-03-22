@@ -27,13 +27,15 @@ const Hero: React.FC<Props> = ({ componentRef, variant, isVisible }) => {
       <TextAnimation type="fade_right" delay={0}>
         <Title index='01' title='Jonathan Sivahera' subtitle="Hello, I'm" variant={variant} />
       </TextAnimation>
-      <p className={styles.copy}>
-        I&#39;m a <span className="highlight">full-stack software developer</span> passionate about creating top-quality software.
-        <br />
-        Want to build a new product, feature, or website?
-        <br />
-        I can help you <span className="highlight">achieve your goals.</span> Check out my work and contact me if you like what you see!
-      </p>
+      <TextAnimation type="fade_down" delay={0}>
+        <p className={styles.copy}>
+          I&#39;m a <span className="highlight">full-stack software developer</span> passionate about creating top-quality software.
+          <br />
+          Want to build a new product, feature, or website?
+          <br />
+          I can help you <span className="highlight">achieve your goals.</span> Check out my work and contact me if you like what you see!
+        </p>
+      </TextAnimation>
       <TextAnimation type="fade_down" delay={0}>
         <section className={styles.links}>
           <Link className={styles.works_link} href="#portfolio">See my work</Link>
