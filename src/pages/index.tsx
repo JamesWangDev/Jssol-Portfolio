@@ -25,6 +25,12 @@ const Home = () => {
       <Head>
         {/* Author meta tags info */}
         <meta name="author" content="Jonathan Sivahera" />
+        <meta
+          name="description"
+          content="I'm a full-stack software developer passionate about creating top-quality software.
+          Want to build a new product, feature, or website?
+          I can help you achieve your goals. Check out my work and contact me if you like what you see!"
+        />
 
         {/* Open Graph meta tags info */}
         <meta property="og:title" content="Portfolio • Jonathan Sivahera" />
@@ -59,12 +65,6 @@ const Home = () => {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <link rel="icon" href="/favicon.ico" />
         <title>Portfolio • Jonathan Sivahera</title>
-        <meta
-          property="description"
-          content="I'm a full-stack software developer passionate about creating top-quality software.
-          Want to build a new product, feature, or website?
-          I can help you achieve your goals. Check out my work and contact me if you like what you see!"
-        />
 
         {/* Global site tag (gtag.js) - Google Analytics using Partytown web worker */}
         <Partytown debug={true} forward={['dataLayer.push']} />
