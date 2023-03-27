@@ -9,7 +9,6 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import NavProvider from '@/components/NavContext';
 import styles from '@/styles/Home.module.scss';
-import profile from '@/assets/profile.jpeg';
 
 const Home = () => {
   const analyticsScript = `
