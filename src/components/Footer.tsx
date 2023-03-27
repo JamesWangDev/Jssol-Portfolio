@@ -19,7 +19,7 @@ const Footer: React.FC<{}> = () => {
   return (
     <footer className={`${styles.container} ${isNavOpen && styles.hidden}`}>
       <TextAnimation type="fade_down" delay={0} className={styles.link}>
-        <a href="/resume.pdf" target='_blank' className={styles.resume_link}>
+        <a href="/resume.pdf" target='_blank' className={styles.resume_link} download="01JonathanSivahera">
           <span className="span">Get my Resume</span>
           <BsArrowUpRightCircleFill />
         </a>
