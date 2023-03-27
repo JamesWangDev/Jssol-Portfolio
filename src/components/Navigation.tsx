@@ -49,7 +49,7 @@ const Navigation: React.FC<any> = () => {
               ))
             }
           </ul>
-          <TextAnimation type="fade_right" className="blob" delay={5} />
+          <TextAnimation type="fade_right" className="blob" delay={0} />
         </section>
       </nav>
       <section id='desktop_nav' className='desktop_nav'>
