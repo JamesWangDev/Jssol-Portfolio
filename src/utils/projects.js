@@ -3,6 +3,7 @@ import velmar from '@/assets/velmar.png';
 import neutral from '@/assets/neutral.png';
 import culturescape from '@/assets/culturescape.png';
 import filmguru from '@/assets/filmguru.png';
+import wisefin from '@/assets/wisefin.png';
 
 const projects = [
   {
@@ -14,7 +15,7 @@ const projects = [
     ],
     image: comigra,
     stack: ['JavaScript', 'React', 'Tailwind', 'DaisyUI'],
-    live: 'https://comigra.netlify.app/',
+    live: 'https://comigra.netlify.app',
     github: 'https://github.com/neutral-technology/comigra-frontend',
     alias: 'one',
   },
@@ -27,7 +28,7 @@ const projects = [
     ],
     image: culturescape,
     stack: ['Tailwind', 'React', 'Redux', 'TDD'],
-    live: 'https://culturescape.netlify.app/',
+    live: 'https://culturescape.netlify.app',
     github: 'https://github.com/jssol/metrics-webapp',
     alias: 'two',
   },
@@ -40,7 +41,7 @@ const projects = [
     ],
     image: neutral,
     stack: ['React', 'Rails', 'PostgreSQL', 'Sass'],
-    live: 'https://neutral.codes/',
+    live: 'https://neutral.codes',
     github: 'https://github.com/neutral-technology/neutral.1.0-frontend',
     alias: 'three',
   },
@@ -53,21 +54,21 @@ const projects = [
     ],
     image: velmar,
     stack: ['Rails', 'React', 'Tailwind', 'Redux'],
-    live: 'https://velmar.netlify.app/',
+    live: 'https://velmar.netlify.app',
     github: 'https://github.com/jssol/comics-list-webapp',
     alias: 'four',
   },
   {
     title: 'WiseFin',
-    subtitle: 'Lorem ipsum consectetur elit.',
+    subtitle: 'A Budget Management Mobile Web Application',
     description: [
-      'Neutral is a digital agency platform that provides software development services to businesses, focusing on building and maintaining mobile and web applications. The platform has collaborated with 10+ commerce in the Democratic Republic of Congo (DRC).',
-      'The primary goal of the Neutral platform is to provide businesses with access to reliable and affordable software development services. Neutral accomplishes this goal by leveraging the expertise of its team of experienced software developers, who work closely with businesses to design, develop, and maintain custom software solutions that meet their specific needs.',
+      'Wisefin is a mobile web application for users to manage their budgets. They can add transactions and associate them with a specific category, allowing them to see how much money they have spent and on what.',
+      'The application uses Ruby on Rails, a popular web application framework known for its flexibility and ease of use. It also uses Postgres as the database management system, ensuring data integrity and reliability. Additionally, Rspec, a testing framework for Ruby, ensures that the application functions as intended and that any bugs get caught early in the development process.',
     ],
-    image: comigra,
-    stack: ['JavaScript', 'React', 'Tailwind', 'DaisyUI'],
-    live: '',
-    github: '',
+    image: wisefin,
+    stack: ['Rails', 'JavaScript', 'PostgreSQL', 'Ruby'],
+    live: 'https://wise-fin.herokuapp.com',
+    github: 'https://github.com/jssol/budget-app',
     alias: 'five',
   },
   {
@@ -79,7 +80,7 @@ const projects = [
     ],
     image: filmguru,
     stack: ['JavaScript', 'Webpack', 'CSS', 'API'],
-    live: 'https://jssol.github.io/api-based-webapp/',
+    live: 'https://jssol.github.io/api-based-webapp',
     github: 'https://github.com/jssol/api-based-webapp',
     alias: 'six',
   },
